@@ -8,15 +8,15 @@ scaffold import from CI.
 
 - Repository: <https://github.com/dongfanghong656/OMPCP>
 - Current source commit for the imported CI evidence:
-  `aebf9466c350e34608966f2632af7a948bd3feb3`
+  `ddaf1731ec694a527b32d4f6db305ce5f884e062`
 - Sphere convergence scaffold commit:
   `aebf9466c350e34608966f2632af7a948bd3feb3`
 - CPython 3.10 + T-matrix CI run:
-  <https://github.com/dongfanghong656/OMPCP/actions/runs/25060075362>
+  <https://github.com/dongfanghong656/OMPCP/actions/runs/25061317786>
 - CI result used for imported evidence: `completed / success`
 
-The full CPython 3.10 T-matrix rebuild was performed by CI run `25060075362` at
-commit `aebf946...`; its lightweight reports were imported into the canonical
+The full CPython 3.10 T-matrix rebuild was performed by CI run `25061317786` at
+commit `ddaf173...`; its lightweight reports were imported into the canonical
 `reports/` directory. The import intentionally excludes large NPZ artifacts.
 
 ## What Changed Since The Previous Pro Packet
@@ -71,7 +71,7 @@ commit `aebf946...`; its lightweight reports were imported into the canonical
 - Local full helper suite: `82 tests OK`.
 - Local sphere Mie full-NA acceptance sweep: `3 / 3 cases OK`.
 - Local validator: `exit 0`.
-- GitHub Actions CPython 3.10 T-matrix run `25060075362`: `success`.
+- GitHub Actions CPython 3.10 T-matrix run `25061317786`: `success`.
 - Imported CI reports: `42` files, checksummed in
   `round6p1_ci_evidence_import_manifest`.
 - Sphere Mie convergence scaffold: `preliminary_convergence_attention_not_paper_safe`.

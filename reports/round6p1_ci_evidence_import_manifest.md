@@ -1,10 +1,10 @@
 # round6p1 CI Evidence Import Manifest
 
 - import_status: `imported`
-- source_run_id: `25060075362`
-- source_head_sha: `aebf9466c350e34608966f2632af7a948bd3feb3`
-- source_artifact_dir: `C:\codex-data\OMPCP\reports\actions_run_25060075362_reports_selected`
-- source_rebuild_dir: `C:\codex-data\OMPCP\reports\actions_run_25060075362_reports_selected\round6p1_cp310_ci_rebuild`
+- source_run_id: `25061317786`
+- source_head_sha: `ddaf1731ec694a527b32d4f6db305ce5f884e062`
+- source_artifact_dir: `C:\codex-data\OMPCP\reports\actions_run_25061317786_reports_selected`
+- source_rebuild_dir: `C:\codex-data\OMPCP\reports\actions_run_25061317786_reports_selected\round6p1_cp310_ci_rebuild`
 - copied_file_count: `42`
 - skipped_existing_count: `0`
 
@@ -42,11 +42,11 @@ It prevents source/report drift by attaching CI provenance and checksums to the 
 - `round6p1_particle_size_sweep.json` (cp310_rebuild_report, sha256 `ff27aa4adaa84c20c3eb509f2be68fb4b03a82d2290f8855ac86c7886498070c`)
 - `round6p1_particle_size_sweep.md` (cp310_rebuild_report, sha256 `c566488b6adf67e625aa125b1083f33f7fb8566764b0e17a8b2dc1fb54bd3868`)
 - `round6p1_validation_failure_summary.txt` (cp310_rebuild_report, sha256 `327d39b8fca96447a9881e8fb9557e3bc360f7ea37f2f6d6a818c7a46757675b`)
-- `round6p1_validation_summary.json` (cp310_rebuild_report, sha256 `5daca6bffe2ff0a881cd0ef42beab574e235cbb6a6228816e3d3084167ad1dcb`)
+- `round6p1_validation_summary.json` (cp310_rebuild_report, sha256 `0d491caaf4fd5ae4f09471a52d0ae9c51fb01852864fd9a0a75c397c08e2b4f0`)
 - `particle_size_sweep_ci_backend_provenance.json` (ci_support_report, sha256 `55cdc41c83b6e60ce9abc294c5bb0cd7043b3856c35cab87b179df599f63a3d6`)
 - `pytmatrix-built-files.json` (ci_support_report, sha256 `ee6fc7f1a9998ef0c6f47940ed828bc3e4475cc23a40787be4d81184aa59e7fd`)
 - `pytmatrix-diagnose.json` (ci_support_report, sha256 `5079f262b164201482472678f39bf6d5f0ddfa663f07e7e28d1f7fbd7b635e2b`)
-- `round6p1_cp310_evidence_rebuild_readiness.json` (ci_support_report, sha256 `9532ca506eb4a757e0c3498d50fb498f39ab490f0739c6db2addb9b39de7f09e`)
+- `round6p1_cp310_evidence_rebuild_readiness.json` (ci_support_report, sha256 `b591a40eefc724c638fc457c49eacb3b145dc2befee9aa154325351cda7f4092`)
 - `round6p1_cp310_evidence_rebuild_readiness.md` (ci_support_report, sha256 `9ccd012f504be77b0460aa421c13903a4a3f5079f4af9533c37863f0f2787ade`)
 - `round6p1_sphere_convergence_progress_20260428.md` (ci_support_report, sha256 `935bfbbdc726e3f3363845451cf841070f1158a42c8ccfbb45e965378c2d6196`)
 - `particle_size_sweep_ci/particle_size_sweep_summary.json` (ci_support_report, sha256 `e8b999196ca874db1a5a97dfd5199f671839b4fe0826b7174acab8e9e5fbb9ab`)
