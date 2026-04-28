@@ -1,0 +1,1066 @@
+from __future__ import annotations
+
+import argparse
+from collections import defaultdict
+from dataclasses import dataclass
+from datetime import datetime
+from pathlib import Path
+import re
+from typing import Callable
+
+
+ATTEMPT_THEME_NAV_PATH = "15_尝试归档与索引/00_总览/尝试主题导航.md"
+ATTEMPT_READER_ENTRY_PATH = "13_阅读区/10_尝试归档与索引/尝试主题阅读入口.md"
+ATTEMPT_PROTOTYPE_OVERVIEW_PATH = "15_尝试归档与索引/02_工具与原型尝试/原型路线总览.md"
+ATTEMPT_VAULT_PROTOTYPES_PATH = "15_尝试归档与索引/02_工具与原型尝试/Vault与论文流程原型索引.md"
+ATTEMPT_VALIDATION_PROTOTYPES_PATH = "15_尝试归档与索引/02_工具与原型尝试/验证表达与基线原型索引.md"
+ATTEMPT_CODEX_DIAGNOSTICS_PATH = "15_尝试归档与索引/02_工具与原型尝试/Codex App 线程排查索引.md"
+
+CONVERSATION_THEME_NAV_PATH = "09_Conversations/高价值会话主题导航.md"
+CONVERSATION_READER_ENTRY_PATH = "13_阅读区/09_项目进展与管理/高价值会话入口.md"
+CONVERSATION_SYSTEM_INDEX_PATH = "09_Conversations/研究系统与知识库演进会话索引.md"
+CONVERSATION_LEARNING_INDEX_PATH = "09_Conversations/OCT学习与逐篇文献会话索引.md"
+CONVERSATION_DECONV_INDEX_PATH = "09_Conversations/反卷积与验证会话索引.md"
+CONVERSATION_TOOLING_INDEX_PATH = "09_Conversations/Codex与工具恢复会话索引.md"
+CONVERSATION_CAREER_INDEX_PATH = "09_Conversations/就业与行业观察会话索引.md"
+
+PROGRESS_THEME_NAV_PATH = "04_Progress/研究推进主线导航.md"
+PROGRESS_READER_ENTRY_PATH = "13_阅读区/09_项目进展与管理/研究主线入口.md"
+PROGRESS_MANUSCRIPT_INDEX_PATH = "04_Progress/反卷积验证与稿件主线索引.md"
+PROGRESS_SPECTROMETER_INDEX_PATH = "04_Progress/OCT光谱仪系统专项索引.md"
+PROGRESS_PIPELINE_INDEX_PATH = "04_Progress/知识库与文献管线索引.md"
+PROGRESS_TRI_AGENT_INDEX_PATH = "04_Progress/Tri-Agent与控制平面索引.md"
+PROGRESS_EVIDENCE_NAV_PATH = "04_Progress/研究问题证据链导航.md"
+PROGRESS_EVIDENCE_READER_ENTRY_PATH = "13_阅读区/09_项目进展与管理/研究问题证据入口.md"
+PROGRESS_DECONV_EVIDENCE_PATH = "04_Progress/反卷积真实增益证据链.md"
+PROGRESS_SYSTEM_EVIDENCE_PATH = "04_Progress/OCT系统专用化证据链.md"
+PROGRESS_DELIVERY_EVIDENCE_PATH = "04_Progress/知识库持续交付证据链.md"
+
+INDEX_TITLE_MAP = {
+    "02_Literature/Papers": "文献论文索引",
+    "02_Literature/Paper-Dossiers": "论文档案索引",
+    "12_Zotero/04_Item-Backfills": "Zotero 回填索引",
+    "09_Conversations": "会话索引",
+    "04_Progress": "进展索引",
+    "10_Tasks": "任务索引",
+    "05_Experiments/00_Verification-Plans": "验证计划索引",
+    "05_Experiments/03_PSF-Measurement": "PSF 测量索引",
+    "05_Experiments/04_Deconvolution-Baselines": "反卷积基线索引",
+    "05_Experiments/05_No-Ground-Truth-Evaluation": "无真值评估索引",
+    "05_Experiments/06_Statistical-Analysis": "统计分析索引",
+    "06_Writing/05_Claim-to-Evidence": "论点到证据索引",
+    "06_Writing/translation-workbench": "翻译工作台索引",
+    "06_Writing/translated-papers": "译文索引",
+}
+
+ATTEMPT_VAULT_WORKFLOW_NOTES = [
+    "15_尝试归档与索引/02_工具与原型尝试/2026-03-17-initial-vault-build-and-seed-literature-ingestion.md",
+    "15_尝试归档与索引/02_工具与原型尝试/2026-03-18-translated-paper-workflow-validation.md",
+    "15_尝试归档与索引/02_工具与原型尝试/2026-03-19-figure-study-packet-and-figure-analysis-layer.md",
+    "15_尝试归档与索引/02_工具与原型尝试/2026-03-19-reader-facing-vault-and-daily-norms-zone.md",
+    "15_尝试归档与索引/02_工具与原型尝试/2026-03-20-历史尝试回填与关键词记忆增强.md",
+]
+ATTEMPT_VALIDATION_PROTOTYPE_NOTES = [
+    "15_尝试归档与索引/02_工具与原型尝试/2026-03-20-measured-psf-vs-gaussian-validation-page-v0.2.md",
+    "15_尝试归档与索引/02_工具与原型尝试/2026-03-18-translated-paper-workflow-validation.md",
+]
+ATTEMPT_CODEX_APP_NOTES = [
+    "15_尝试归档与索引/02_工具与原型尝试/2026-04-13-官方-codex-app-recent-list-疑似第二次响应失接.md",
+    "15_尝试归档与索引/02_工具与原型尝试/2026-04-13-官方-codex-app-多账号独立线程集的可行性判断.md",
+    "15_尝试归档与索引/02_工具与原型尝试/2026-04-13-官方-codex-app-线程列表缺失首屏分页-50-条的验证.md",
+    "15_尝试归档与索引/02_工具与原型尝试/2026-04-13-官方-codex-app-线程缺失主因排序调整到分页与-pinned-持久化.md",
+    "15_尝试归档与索引/02_工具与原型尝试/2026-04-13-官方-codex-app-线程缺失单根回写与-rollout-错配的二次定位.md",
+    "15_尝试归档与索引/02_工具与原型尝试/2026-04-13-官方-codex-app-缺失线程的-pinned-thread-ids-验证.md",
+    "15_尝试归档与索引/02_工具与原型尝试/2026-04-13-官方-codex-app-缺失线程的关闭态-pinned-注入验证.md",
+]
+
+CONVERSATION_SYSTEM_NOTES = [
+    "09_Conversations/2026-03-17-initial-vault-build-and-first-literature-batch-153435.md",
+    "09_Conversations/2026-03-18-structured-vault-governance-and-seed-note-expansion-165639.md",
+    "09_Conversations/2026-03-18-theory-governance-and-behavioral-constitution-expansion-173646.md",
+    "09_Conversations/2026-03-18-three-track-literature,-zotero,-and-delivery-upgrade-124623.md",
+    "09_Conversations/2026-03-18-translation,-zotero,-and-delivery-framework-extension-132427.md",
+    "09_Conversations/2026-03-18-vault-architecture-and-obsidian-filing-expansion-155731.md",
+    "09_Conversations/2026-03-19-reader-facing-vault-expansion-and-daily-norms-zone-113933.md",
+    "09_Conversations/2026-03-20-2026-03-20-attempt-archive-and-keyword-index-layer-added-to-the-oct-research-system-104331.md",
+    "09_Conversations/2026-03-20-historical-attempt-backfill-and-keyword-memory-upgrade-111534.md",
+    "09_Conversations/2026-03-23-long-dialogue-reuse-protocol-learned-from-oct-conversations-101453.md",
+    "09_Conversations/2026-04-03-codex-history-recovery-priority-and-obsidian-sync-rule-170557.md",
+]
+CONVERSATION_LEARNING_NOTES = [
+    "09_Conversations/2026-03-18-book-theory-backbone-and-evaluation-innovation-expansion-172359.md",
+    "09_Conversations/2026-03-18-critical-paper-cards,-experiment-templates,-and-dashboard-expansion-170533.md",
+    "09_Conversations/2026-03-18-high-weight-theory-expansion-and-template-integration-174411.md",
+    "09_Conversations/2026-03-19-figure-analysis-framework-and-long-horizon-learning-upgrade-095843.md",
+    "09_Conversations/2026-03-19-figure-workflow-script-and-project-roadmap-drafting-110446.md",
+    "09_Conversations/2026-03-20-oct-classified-basics-154205.md",
+    "09_Conversations/2026-03-20-oct-classified-effective-spectrum-and-pixel-matching-155556.md",
+    "09_Conversations/2026-03-20-oct-classified-pixels-and-reference-power-2-155000.md",
+    "09_Conversations/2026-03-20-oct-knowledge-classification-153431.md",
+    "09_Conversations/2026-03-20-oct-learning-process-and-protocol-152818.md",
+    "09_Conversations/2026-03-20-oct-spectrometer-knowledge-organization-153756.md",
+    "09_Conversations/2026-03-20-oct-spectrometer-tuning-qa-151400.md",
+    "09_Conversations/2026-03-20-oct光谱仪四阶段深化学习执行-105919.md",
+    "09_Conversations/2026-03-20-oct光谱仪学习盘点与深化计划-104251.md",
+    "09_Conversations/2026-03-23-oct-classified-grating-match-and-detector-plane-175142.md",
+    "09_Conversations/2026-03-23-oct-decision-layer-three-windows-175621.md",
+    "09_Conversations/2026-03-23-杰文师兄文献夹批量学习-102208.md",
+    "09_Conversations/2026-03-23-逐篇学习：1991-2003-oct基础链-105232.md",
+    "09_Conversations/2026-03-23-逐篇学习：2003-2006-fd-ss-ofdi链-175137.md",
+    "09_Conversations/2026-03-24-逐篇学习：2008-amd-ofdi-1050nm-100202.md",
+    "09_Conversations/2026-03-27-逐篇学习基础链标准化回填-013738.md",
+]
+CONVERSATION_DECONV_NOTES = [
+    "09_Conversations/2026-03-20-2026-03-20-validation-methodology-written-into-base-layer,-skill,-and-vault-102533.md",
+    "09_Conversations/2026-03-20-2026-03-20-validation-prototype-control-upgrade-with-sliders,-toggles,-seed,-version,-and-export-014057.md",
+    "09_Conversations/2026-03-20-formal-verification-plan-for-measured-psf-versus-gaussian-baseline-002315.md",
+    "09_Conversations/2026-03-20-minimal-visual-validation-page-draft-for-measured-psf-versus-gaussian-baseline-003710.md",
+    "09_Conversations/2026-03-20-validation-driven-methodology-layer-and-research-ui-protocol-001415.md",
+    "09_Conversations/2026-04-02-psf-deconvolution-code-radar-round2-230000.md",
+    "09_Conversations/2026-04-12-oct-deconvolution-code-and-algorithm-package-for-gpt-review.md",
+    "09_Conversations/2026-04-12-oct-deconvolution-theory-package-for-gpt-pro-review.md",
+    "09_Conversations/2026-04-12-反卷积文章逻辑梳理与GPT深调研委托.md",
+    "09_Conversations/2026-04-13-rl-wiener-blind-rl-round4-120500.md",
+    "09_Conversations/2026-04-13-young-oct-lfs-and-deconvolution-round3-111500.md",
+]
+CONVERSATION_TOOLING_NOTES = [
+    "09_Conversations/2026-03-17-openclaw-migration-and-zotero-local-repair-165330.md",
+    "09_Conversations/2026-03-23-ecm-local-package-verification-and-runtime-split-103840.md",
+    "09_Conversations/2026-03-23-ecm-matlab新窗口命令与antigravity-matlab调查-153226.md",
+    "09_Conversations/2026-03-23-ecm-window-conversation-critical-review-100612.md",
+    "09_Conversations/2026-03-23-matlab-startup-blocker-narrowed-to-pathdef-access-denial-105342.md",
+    "09_Conversations/2026-03-23-prepared-manual-windows-checklist-for-matlab-path-repair-143153.md",
+    "09_Conversations/2026-04-13-codex-app-线程仍不全：定位到官方桌面首屏仅拉取-50-条-000750.md",
+    "09_Conversations/2026-04-13-codex-app-线程仍未全显：补定位到单根回写与-active-rollout-路径错配-003725.md",
+    "09_Conversations/2026-04-13-codex-app-线程补全验证：利用-pinned-thread-ids-强制注水缺失页-001147.md",
+    "09_Conversations/2026-04-13-codex-app-线程补全验证：已在关闭状态下注入-pinned-thread-ids-并重启官方-app-002218.md",
+    "09_Conversations/2026-04-13-codex-官方-app-主因排序调整：分页与-pinned-持久化优先于-active-root-010704.md",
+    "09_Conversations/2026-04-13-codex-官方-app-分页链新判断：第二次-thread-list-响应可能未被前端状态机接住-093720.md",
+    "09_Conversations/2026-04-13-codex-官方-app-多账号独立线程可行性判断：当前证据不支持原生按账号分离线程集-100806.md",
+]
+CONVERSATION_CAREER_NOTES = [
+    "09_Conversations/2026-04-12-oct-job-content-role-breakdown-173904.md",
+    "09_Conversations/2026-04-12-oct-master-employment-scale-salary-deep-dive-135101.md",
+    "09_Conversations/2026-04-12-oct-non-algorithm-jobs-and-mechanical-support-142835.md",
+    "09_Conversations/2026-04-12-wechat-oct-job-companies-positions-round2-182722.md",
+    "09_Conversations/2026-04-12-wechat-oct-job-companies-positions-round2-183458.md",
+    "09_Conversations/2026-04-12-wechat-public-account-oct-employment-supplement-131951.md",
+    "09_Conversations/2026-04-12-xhs-wechat-oct-nonalgorithm-mechanical-addendum-161727.md",
+    "09_Conversations/2026-04-12-xiaohongshu-oct就业去向与薪资甄别-120210.md",
+]
+
+PROGRESS_MANUSCRIPT_NOTES = [
+    "04_Progress/01_Project-Roadmap/roadmap-overview.md",
+    "04_Progress/03_Risk-Register/risk-register.md",
+    "04_Progress/03_Risk-Register/controversy-and-debate-map.md",
+    "04_Progress/03_Risk-Register/long-horizon-key-questions-for-oct-figure-analysis.md",
+    "04_Progress/04_Decision-Log/decision-log.md",
+    "04_Progress/05_Claim-Tracker/claim-tracker.md",
+    "04_Progress/2026-03-18-research-gap-matrix.md",
+    "04_Progress/three-month-manuscript-track.md",
+    "04_Progress/platform-integration-progress.md",
+]
+PROGRESS_SPECTROMETER_NOTES = [
+    "04_Progress/oct-spectrometer-system-specific-template.md",
+    "04_Progress/oct-spectrometer-system-specific-open-questions.md",
+    "04_Progress/oct-spectrometer-system-specific-decision-map.md",
+]
+PROGRESS_PIPELINE_NOTES = [
+    "04_Progress/2026-03-18-vault-architecture-expansion.md",
+    "04_Progress/2026-03-18-translation-zotero-and-delivery-extension.md",
+    "04_Progress/2026-03-18-obsidian-bridge-and-gmail-switch.md",
+    "04_Progress/platform-integration-progress.md",
+]
+PROGRESS_TRI_AGENT_NOTES = [
+    "04_Progress/tri-agent-control-plane-progress.md",
+    "10_Tasks/system-expansion-backlog.md",
+    "10_Tasks/01_This-Week/this-week-focus.md",
+    "10_Tasks/Tri-Agent/Tri-Agent Task Bus Board.md",
+    "10_Tasks/Tri-Agent/Tri-Agent-Permission-Config.md",
+    "10_Tasks/Tri-Agent/Tri-Agent-Experience-Summary-2026-04-02.md",
+    "10_Tasks/Tri-Agent/Antigravity-Integration-Protocol-2026-04-02.md",
+    "10_Tasks/Tri-Agent/Antigravity-Vault-Auto-Sync-Rule.md",
+    "10_Tasks/Tri-Agent/Claude-Adoption-Record-2026-04-01.md",
+    "10_Tasks/Tri-Agent/Claude-Vault-Auto-Sync-Rule.md",
+]
+
+PROGRESS_DECONV_EVIDENCE_SECTIONS = [
+    (
+        "进展判断",
+        [
+            PROGRESS_MANUSCRIPT_INDEX_PATH,
+            "04_Progress/three-month-manuscript-track.md",
+            "04_Progress/05_Claim-Tracker/claim-tracker.md",
+            "04_Progress/03_Risk-Register/risk-register.md",
+        ],
+    ),
+    (
+        "实验与验证",
+        [
+            "05_Experiments/00_Verification-Plans/_Index.md",
+            "05_Experiments/03_PSF-Measurement/_Index.md",
+            "05_Experiments/04_Deconvolution-Baselines/_Index.md",
+            "05_Experiments/05_No-Ground-Truth-Evaluation/_Index.md",
+            "05_Experiments/06_Statistical-Analysis/_Index.md",
+            "05_Experiments/lateral-resolution-validation-matrix.md",
+        ],
+    ),
+    (
+        "论文与档案",
+        [
+            "02_Literature/Paper-Dossiers/_Index.md",
+            "02_Literature/Paper-Dossiers/[2022] Ge - Superresolving artifact-free optical co-daab5363/_Index.md",
+            "02_Literature/Paper-Dossiers/[2024] Ge - Deblurring artifact-free optical cohere-7ab44c80/_Index.md",
+            "02_Literature/Paper-Dossiers/[2022] Dong - Spatially adaptive blind deconvolution methods for/_Index.md",
+            "02_Literature/Paper-Dossiers/[2025] Abbasi - Deconvolution Techniques in Optical Coherence Tomography/_Index.md",
+            "02_Literature/Paper-Dossiers/[2025] Unknown - Enhanced A-scan spatial resolution in spectral/_Index.md",
+        ],
+    ),
+    (
+        "写作与表达",
+        [
+            "06_Writing/05_Claim-to-Evidence/_Index.md",
+            "06_Writing/03_Figures-and-Captions/_Index.md",
+            "06_Writing/03_Figures-and-Captions/minimal-validation-page-draft-measured-psf-vs-gaussian.md",
+            "06_Writing/03_Figures-and-Captions/current-oct-deconvolution-technical-roadmap-draft.md",
+        ],
+    ),
+    (
+        "会话与讨论",
+        [
+            CONVERSATION_DECONV_INDEX_PATH,
+            "09_Conversations/2026-04-12-反卷积文章逻辑梳理与GPT深调研委托.md",
+            "09_Conversations/2026-04-13-rl-wiener-blind-rl-round4-120500.md",
+        ],
+    ),
+]
+
+PROGRESS_SYSTEM_EVIDENCE_SECTIONS = [
+    (
+        "进展判断",
+        [
+            PROGRESS_SPECTROMETER_INDEX_PATH,
+            "04_Progress/oct-spectrometer-system-specific-template.md",
+            "04_Progress/oct-spectrometer-system-specific-open-questions.md",
+            "04_Progress/oct-spectrometer-system-specific-decision-map.md",
+        ],
+    ),
+    (
+        "实验与系统检查",
+        [
+            "05_Experiments/OCT-Spectrometer-Three-Window-Decision-Flow.md",
+            "05_Experiments/OCT-Spectrometer-System-Data-Package-Checklist.md",
+            "05_Experiments/OCT-Spectrometer-Evidence-Intake-Worksheet.md",
+            "05_Experiments/OCT-Spectrometer-Adjustment-and-Validation-Checklist.md",
+            "05_Experiments/OCT-Spectrometer-Effective-Spectrum-Inspection-Checklist.md",
+            "05_Experiments/OCT-Spectrometer-Pixel-and-Spot-Matching-Checklist.md",
+            "05_Experiments/OCT-Spectrometer-Grating-Match-Inspection-Checklist.md",
+            "05_Experiments/OCT-Spectrometer-Reference-Arm-Power-Adjustment-Checklist.md",
+            "05_Experiments/OCT-Spectrometer-Detector-Plane-and-Edge-Aberration-Checklist.md",
+        ],
+    ),
+    (
+        "论文与档案",
+        [
+            "02_Literature/Paper-Dossiers/_Index.md",
+            "02_Literature/Paper-Dossiers/[2003] 吴开杰 - OCT系统实用化的研究进展/_Index.md",
+            "02_Literature/Paper-Dossiers/[2010] 邹恒 - 基于时域和频域的光学相干层析成像系统的研究/_Index.md",
+            "02_Literature/Paper-Dossiers/[2003] de Boer - Improved signal-to-noise ratio in spectral-domain compared/_Index.md",
+            "02_Literature/Paper-Dossiers/[2003] Choma - Sensitivity advantage of swept source and/_Index.md",
+        ],
+    ),
+    (
+        "图示与讨论",
+        [
+            "06_Writing/03_Figures-and-Captions/seed-paper-system-and-figure-comparison-board.md",
+            CONVERSATION_LEARNING_INDEX_PATH,
+            "09_Conversations/2026-04-14-oct-system-specific-decision-map-and-worksheet-110025.md",
+            "09_Conversations/2026-04-13-oct-system-specific-template-and-data-package-120346.md",
+        ],
+    ),
+]
+
+PROGRESS_DELIVERY_EVIDENCE_SECTIONS = [
+    (
+        "进展判断",
+        [
+            PROGRESS_PIPELINE_INDEX_PATH,
+            "04_Progress/2026-03-18-vault-architecture-expansion.md",
+            "04_Progress/2026-03-18-translation-zotero-and-delivery-extension.md",
+            "04_Progress/2026-03-18-obsidian-bridge-and-gmail-switch.md",
+            "04_Progress/platform-integration-progress.md",
+        ],
+    ),
+    (
+        "文献与归档层",
+        [
+            "02_Literature/Papers/_Index.md",
+            "02_Literature/Paper-Dossiers/_Index.md",
+            "12_Zotero/04_Item-Backfills/_Index.md",
+        ],
+    ),
+    (
+        "翻译与写作交付",
+        [
+            "06_Writing/translated-papers/_Index.md",
+            "06_Writing/translation-workbench/_Index.md",
+            "06_Writing/05_Claim-to-Evidence/_Index.md",
+        ],
+    ),
+    (
+        "对话与尝试脉络",
+        [
+            CONVERSATION_SYSTEM_INDEX_PATH,
+            ATTEMPT_THEME_NAV_PATH,
+            ATTEMPT_VAULT_PROTOTYPES_PATH,
+            CONVERSATION_READER_ENTRY_PATH,
+        ],
+    ),
+]
+
+
+@dataclass(frozen=True)
+class Note:
+    rel_path: str
+    title: str
+    frontmatter: dict[str, str]
+    top_folder: str
+    parent_folder: str
+    stem: str
+    is_index: bool
+
+
+def norm_path(path: str | Path) -> str:
+    return str(path).replace("\\", "/")
+
+
+def wikilink(rel_path: str | Path, label: str | None = None) -> str:
+    target = norm_path(rel_path)
+    if target.endswith(".md"):
+        target = target[:-3]
+    return f"[[{target}|{label}]]" if label else f"[[{target}]]"
+
+
+def slug_title(stem: str) -> str:
+    title = stem.replace("-", " ").replace("_", " ").strip()
+    title = re.sub(r"\s+", " ", title)
+    return title or stem
+
+
+def preferred_index_title(rel_path: str, fallback: str) -> str:
+    rel = norm_path(rel_path)
+    folder = str(Path(rel).parent).replace("\\", "/")
+    return INDEX_TITLE_MAP.get(folder, fallback)
+
+
+def parse_frontmatter(text: str) -> tuple[dict[str, str], str]:
+    if not text.startswith("---"):
+        return {}, text
+    lines = text.splitlines()
+    if not lines or lines[0].strip() != "---":
+        return {}, text
+    frontmatter: dict[str, str] = {}
+    end_idx = None
+    for idx in range(1, len(lines)):
+        line = lines[idx]
+        if line.strip() == "---":
+            end_idx = idx
+            break
+        if ":" not in line:
+            continue
+        key, value = line.split(":", 1)
+        frontmatter[key.strip()] = value.strip().strip("'\"")
+    if end_idx is None:
+        return {}, text
+    body = "\n".join(lines[end_idx + 1 :]).lstrip("\n")
+    return frontmatter, body
+
+
+def extract_title(text: str, fallback: str) -> str:
+    for line in text.splitlines():
+        if line.startswith("# "):
+            return line[2:].strip()
+    return fallback
+
+
+def scan_notes(vault_root: Path) -> dict[str, Note]:
+    notes: dict[str, Note] = {}
+    for path in sorted(vault_root.rglob("*.md")):
+        rel_path = norm_path(path.relative_to(vault_root))
+        raw_text = path.read_text(encoding="utf-8-sig")
+        frontmatter, body = parse_frontmatter(raw_text)
+        stem = path.stem
+        title = frontmatter.get("title") or extract_title(body, slug_title(stem))
+        top_folder = rel_path.split("/", 1)[0]
+        parent_folder = norm_path(path.relative_to(vault_root).parent)
+        notes[rel_path] = Note(
+            rel_path=rel_path,
+            title=title,
+            frontmatter=frontmatter,
+            top_folder=top_folder,
+            parent_folder="" if parent_folder == "." else parent_folder,
+            stem=stem,
+            is_index=stem == "_Index",
+        )
+    return notes
+
+
+def descendants(notes: dict[str, Note], folder: str) -> list[Note]:
+    prefix = f"{folder}/" if folder else ""
+    return [note for note in notes.values() if note.rel_path.startswith(prefix) and not note.is_index]
+
+
+def direct_notes(notes: dict[str, Note], folder: str) -> list[Note]:
+    return sorted(
+        [note for note in notes.values() if note.parent_folder == folder and not note.is_index],
+        key=lambda note: (note.title.lower(), note.rel_path.lower()),
+    )
+
+
+def child_dirs(notes: dict[str, Note], folder: str) -> list[str]:
+    prefix = f"{folder}/" if folder else ""
+    children: set[str] = set()
+    for note in notes.values():
+        if not note.rel_path.startswith(prefix):
+            continue
+        rest = note.rel_path[len(prefix) :]
+        if "/" not in rest:
+            continue
+        child = rest.split("/", 1)[0]
+        children.add(f"{folder}/{child}" if folder else child)
+    return sorted(children)
+
+
+def resolve_paths(notes: dict[str, Note], paths: list[str]) -> list[Note]:
+    resolved: list[Note] = []
+    for path in paths:
+        if path in notes:
+            note = notes[path]
+            if note.is_index:
+                note = Note(
+                    rel_path=note.rel_path,
+                    title=preferred_index_title(note.rel_path, note.title),
+                    frontmatter=note.frontmatter,
+                    top_folder=note.top_folder,
+                    parent_folder=note.parent_folder,
+                    stem=note.stem,
+                    is_index=note.is_index,
+                )
+            resolved.append(note)
+            continue
+        rel = norm_path(path)
+        stem = Path(rel).stem
+        if stem == "_Index":
+            title = preferred_index_title(rel, Path(rel).parent.name)
+        else:
+            title = slug_title(stem)
+        resolved.append(
+            Note(
+                rel_path=rel,
+                title=title,
+                frontmatter={},
+                top_folder=rel.split("/", 1)[0],
+                parent_folder=Path(rel).parent.as_posix(),
+                stem=stem,
+                is_index=stem == "_Index",
+            )
+        )
+    return sorted(resolved, key=lambda note: (note.title.lower(), note.rel_path.lower()))
+
+
+def bullet_links(items: list[tuple[str, str]]) -> list[str]:
+    lines: list[str] = []
+    for rel_path, label in items:
+        lines.append(f"- {wikilink(rel_path, label)}")
+    return lines
+
+
+def note_section(title: str, items: list[Note]) -> list[str]:
+    if not items:
+        return []
+    lines = [f"## {title}", ""]
+    for note in items:
+        lines.append(f"- {wikilink(note.rel_path, note.title)}")
+    lines.append("")
+    return lines
+
+
+def cluster_note(title: str, summary: str, items: list[Note]) -> str:
+    lines = [f"# {title}", "", summary, ""]
+    lines.extend(note_section("相关笔记", items) or ["## 相关笔记", "", "- 暂无匹配笔记", ""])
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def build_sectioned_note(
+    title: str,
+    summary: str,
+    sections: list[tuple[str, list[str]]],
+    notes: dict[str, Note],
+) -> str:
+    lines = [f"# {title}", "", summary, ""]
+    rendered = False
+    for heading, paths in sections:
+        items = resolve_paths(notes, paths)
+        if not items:
+            continue
+        rendered = True
+        lines.extend(note_section(heading, items))
+    if not rendered:
+        lines.extend(["## 相关笔记", "", "- 暂无匹配笔记", ""])
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def build_attempt_theme_navigation(notes: dict[str, Note]) -> str:
+    lines = [
+        "# 尝试主题导航",
+        "",
+        "这页把早期原型、验证尝试和工具排查重新按主题串起来，方便按问题线索回找。",
+        "",
+        "## 主题入口",
+        "",
+        *bullet_links(
+            [
+                (ATTEMPT_PROTOTYPE_OVERVIEW_PATH, "原型路线总览"),
+                (ATTEMPT_VAULT_PROTOTYPES_PATH, "Vault与论文流程原型索引"),
+                (ATTEMPT_VALIDATION_PROTOTYPES_PATH, "验证表达与基线原型索引"),
+                (ATTEMPT_CODEX_DIAGNOSTICS_PATH, "Codex App 线程排查索引"),
+            ]
+        ),
+        "",
+        "## 阅读区入口",
+        "",
+        f"- {wikilink(ATTEMPT_READER_ENTRY_PATH, '尝试主题阅读入口')}",
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def build_attempt_reader_entry() -> str:
+    lines = [
+        "# 尝试主题阅读入口",
+        "",
+        "这页适合从“我记得之前试过什么”出发，直接跳到对应的原型簇和排查簇。",
+        "",
+        "## 先从这里进",
+        "",
+        *bullet_links(
+            [
+                (ATTEMPT_PROTOTYPE_OVERVIEW_PATH, "原型路线总览"),
+                (ATTEMPT_VAULT_PROTOTYPES_PATH, "Vault与论文流程原型索引"),
+                (ATTEMPT_VALIDATION_PROTOTYPES_PATH, "验证表达与基线原型索引"),
+                (ATTEMPT_CODEX_DIAGNOSTICS_PATH, "Codex App 线程排查索引"),
+                (ATTEMPT_THEME_NAV_PATH, "尝试主题导航"),
+            ]
+        ),
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def build_conversation_theme_navigation() -> str:
+    lines = [
+        "# 高价值会话主题导航",
+        "",
+        "这页不按日期翻会话，而是按你真正会回找的问题主题组织。",
+        "",
+        "## 主题簇",
+        "",
+        *bullet_links(
+            [
+                (CONVERSATION_SYSTEM_INDEX_PATH, "研究系统与知识库演进会话索引"),
+                (CONVERSATION_LEARNING_INDEX_PATH, "OCT学习与逐篇文献会话索引"),
+                (CONVERSATION_DECONV_INDEX_PATH, "反卷积与验证会话索引"),
+                (CONVERSATION_TOOLING_INDEX_PATH, "Codex与工具恢复会话索引"),
+                (CONVERSATION_CAREER_INDEX_PATH, "就业与行业观察会话索引"),
+            ]
+        ),
+        "",
+        "## 相关协作入口",
+        "",
+        f"- {wikilink('09_Conversations/Tri-Agent/_Index.md', 'Tri-Agent 会话索引')}",
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def build_conversation_reader_entry() -> str:
+    lines = [
+        "# 高价值会话入口",
+        "",
+        "这页适合你记得的是“我们讨论过哪类问题”，但不想先回忆具体日期。",
+        "",
+        "## 常用跳转",
+        "",
+        *bullet_links(
+            [
+                (CONVERSATION_THEME_NAV_PATH, "高价值会话主题导航"),
+                (CONVERSATION_DECONV_INDEX_PATH, "反卷积与验证会话索引"),
+                (CONVERSATION_LEARNING_INDEX_PATH, "OCT学习与逐篇文献会话索引"),
+                (CONVERSATION_SYSTEM_INDEX_PATH, "研究系统与知识库演进会话索引"),
+            ]
+        ),
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def build_progress_theme_navigation() -> str:
+    lines = [
+        "# 研究推进主线导航",
+        "",
+        "> [!summary]",
+        "> 这页不是按目录翻文件，而是按“研究现在沿着哪条线推进”来回找。",
+        "",
+        "## 核心研究线",
+        "",
+        *bullet_links(
+            [
+                (PROGRESS_MANUSCRIPT_INDEX_PATH, "反卷积验证与稿件主线索引"),
+                (PROGRESS_SPECTROMETER_INDEX_PATH, "OCT光谱仪系统专项索引"),
+                (PROGRESS_PIPELINE_INDEX_PATH, "知识库与文献管线索引"),
+            ]
+        ),
+        "",
+        "## 支撑协作线",
+        "",
+        *bullet_links(
+            [
+                (PROGRESS_TRI_AGENT_INDEX_PATH, "Tri-Agent与控制平面索引"),
+                ("10_Tasks/_Index.md", "任务索引"),
+            ]
+        ),
+        "",
+        "## 阅读入口",
+        "",
+        *bullet_links(
+            [
+                (PROGRESS_READER_ENTRY_PATH, "研究主线入口"),
+                (PROGRESS_EVIDENCE_READER_ENTRY_PATH, "研究问题证据入口"),
+                ("13_阅读区/09_项目进展与管理/项目进展与决策总览.md", "项目进展与决策总览"),
+                (CONVERSATION_READER_ENTRY_PATH, "高价值会话入口"),
+            ]
+        ),
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def build_progress_reader_entry() -> str:
+    lines = [
+        "# 研究主线入口",
+        "",
+        "这页适合你记得的是“现在研究推进到哪一段”，但不想先在 `04_Progress` 和 `10_Tasks` 里逐个翻文件。",
+        "",
+        "## 核心推进线",
+        "",
+        f"- 反卷积验证、证据边界和稿件推进：{wikilink(PROGRESS_MANUSCRIPT_INDEX_PATH, '反卷积验证与稿件主线索引')}",
+        f"- OCT 光谱仪系统专项判断：{wikilink(PROGRESS_SPECTROMETER_INDEX_PATH, 'OCT光谱仪系统专项索引')}",
+        f"- Zotero、翻译和知识库管线演进：{wikilink(PROGRESS_PIPELINE_INDEX_PATH, '知识库与文献管线索引')}",
+        "",
+        "## 按研究问题回找",
+        "",
+        f"- 研究问题总入口：{wikilink(PROGRESS_EVIDENCE_READER_ENTRY_PATH, '研究问题证据入口')}",
+        f"- 问题链总览：{wikilink(PROGRESS_EVIDENCE_NAV_PATH, '研究问题证据链导航')}",
+        "",
+        "## 支撑协作线",
+        "",
+        f"- Tri-Agent、任务总线和控制平面：{wikilink(PROGRESS_TRI_AGENT_INDEX_PATH, 'Tri-Agent与控制平面索引')}",
+        f"- 高价值对话证据：{wikilink(CONVERSATION_THEME_NAV_PATH, '高价值会话主题导航')}",
+        "",
+        "## 和原目录的关系",
+        "",
+        "- `04_Progress` 仍然保留按状态和决策沉淀的原始结构；这页只负责把主线重新串起来。",
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def build_progress_evidence_navigation() -> str:
+    lines = [
+        "# 研究问题证据链导航",
+        "",
+        "这页按“你现在到底想回答哪个研究问题”来组织入口，每条链都直接接到进展、实验、论文、写作和对话证据。",
+        "",
+        "## 三条核心证据链",
+        "",
+        *bullet_links(
+            [
+                (PROGRESS_DECONV_EVIDENCE_PATH, "反卷积真实增益证据链"),
+                (PROGRESS_SYSTEM_EVIDENCE_PATH, "OCT系统专用化证据链"),
+                (PROGRESS_DELIVERY_EVIDENCE_PATH, "知识库持续交付证据链"),
+            ]
+        ),
+        "",
+        "## 上游导航",
+        "",
+        *bullet_links(
+            [
+                (PROGRESS_THEME_NAV_PATH, "研究推进主线导航"),
+                (PROGRESS_READER_ENTRY_PATH, "研究主线入口"),
+                (CONVERSATION_THEME_NAV_PATH, "高价值会话主题导航"),
+            ]
+        ),
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def build_progress_evidence_reader_entry() -> str:
+    lines = [
+        "# 研究问题证据入口",
+        "",
+        "这页适合你脑子里已经是一个研究问题，比如“反卷积到底能不能证明有效”，而不是某个目录名。",
+        "",
+        "## 先按问题进",
+        "",
+        *bullet_links(
+            [
+                (PROGRESS_EVIDENCE_NAV_PATH, "研究问题证据链导航"),
+                (PROGRESS_DECONV_EVIDENCE_PATH, "反卷积真实增益证据链"),
+                (PROGRESS_SYSTEM_EVIDENCE_PATH, "OCT系统专用化证据链"),
+                (PROGRESS_DELIVERY_EVIDENCE_PATH, "知识库持续交付证据链"),
+            ]
+        ),
+        "",
+        "## 如果你记得的是推进阶段",
+        "",
+        *bullet_links(
+            [
+                (PROGRESS_READER_ENTRY_PATH, "研究主线入口"),
+                (PROGRESS_THEME_NAV_PATH, "研究推进主线导航"),
+            ]
+        ),
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def build_folder_index(folder: str, notes: dict[str, Note]) -> str:
+    folder_notes = descendants(notes, folder)
+    direct = direct_notes(notes, folder)
+    children = child_dirs(notes, folder)
+    title = INDEX_TITLE_MAP.get(folder, f"{folder.split('/')[-1]} 索引")
+    lines = [f"# {title}", "", f"- 目录：`{folder}`", f"- 笔记数：`{len(folder_notes)}`", ""]
+    if children:
+        lines.extend(["## 子目录入口", ""])
+        for child in children:
+            lines.append(f"- {wikilink(f'{child}/_Index.md', child.split('/')[-1])}")
+        lines.append("")
+    if direct:
+        lines.extend(note_section("本层笔记", direct))
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def build_papers_index(notes: dict[str, Note]) -> str:
+    papers = [
+        note
+        for note in descendants(notes, "02_Literature/Papers")
+        if note.parent_folder == "02_Literature/Papers"
+        and note.frontmatter.get("library_status") != "synthetic-example"
+    ]
+    papers.sort(key=lambda note: (note.frontmatter.get("year", ""), note.title.lower(), note.rel_path.lower()))
+    lines = ["# 文献论文索引", "", "## 论文条目", ""]
+    for note in papers:
+        label = note.frontmatter.get("title") or note.title
+        lines.append(f"- {wikilink(note.rel_path, label)}")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def build_zotero_index(notes: dict[str, Note]) -> str:
+    items = [note for note in descendants(notes, "12_Zotero/04_Item-Backfills") if note.parent_folder == "12_Zotero/04_Item-Backfills"]
+    items.sort(key=lambda note: note.title.lower())
+    lines = ["# Zotero 回填索引", "", "## 回填条目", ""]
+    for note in items:
+        label = note.frontmatter.get("zotero_key", "").strip()
+        label = f"{label} - {note.title}" if label else note.title
+        lines.append(f"- {wikilink(note.rel_path, label)}")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def build_home_navigation(notes: dict[str, Note]) -> str:
+    top_folders = sorted({note.top_folder for note in notes.values()})
+    lines = [
+        "# 知识库导航中心",
+        "",
+        "## 常用入口",
+        "",
+        *bullet_links(
+            [
+                ("00_Home/目录总索引.md", "目录总索引"),
+                ("00_Home/分类逻辑说明.md", "分类底层逻辑"),
+                ("13_阅读区/00_从这里开始/项目内容全景图.md", "项目内容全景图"),
+                ("02_Literature/Paper-Dossiers/_Index.md", "论文档案索引"),
+                (ATTEMPT_READER_ENTRY_PATH, "历史尝试主题入口"),
+                (CONVERSATION_READER_ENTRY_PATH, "高价值会话入口"),
+                (PROGRESS_READER_ENTRY_PATH, "研究主线入口"),
+                (PROGRESS_EVIDENCE_READER_ENTRY_PATH, "研究问题证据入口"),
+            ]
+        ),
+        "",
+        "## 顶层分区",
+        "",
+    ]
+    for folder in top_folders:
+        lines.append(f"- {wikilink(f'{folder}/_Index.md', folder)}")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def build_master_index(notes: dict[str, Note]) -> str:
+    top_folders = sorted({note.top_folder for note in notes.values()})
+    lines = ["# 目录总索引", "", "## 顶层目录", ""]
+    for folder in top_folders:
+        count = len(descendants(notes, folder))
+        lines.append(f"- {wikilink(f'{folder}/_Index.md', folder)} (`{count}`)")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def build_logic_note() -> str:
+    return "\n".join(
+        [
+            "# 分类逻辑说明",
+            "",
+            "这套导航同时保留目录结构和问题导向入口：",
+            "",
+            "- 目录层负责稳定归档。",
+            "- 阅读层负责按问题、主线和主题快速回找。",
+            "- 证据链层负责把研究问题直接接到论文、实验、写作和会话。",
+            "- 论文层优先按单篇 dossier 聚合 Zotero、原文、翻译和解析。",
+            "",
+        ]
+    )
+
+
+def build_health_note(notes: dict[str, Note]) -> str:
+    total = len([note for note in notes.values() if not note.is_index])
+    folders = len({note.parent_folder for note in notes.values()})
+    return "\n".join(["# 知识库体检报告", "", f"- 笔记总数：`{total}`", f"- 涉及目录：`{folders}`", ""])
+
+
+def build_reader_project_progress_index(notes: dict[str, Note]) -> str:
+    lines = [
+        "# 项目进展与管理索引",
+        "",
+        "## 阅读入口",
+        "",
+        *bullet_links(
+            [
+                (PROGRESS_READER_ENTRY_PATH, "研究主线入口"),
+                (PROGRESS_EVIDENCE_READER_ENTRY_PATH, "研究问题证据入口"),
+                (CONVERSATION_READER_ENTRY_PATH, "高价值会话入口"),
+                ("13_阅读区/09_项目进展与管理/项目进展与决策总览.md", "项目进展与决策总览"),
+                ("13_阅读区/09_项目进展与管理/验证与原型总览.md", "验证与原型总览"),
+                ("13_阅读区/09_项目进展与管理/检索与文献管理总览.md", "检索与文献管理总览"),
+            ]
+        ),
+        "",
+    ]
+    direct = [note for note in direct_notes(notes, "13_阅读区/09_项目进展与管理") if note.rel_path not in {PROGRESS_READER_ENTRY_PATH, CONVERSATION_READER_ENTRY_PATH}]
+    if direct:
+        lines.extend(note_section("本层笔记", direct))
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def build_specific_index(title: str, summary: str, note_paths: list[str], notes: dict[str, Note]) -> str:
+    return cluster_note(title, summary, resolve_paths(notes, note_paths))
+
+
+def build_attempt_folder_index(notes: dict[str, Note]) -> str:
+    lines = [
+        "# 工具与原型尝试索引",
+        "",
+        "## 先看主题总览",
+        "",
+        *bullet_links(
+            [
+                (ATTEMPT_PROTOTYPE_OVERVIEW_PATH, "原型路线总览"),
+                (ATTEMPT_VAULT_PROTOTYPES_PATH, "Vault与论文流程原型索引"),
+                (ATTEMPT_VALIDATION_PROTOTYPES_PATH, "验证表达与基线原型索引"),
+                (ATTEMPT_CODEX_DIAGNOSTICS_PATH, "Codex App 线程排查索引"),
+            ]
+        ),
+        "",
+    ]
+    direct = [note for note in direct_notes(notes, "15_尝试归档与索引/02_工具与原型尝试") if note.rel_path not in {ATTEMPT_PROTOTYPE_OVERVIEW_PATH, ATTEMPT_VAULT_PROTOTYPES_PATH, ATTEMPT_VALIDATION_PROTOTYPES_PATH, ATTEMPT_CODEX_DIAGNOSTICS_PATH}]
+    if direct:
+        lines.extend(note_section("本层尝试记录", direct))
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def build_conversation_index(notes: dict[str, Note]) -> str:
+    lines = [
+        "# 会话索引",
+        "",
+        "## 主题入口",
+        "",
+        f"- {wikilink(CONVERSATION_THEME_NAV_PATH, '高价值会话主题导航')}",
+        f"- {wikilink(CONVERSATION_SYSTEM_INDEX_PATH, '研究系统与知识库演进会话索引')}",
+        f"- {wikilink(CONVERSATION_LEARNING_INDEX_PATH, 'OCT学习与逐篇文献会话索引')}",
+        f"- {wikilink(CONVERSATION_DECONV_INDEX_PATH, '反卷积与验证会话索引')}",
+        f"- {wikilink(CONVERSATION_TOOLING_INDEX_PATH, 'Codex与工具恢复会话索引')}",
+        f"- {wikilink(CONVERSATION_CAREER_INDEX_PATH, '就业与行业观察会话索引')}",
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def build_progress_index(notes: dict[str, Note]) -> str:
+    items = descendants(notes, "04_Progress")
+    lines = [
+        "# 进展索引",
+        "",
+        "- 目录：`04_Progress`",
+        f"- 笔记数：`{len(items)}`",
+        "- 这里保留项目状态、决策、风险与进展判断；优先入口已经切成研究主线，而不是平铺文件名。",
+        "",
+        "## 先从主线进",
+        "",
+        *bullet_links(
+            [
+                (PROGRESS_THEME_NAV_PATH, "研究推进主线导航"),
+                (PROGRESS_READER_ENTRY_PATH, "研究主线入口"),
+                (PROGRESS_EVIDENCE_NAV_PATH, "研究问题证据链导航"),
+                (PROGRESS_EVIDENCE_READER_ENTRY_PATH, "研究问题证据入口"),
+                (PROGRESS_MANUSCRIPT_INDEX_PATH, "反卷积验证与稿件主线索引"),
+                (PROGRESS_SPECTROMETER_INDEX_PATH, "OCT光谱仪系统专项索引"),
+                (PROGRESS_PIPELINE_INDEX_PATH, "知识库与文献管线索引"),
+                (PROGRESS_TRI_AGENT_INDEX_PATH, "Tri-Agent与控制平面索引"),
+            ]
+        ),
+        "",
+    ]
+    direct = [
+        note
+        for note in direct_notes(notes, "04_Progress")
+        if note.rel_path
+        not in {
+            PROGRESS_THEME_NAV_PATH,
+            PROGRESS_EVIDENCE_NAV_PATH,
+            PROGRESS_MANUSCRIPT_INDEX_PATH,
+            PROGRESS_SPECTROMETER_INDEX_PATH,
+            PROGRESS_PIPELINE_INDEX_PATH,
+            PROGRESS_TRI_AGENT_INDEX_PATH,
+            PROGRESS_DECONV_EVIDENCE_PATH,
+            PROGRESS_SYSTEM_EVIDENCE_PATH,
+            PROGRESS_DELIVERY_EVIDENCE_PATH,
+        }
+    ]
+    if direct:
+        lines.extend(note_section("时间与状态入口", direct))
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def build_tasks_index(notes: dict[str, Note]) -> str:
+    items = descendants(notes, "10_Tasks")
+    lines = ["# 任务索引", "", "- 目录：`10_Tasks`", f"- 笔记数：`{len(items)}`", ""]
+    primary = sorted(
+        [
+            note
+            for note in items
+            if not note.rel_path.startswith("10_Tasks/Tri-Agent/")
+        ],
+        key=lambda note: (note.title.lower(), note.rel_path.lower()),
+    )
+    if primary:
+        lines.extend(note_section("核心任务入口", primary))
+    tri_agent = [note for note in descendants(notes, "10_Tasks/Tri-Agent")]
+    if tri_agent:
+        lines.extend(note_section("Tri-Agent 协作任务", tri_agent))
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def build_generated_files(notes: dict[str, Note]) -> dict[str, str]:
+    directories = sorted({note.parent_folder for note in notes.values() if note.parent_folder})
+    generated = {f"{folder}/_Index.md": build_folder_index(folder, notes) for folder in directories}
+    generated.update(
+        {
+            "00_Home/知识库导航中心.md": build_home_navigation(notes),
+            "00_Home/目录总索引.md": build_master_index(notes),
+            "00_Home/分类逻辑说明.md": build_logic_note(),
+            "00_Home/知识库体检报告.md": build_health_note(notes),
+            "02_Literature/Papers/_Index.md": build_papers_index(notes),
+            "12_Zotero/04_Item-Backfills/_Index.md": build_zotero_index(notes),
+            ATTEMPT_THEME_NAV_PATH: build_attempt_theme_navigation(notes),
+            ATTEMPT_READER_ENTRY_PATH: build_attempt_reader_entry(),
+            ATTEMPT_PROTOTYPE_OVERVIEW_PATH: "placeholder\n",
+            ATTEMPT_VAULT_PROTOTYPES_PATH: build_specific_index("Vault与论文流程原型索引", "把与知识库结构、论文导入、阅读区组织相关的尝试收在一起。", ATTEMPT_VAULT_WORKFLOW_NOTES, notes),
+            ATTEMPT_VALIDATION_PROTOTYPES_PATH: build_specific_index("验证表达与基线原型索引", "把 measured PSF、Gaussian baseline 和验证表达试验集中到一起。", ATTEMPT_VALIDATION_PROTOTYPE_NOTES, notes),
+            ATTEMPT_CODEX_DIAGNOSTICS_PATH: build_specific_index("Codex App 线程排查索引", "收纳 Codex App 线程可见性、分页、pinned 持久化等排查记录。", ATTEMPT_CODEX_APP_NOTES, notes),
+            CONVERSATION_THEME_NAV_PATH: build_conversation_theme_navigation(),
+            CONVERSATION_READER_ENTRY_PATH: build_conversation_reader_entry(),
+            CONVERSATION_SYSTEM_INDEX_PATH: build_specific_index("研究系统与知识库演进会话索引", "把 vault、Zotero、翻译交付和知识库治理相关会话放在一起。", CONVERSATION_SYSTEM_NOTES, notes),
+            CONVERSATION_LEARNING_INDEX_PATH: build_specific_index("OCT学习与逐篇文献会话索引", "把 OCT 理论学习、逐篇文献梳理和读书式推进会话放在一起。", CONVERSATION_LEARNING_NOTES, notes),
+            CONVERSATION_DECONV_INDEX_PATH: build_specific_index("反卷积与验证会话索引", "把 PSF、验证方案、Wiener / RL / blind RL 等主线会话收在一起。", CONVERSATION_DECONV_NOTES, notes),
+            CONVERSATION_TOOLING_INDEX_PATH: build_specific_index("Codex与工具恢复会话索引", "把 Codex App、ECM、MATLAB、恢复与环境问题相关会话聚合起来。", CONVERSATION_TOOLING_NOTES, notes),
+            CONVERSATION_CAREER_INDEX_PATH: build_specific_index("就业与行业观察会话索引", "把 OCT 就业、岗位、薪资和行业观察相关会话集中归档。", CONVERSATION_CAREER_NOTES, notes),
+            PROGRESS_THEME_NAV_PATH: build_progress_theme_navigation(),
+            PROGRESS_READER_ENTRY_PATH: build_progress_reader_entry(),
+            PROGRESS_EVIDENCE_NAV_PATH: build_progress_evidence_navigation(),
+            PROGRESS_EVIDENCE_READER_ENTRY_PATH: build_progress_evidence_reader_entry(),
+            PROGRESS_MANUSCRIPT_INDEX_PATH: build_specific_index("反卷积验证与稿件主线索引", "把研究问题、验证边界、claim 与稿件推进相关记录串到一页。", PROGRESS_MANUSCRIPT_NOTES, notes),
+            PROGRESS_SPECTROMETER_INDEX_PATH: build_specific_index("OCT光谱仪系统专项索引", "聚合 OCT 光谱仪 system-specific 模板、问题与决策图。", PROGRESS_SPECTROMETER_NOTES, notes),
+            PROGRESS_PIPELINE_INDEX_PATH: build_specific_index("知识库与文献管线索引", "把 vault 架构、Zotero、翻译交付和 bridge 管线放到一条线里。", PROGRESS_PIPELINE_NOTES, notes),
+            PROGRESS_TRI_AGENT_INDEX_PATH: build_specific_index("Tri-Agent与控制平面索引", "把 Tri-Agent 控制平面、任务总线和协作规则集中到一起。", PROGRESS_TRI_AGENT_NOTES, notes),
+            PROGRESS_DECONV_EVIDENCE_PATH: build_sectioned_note("反卷积真实增益证据链", "把“反卷积到底有没有真实增益”这条问题线直接接到进展、实验、论文、写作和对话证据。", PROGRESS_DECONV_EVIDENCE_SECTIONS, notes),
+            PROGRESS_SYSTEM_EVIDENCE_PATH: build_sectioned_note("OCT系统专用化证据链", "把 system-specific 判断从模板、实验清单、论文依据和讨论记录串成一条链。", PROGRESS_SYSTEM_EVIDENCE_SECTIONS, notes),
+            PROGRESS_DELIVERY_EVIDENCE_PATH: build_sectioned_note("知识库持续交付证据链", "把 vault、Zotero、翻译交付和前台阅读入口放到同一条持续交付链上。", PROGRESS_DELIVERY_EVIDENCE_SECTIONS, notes),
+            "04_Progress/_Index.md": build_progress_index(notes),
+            "10_Tasks/_Index.md": build_tasks_index(notes),
+            "09_Conversations/_Index.md": build_conversation_index(notes),
+            "13_阅读区/09_项目进展与管理/_Index.md": build_reader_project_progress_index(notes),
+            "15_尝试归档与索引/02_工具与原型尝试/_Index.md": build_attempt_folder_index(notes),
+        }
+    )
+    generated[ATTEMPT_PROTOTYPE_OVERVIEW_PATH] = "\n".join(
+        [
+            "# 原型路线总览",
+            "",
+            "## 三条原型路线",
+            "",
+            f"- {wikilink(ATTEMPT_VAULT_PROTOTYPES_PATH, 'Vault与论文流程原型索引')}",
+            f"- {wikilink(ATTEMPT_VALIDATION_PROTOTYPES_PATH, '验证表达与基线原型索引')}",
+            f"- {wikilink(ATTEMPT_CODEX_DIAGNOSTICS_PATH, 'Codex App 线程排查索引')}",
+            "",
+        ]
+    )
+    return generated
+
+
+def generate_bundle(vault_root: Path, output_root: Path, run_label: str) -> Path:
+    notes = scan_notes(vault_root)
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    run_dir = output_root / "vault-reorg" / f"{timestamp}-{run_label}"
+    bundle_root = run_dir / "bundle"
+    generated = build_generated_files(notes)
+    for rel_path, content in generated.items():
+        path = bundle_root / Path(rel_path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(content, encoding="utf-8")
+    run_lines = [
+        f"# {run_label}",
+        "",
+        f"- vault_root: `{vault_root}`",
+        f"- generated_files: `{len(generated)}`",
+        f"- source_notes: `{len([note for note in notes.values() if not note.is_index])}`",
+        "",
+    ]
+    run_dir.mkdir(parents=True, exist_ok=True)
+    (run_dir / "run.md").write_text("\n".join(run_lines), encoding="utf-8")
+    return run_dir
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Rebuild Obsidian navigation bundle.")
+    parser.add_argument("--vault-root", type=Path, required=True)
+    parser.add_argument("--output-root", type=Path, required=True)
+    parser.add_argument("--run-label", default="obsidian-findability-reorg")
+    args = parser.parse_args()
+    run_dir = generate_bundle(args.vault_root, args.output_root, args.run_label)
+    print(run_dir)
+
+
+if __name__ == "__main__":
+    main()

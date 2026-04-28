@@ -1,0 +1,203 @@
+{
+  "profile_path": "C:/Users/1/OneDrive - fzu.edu.cn (1)/Attachments/OCT_Research_System/oct-research-assist/profiles/oct-interest.json",
+  "vault_root": "C:/Users/1/OneDrive - fzu.edu.cn (1)/Attachments/OCT_Research_System/oct-research-assist/vault",
+  "output_root": "C:/Users/1/OneDrive - fzu.edu.cn (1)/Attachments/OCT_Research_System/oct-research-assist/reports",
+  "mineru_runner": "C:/Users/1/OneDrive - fzu.edu.cn (1)/Attachments/OCT_Research_System/tools/run-mineru.ps1",
+  "retrieval": {
+    "sources": [
+      "arxiv",
+      "openalex"
+    ],
+    "since_days": 7,
+    "max_results_per_interest": 15,
+    "openalex_mailto": ""
+  },
+  "google_scholar": {
+    "enabled": true,
+    "via_mcp": true,
+    "max_results": 5,
+    "min_interval_sec": 12,
+    "download_full_text": false
+  },
+  "zotero": {
+    "enabled": false,
+    "library_id": "",
+    "api_key": {
+      "$secure_ref": "zotero.web"
+    },
+    "library_type": "user",
+    "sqlite_path": "",
+    "scope_collection": "",
+    "default_tags": [
+      "oct-research-assist"
+    ]
+  },
+  "obsidian": {
+    "daily_folder": "01_Daily",
+    "paper_folder": "02_Papers",
+    "concept_folder": "03_Concepts",
+    "progress_folder": "04_Progress",
+    "experiment_folder": "05_Experiments",
+    "writing_folder": "06_Writing",
+    "profile_folder": "07_Profiles",
+    "attachment_folder": "08_Attachments",
+    "conversation_folder": "09_Conversations",
+    "task_folder": "10_Tasks",
+    "retrieval_folder": "11_Retrieval",
+    "zotero_folder": "12_Zotero",
+    "people_folder": "13_People",
+    "relationship_folder": "14_Relationships"
+  },
+  "translation": {
+    "target_language": "zh-CN",
+    "openai": {
+      "api_key": {
+        "$secure_ref": "openai.translate"
+      },
+      "base_url": "https://api.openai.com/v1/responses",
+      "model": "gpt-5",
+      "batch_chars": 12000,
+      "max_output_tokens": 8000
+    },
+    "render": {
+      "translated_folder_name": "translated-papers",
+      "include_original_blocks": false
+    }
+  },
+  "academic_qa": {
+    "enable_critique": true,
+    "enable_auto_evidence": true,
+    "question_folder": "04_Research/Questions",
+    "report_folder_name": "research-question-flow",
+    "auto_evidence_paths": [
+      "02_Papers",
+      "02_Literature/Papers",
+      "03_Concepts",
+      "04_Progress",
+      "05_Experiments",
+      "06_Writing",
+      "07_Profiles",
+      "09_Conversations",
+      "10_Tasks",
+      "12_Zotero",
+      "00_Home",
+      "03_Courses"
+    ],
+    "auto_evidence_min_score": 2,
+    "auto_evidence_max_notes": 6,
+    "auto_evidence_max_chars_per_note": 700,
+    "auto_evidence_max_candidates_log": 20,
+    "openai": {
+      "api_key": {
+        "$secure_ref": "openai.academic-qa"
+      },
+      "base_url": "https://api.openai.com/v1/responses",
+      "extract_model": "gpt-5-mini",
+      "extract_reasoning_effort": "minimal",
+      "extract_max_output_tokens": 4000,
+      "reason_model": "gpt-5.4",
+      "reason_reasoning_effort": "high",
+      "reason_max_output_tokens": 8000,
+      "critic_model": "gpt-5.4",
+      "critic_reasoning_effort": "high",
+      "critic_max_output_tokens": 6000
+    }
+  },
+  "question_radar": {
+    "report_folder_name": "question-radar",
+    "note_folder": "04_Research/Questions",
+    "daily_section_title": "Question Radar",
+    "max_questions": 5,
+    "lookback_days": 1,
+    "recent_note_paths": [
+      "02_Papers",
+      "02_Literature/Papers",
+      "03_Concepts",
+      "04_Progress",
+      "05_Experiments",
+      "06_Writing",
+      "09_Conversations",
+      "10_Tasks",
+      "11_Retrieval"
+    ],
+    "recent_note_max_files": 12,
+    "recent_note_max_chars": 500,
+    "latest_literature_enabled": true,
+    "latest_literature_sources": [
+      "openalex",
+      "arxiv"
+    ],
+    "latest_literature_max_per_interest": 4,
+    "latest_literature_since_days": 7,
+    "openalex_mailto": "",
+    "write_daily_note": true,
+    "write_vault_note": true,
+    "openai": {
+      "api_key": {
+        "$secure_ref": "openai.question-radar"
+      },
+      "base_url": "https://api.openai.com/v1/responses",
+      "model": "gpt-5.4",
+      "reasoning_effort": "high",
+      "max_output_tokens": 6000
+    }
+  },
+  "continuous_research": {
+    "report_folder_name": "continuous-research",
+    "note_folder": "04_Progress",
+    "write_progress_note": true,
+    "openai": {
+      "api_key": {
+        "$secure_ref": "openai.continuous-research"
+      },
+      "base_url": "https://api.openai.com/v1/responses",
+      "writing_memory_model": "gpt-5.4",
+      "writing_memory_reasoning_effort": "high",
+      "writing_memory_max_output_tokens": 5000,
+      "self_review_model": "gpt-5.4",
+      "self_review_reasoning_effort": "high",
+      "self_review_max_output_tokens": 6000,
+      "draft_builder_model": "gpt-5.4",
+      "draft_builder_reasoning_effort": "high",
+      "draft_builder_max_output_tokens": 7000,
+      "rebuttal_scaffold_model": "gpt-5.4",
+      "rebuttal_scaffold_reasoning_effort": "high",
+      "rebuttal_scaffold_max_output_tokens": 7000,
+      "journal_targeting_model": "gpt-5.4",
+      "journal_targeting_reasoning_effort": "high",
+      "journal_targeting_max_output_tokens": 7000,
+      "response_letter_model": "gpt-5.4",
+      "response_letter_reasoning_effort": "high",
+      "response_letter_max_output_tokens": 7000,
+      "citation_audit_model": "gpt-5.4",
+      "citation_audit_reasoning_effort": "high",
+      "citation_audit_max_output_tokens": 7000,
+      "submission_qc_model": "gpt-5.4",
+      "submission_qc_reasoning_effort": "high",
+      "submission_qc_max_output_tokens": 7000,
+      "draft_health_model": "gpt-5.4",
+      "draft_health_reasoning_effort": "high",
+      "draft_health_max_output_tokens": 7000,
+      "submission_memory_model": "gpt-5.4",
+      "submission_memory_reasoning_effort": "high",
+      "submission_memory_max_output_tokens": 7000
+    }
+  },
+  "delivery": {
+    "email": {
+      "send_enabled": false,
+      "sender": "",
+      "recipients": [],
+      "smtp_server": "",
+      "smtp_port": 465,
+      "smtp_user": {
+        "$secure_ref": "mail.smtp-user"
+      },
+      "smtp_pass": {
+        "$secure_ref": "mail.smtp-auth"
+      },
+      "tls_mode": "ssl",
+      "subject_prefix": "[oct-research-assist]"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local scratch and generated evidence bundles
+_cache/
+tmp/
+reports/_unit_test_tmp/
+reports/bundle_test_tmp/
+reports/plus_review_bundle_*/
+reports/plus_review_bundle_*.zip
+reports/pro_review_packet_*/
+reports/pro_review_packet_*.zip
+reports/_incoming_*/
+reports/**/*.npz
+reports/**/*.png
+reports/**/*.zip
+reports/**/*.tmp
+reports/**/*.runtime.json
+
+# Local editor/OS noise
+.DS_Store
+Thumbs.db
