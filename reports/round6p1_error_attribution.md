@@ -5,7 +5,7 @@ Sphere, low NA, low contrast. This should be the easiest alignment case.
 
 | mode | peakline_x_um | peak_opd_um | centroid_opd_um | fwhm_opd_um | psr_db | sidelobe_energy_fraction | raw_peak_intensity | image_relative_l2_vs_bridge | peakline_x_delta_um_vs_bridge | raw_image_relative_l2_vs_bridge | raw_peak_relative_delta_vs_bridge |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| full_na_scalar_fixed_basis | 0 | 0 | -0.00704395 | 5.7862 | -26.5176 | 0.00051261 | 4.29708e-07 | 0.126678 | 2 | 395.744 | 356.966 |
+| full_na_scalar_fixed_basis | 0 | 0 | -0.0070569 | 5.77492 | -26.6164 | 0.000500441 | 5.09733e-05 | 0.125574 | 2 | 46998.4 | 42462 |
 | vector_pupil_overlap_bridge | 2 | 0 | -0.00697136 | 5.78362 | -26.5403 | 0.000509853 | 1.20042e-09 | 0 | 0 | 0 | 0 |
 | low_na_asymptotic | 0 | 0 | -0.00704412 | 5.7862 | -26.5176 | 0.000512611 | 6.79032e-08 | 0.120516 | 2 | 59.5112 | 55.5663 |
 
