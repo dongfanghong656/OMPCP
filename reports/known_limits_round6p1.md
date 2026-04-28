@@ -21,6 +21,9 @@ This note freezes the current known limits without mixing them with implementati
 - The sphere-only sweep runner now also compares each case against an ideal uniform-pupil full-NA reference and reports
   `*_vs_ideal` PSF-bias fields. These fields are trend scaffolds for Pro review, not convergence- or device-calibrated
   paper-safe conclusions.
+- The sphere Mie convergence runner compares the trend metrics across numerical settings and reports drift against an
+  explicit reference configuration. This is only a numerical-stability scaffold; it does not replace measurement-wrapper
+  calibration, vector-diffraction scope gating, or device-level validation.
 - The old `low_na_separable_baseline` remains an axial spectral smoke path with a Gaussian lateral surrogate; it still
   must not be used as evidence that particle scattering does not affect the lateral PSF.
 

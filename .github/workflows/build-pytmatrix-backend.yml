@@ -11,11 +11,13 @@ on:
       - "scripts/import_ci_evidence_artifacts.py"
       - "scripts/oct_nonspherical_psf_solver.py"
       - "scripts/particle_size_sweep_runner.py"
+      - "scripts/sphere_mie_convergence_runner.py"
       - "scripts/sphere_particle_sweep_runner.py"
       - "scripts/validate_oct_nonspherical_psf_solver.py"
       - "physics/**"
       - "12_test_low_na_asymptotic_helpers.py"
       - "test_low_na_asymptotic_helpers.py"
+      - "tests/test_sphere_mie_convergence_runner.py"
       - "tests/test_sphere_mie_branch_contract.py"
       - "vendor/**"
   pull_request:
@@ -27,11 +29,13 @@ on:
       - "scripts/import_ci_evidence_artifacts.py"
       - "scripts/oct_nonspherical_psf_solver.py"
       - "scripts/particle_size_sweep_runner.py"
+      - "scripts/sphere_mie_convergence_runner.py"
       - "scripts/sphere_particle_sweep_runner.py"
       - "scripts/validate_oct_nonspherical_psf_solver.py"
       - "physics/**"
       - "12_test_low_na_asymptotic_helpers.py"
       - "test_low_na_asymptotic_helpers.py"
+      - "tests/test_sphere_mie_convergence_runner.py"
       - "tests/test_sphere_mie_branch_contract.py"
       - "vendor/**"
 
@@ -131,6 +135,7 @@ jobs:
       - name: Run sphere Mie branch contract tests
         run: |
           python -m unittest discover -s tests -p test_sphere_mie_branch_contract.py
+          python -m unittest discover -s tests -p test_sphere_mie_convergence_runner.py
 
       - name: Run sphere Mie full-NA smoke sweep
         run: |
@@ -142,6 +147,14 @@ jobs:
             --n-x 41 `
             --n-bfp-dense 31 `
             --output-dir reports/sphere_mie_full_na_ci_smoke
+
+      - name: Run sphere Mie convergence smoke panel
+        run: |
+          python scripts/sphere_mie_convergence_runner.py `
+            --diameters 200,500 `
+            --na-values 0.05 `
+            --grid-panel "coarse:11,101,31,21;reference:21,201,41,31" `
+            --output-dir reports/sphere_mie_convergence_ci_smoke
 
       - name: Rebuild round6p1 evidence with required T-matrix backend
         run: |

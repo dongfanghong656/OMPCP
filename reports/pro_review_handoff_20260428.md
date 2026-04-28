@@ -37,6 +37,9 @@ in commit `cae977d...`.
   requires both the sphere Mie branch and a valid spectral cube contract.
 - Imported fresh CPython 3.10 T-matrix evidence from GitHub Actions into the
   canonical reports directory with a checksum manifest.
+- Added the first sphere Mie full-NA convergence scaffold:
+  `reports/round6p1_sphere_convergence_progress_20260428.md` and
+  `reports/sphere_mie_convergence_20260428/sphere_mie_convergence_summary.md`.
 
 ## Primary Evidence Files
 
@@ -50,6 +53,10 @@ in commit `cae977d...`.
 - `reports/particle_size_sweep_ci/particle_size_sweep_summary.json`
 - `reports/round6p1_sphere_branch_independent_review_20260428.md`
 - `reports/sphere_mie_full_na_acceptance_20260428_v2/sphere_mie_full_na_sweep_summary.json`
+- `reports/round6p1_sphere_psf_bias_progress_20260428.md`
+- `reports/sphere_mie_full_na_psf_bias_20260428/sphere_mie_full_na_sweep_summary.md`
+- `reports/round6p1_sphere_convergence_progress_20260428.md`
+- `reports/sphere_mie_convergence_20260428/sphere_mie_convergence_summary.md`
 
 ## Verified Status
 
@@ -60,6 +67,7 @@ in commit `cae977d...`.
 - GitHub Actions CPython 3.10 T-matrix run: `success`.
 - Imported CI reports: `35` files, checksummed in
   `round6p1_ci_evidence_import_manifest`.
+- Sphere Mie convergence scaffold: `preliminary_convergence_attention_not_paper_safe`.
 
 Key machine-readable findings in the current validation summary:
 

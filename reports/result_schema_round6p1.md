@@ -348,6 +348,38 @@ computed with the same grid, NA, spectrum, and scalar fixed-basis propagation se
 This branch is a particle-aware scalar pupil-field path for homogeneous spheres. It is not a substitute for the
 non-spherical T-matrix route, and it is still bounded by the scalar fixed-basis / FD-OCT measurement-scaffold limits.
 
+## Sphere Mie convergence report fields
+
+`scripts/sphere_mie_convergence_runner.py` writes:
+
+- `sphere_mie_convergence_summary.json`
+- `sphere_mie_convergence_summary.md`
+- `sphere_mie_convergence_summary.csv`
+
+The JSON schema exposes:
+
+- `schema_version = "sphere_mie_convergence_v1"`
+- `report_kind = "sphere_mie_convergence"`
+- `grid_panel`
+- `reference_config_id`
+- `convergence_status`
+- `convergence_reference_summary`
+- `metric_ranges`
+- `interpretation_status`
+- `paper_safety_status`
+- `rows[*].config_id`
+- `rows[*].n_lambda`
+- `rows[*].n_z`
+- `rows[*].n_x`
+- `rows[*].n_bfp_dense`
+- `rows[*].*_drift_vs_reference`
+- `rows[*].*_abs_drift_vs_reference`
+
+This report compares the sphere Mie full-NA PSF-bias metrics across numerical settings.
+The reference configuration is the explicitly named `reference_config_id`; by default this is
+the last grid-panel entry. A passing preliminary convergence status is not a paper-safe device
+claim.
+
 ## Validation-summary CPython 3.10 evidence-rebuild fields
 
 The round6p1 evidence package may include a controlled CPython 3.10 / T-matrix rebuild readiness report.
