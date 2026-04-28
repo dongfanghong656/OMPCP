@@ -4,10 +4,10 @@
       "case_name": "sphere_low_na_low_contrast",
       "native_asymptotic_vs_bridge": {
         "label": "low_na_asymptotic_vs_bridge",
-        "fwhm_delta_um": 0.0025806705866608937,
-        "psr_delta_db": 0.02270464219422763,
+        "fwhm_delta_um": 0.0025806705866600055,
+        "psr_delta_db": 0.022704642194231184,
         "peakline_x_delta_um": 2.0,
-        "centroid_opd_delta_um": 7.273321117099753e-05,
+        "centroid_opd_delta_um": 7.27332111711363e-05,
         "image_relative_l2": 0.12336331956178048,
         "max_abs_delta": 0.16104924201852933,
         "max_delta_index": [
@@ -26,56 +26,56 @@
         "raw_max_delta_x_um": 0.0,
         "raw_max_delta_opd_um": 0.0,
         "peakline_x_um": 0.0,
-        "centroid_opd_um": -0.0070440903771336145,
+        "centroid_opd_um": -0.007044090377133753,
         "raw_peak_intensity": 5.919983610371997e-07
       },
       "best_model_id": "fitted_linear_map_3x3",
       "best_model_selection_metric": {
         "peakline_x_delta_um": 0.0,
-        "image_relative_l2": 0.0006675108575822419,
-        "raw_rendered_relative_residual": 0.00556289020141297
+        "image_relative_l2": 0.0006658167696037488,
+        "raw_rendered_relative_residual": 0.005562890318586214
       },
       "map_models": [
         {
           "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
           "raw_rendered_relative_residual": 1.5871068054698516,
-          "orthonormalized_relative_residual": 20.944525517964973,
-          "shared_scale_relative_residual": 0.14229037439321224,
+          "orthonormalized_relative_residual": 20.944525517964976,
+          "shared_scale_relative_residual": 0.14229037439321227,
           "shared_scale_component_residuals": {
             "a0": 0.8244721676179203,
             "a1": 0.9999998205338102,
-            "a2": 0.14229037356619972
+            "a2": 0.14229037356619975
           },
           "component_best_complex_scale": {
             "a0": {
               "name": "a0",
               "relative_residual": 0.12954513388741423,
               "scale_abs": 2.153011897595075,
-              "scale_phase_rad": -4.5811243292467394e-07,
-              "mean_abs_ratio_recovered_over_asymptotic": 2.1366529004291284
+              "scale_phase_rad": -4.581124329286496e-07,
+              "mean_abs_ratio_recovered_over_asymptotic": 2.136652900429129
             },
             "a1": {
               "name": "a1",
-              "relative_residual": 0.16866528857112467,
-              "scale_abs": 2084425.4432173702,
-              "scale_phase_rad": -0.011950177809330857,
-              "mean_abs_ratio_recovered_over_asymptotic": 2095700.7886622238
+              "relative_residual": 0.16866528857273688,
+              "scale_abs": 2084425.4432374341,
+              "scale_phase_rad": -0.011950177809628015,
+              "mean_abs_ratio_recovered_over_asymptotic": 2095700.7886825812
             },
             "a2": {
               "name": "a2",
-              "relative_residual": 0.14229037356619972,
-              "scale_abs": 0.3850649225087145,
-              "scale_phase_rad": -4.471963938659529e-07,
-              "mean_abs_ratio_recovered_over_asymptotic": 0.3818455711580774
+              "relative_residual": 0.14229037356619975,
+              "scale_abs": 0.38506492250871444,
+              "scale_phase_rad": -4.471963938776564e-07,
+              "mean_abs_ratio_recovered_over_asymptotic": 0.3818455711580773
             }
           },
           "injected_vs_bridge": {
             "label": "coefficient_map_audit::identity_slice_projected_rendered_basis_vs_bridge",
-            "fwhm_delta_um": 0.0025806547005391423,
-            "psr_delta_db": 0.022704483808468012,
+            "fwhm_delta_um": 0.002580654700538254,
+            "psr_delta_db": 0.022704483808460907,
             "peakline_x_delta_um": 2.0,
-            "centroid_opd_delta_um": 7.272897521280221e-05,
-            "image_relative_l2": 0.12293457567579008,
+            "centroid_opd_delta_um": 7.27289752132168e-05,
+            "image_relative_l2": 0.12293457567579011,
             "max_abs_delta": 0.16104924201852933,
             "max_delta_index": [
               20,
@@ -83,7 +83,7 @@
             ],
             "max_delta_x_um": 0.0,
             "max_delta_opd_um": 0.0,
-            "raw_image_relative_l2": 397.1133523377005,
+            "raw_image_relative_l2": 397.1133523377006,
             "raw_peak_relative_delta": 361.6049503784963,
             "raw_max_abs_delta": 4.342703995873526e-07,
             "raw_max_delta_index": [
@@ -93,7 +93,7 @@
             "raw_max_delta_x_um": 0.0,
             "raw_max_delta_opd_um": 0.0,
             "peakline_x_um": 0.0,
-            "centroid_opd_um": -0.007044086141175419,
+            "centroid_opd_um": -0.007044086141175834,
             "raw_peak_intensity": 4.3527749113626793e-07
           },
           "field_assembly_model_id": "directional_field_expansion_first_order",
@@ -101,52 +101,52 @@
           "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
           "is_best_model": false,
           "injection_improvement_vs_native": {
-            "image_relative_l2_delta": 0.00042874388599040136,
+            "image_relative_l2_delta": 0.0004287438859903736,
             "peakline_x_delta_um_delta": 0.0,
-            "centroid_opd_delta_um_delta": 4.2359581953199665e-09,
+            "centroid_opd_delta_um_delta": 4.235957919498934e-09,
             "raw_peak_relative_delta_delta": 130.55525362764882
           }
         },
         {
           "coefficient_map_model_id": "shared_complex_scale_map",
           "raw_rendered_relative_residual": 0.14229037439321224,
-          "orthonormalized_relative_residual": 8.679585265174568,
-          "shared_scale_relative_residual": 0.1422903743932122,
+          "orthonormalized_relative_residual": 8.67958526517457,
+          "shared_scale_relative_residual": 0.14229037439321224,
           "shared_scale_component_residuals": {
             "a0": 0.8244721676179203,
             "a1": 0.9999998205338102,
-            "a2": 0.1422903735661997
+            "a2": 0.14229037356619975
           },
           "component_best_complex_scale": {
             "a0": {
               "name": "a0",
               "relative_residual": 0.12954513388741423,
-              "scale_abs": 5.591295835172757,
-              "scale_phase_rad": -1.0916039058441734e-08,
+              "scale_abs": 5.591295835172758,
+              "scale_phase_rad": -1.091603904295438e-08,
               "mean_abs_ratio_recovered_over_asymptotic": 5.5488120974731565
             },
             "a1": {
               "name": "a1",
-              "relative_residual": 0.16866528857112467,
-              "scale_abs": 5413179.236202224,
-              "scale_phase_rad": -0.011949730612936998,
-              "mean_abs_ratio_recovered_over_asymptotic": 5442460.909995005
+              "relative_residual": 0.16866528857273688,
+              "scale_abs": 5413179.236254334,
+              "scale_phase_rad": -0.011949730613234143,
+              "mean_abs_ratio_recovered_over_asymptotic": 5442460.910047872
             },
             "a2": {
               "name": "a2",
-              "relative_residual": 0.14229037356619972,
-              "scale_abs": 0.9999999999531002,
+              "relative_residual": 0.14229037356619975,
+              "scale_abs": 0.9999999999531001,
               "scale_phase_rad": -1.0131140492274396e-17,
-              "mean_abs_ratio_recovered_over_asymptotic": 0.9916394582306498
+              "mean_abs_ratio_recovered_over_asymptotic": 0.9916394582306495
             }
           },
           "injected_vs_bridge": {
             "label": "coefficient_map_audit::shared_complex_scale_map_vs_bridge",
-            "fwhm_delta_um": 0.0025806547005302605,
-            "psr_delta_db": 0.022704483808460907,
+            "fwhm_delta_um": 0.002580654700533813,
+            "psr_delta_db": 0.0227044838084538,
             "peakline_x_delta_um": 2.0,
-            "centroid_opd_delta_um": 7.272897521309017e-05,
-            "image_relative_l2": 0.12293457567578847,
+            "centroid_opd_delta_um": 7.27289752130893e-05,
+            "image_relative_l2": 0.12293457567578876,
             "max_abs_delta": 0.16104924201852933,
             "max_delta_index": [
               20,
@@ -154,7 +154,7 @@
             ],
             "max_delta_x_um": 0.0,
             "max_delta_opd_um": 0.0,
-            "raw_image_relative_l2": 58.032440482469276,
+            "raw_image_relative_l2": 58.0324404824693,
             "raw_peak_relative_delta": 52.76524704500036,
             "raw_max_abs_delta": 6.353367608164504e-08,
             "raw_max_delta_index": [
@@ -164,7 +164,7 @@
             "raw_max_delta_x_um": 0.0,
             "raw_max_delta_opd_um": 0.0,
             "peakline_x_um": 0.0,
-            "centroid_opd_um": -0.007044086141175707,
+            "centroid_opd_um": -0.007044086141175706,
             "raw_peak_intensity": 6.454076763056036e-08
           },
           "field_assembly_model_id": "directional_field_expansion_first_order",
@@ -172,62 +172,62 @@
           "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
           "is_best_model": false,
           "injection_improvement_vs_native": {
-            "image_relative_l2_delta": 0.0004287438859920112,
+            "image_relative_l2_delta": 0.00042874388599171975,
             "peakline_x_delta_um_delta": 0.0,
-            "centroid_opd_delta_um_delta": 4.2359579073558695e-09,
+            "centroid_opd_delta_um_delta": 4.235958047001109e-09,
             "raw_peak_relative_delta_delta": 439.39495696114477
           }
         },
         {
           "coefficient_map_model_id": "componentwise_complex_scale_map",
           "raw_rendered_relative_residual": 0.14229037356307506,
-          "orthonormalized_relative_residual": 0.006896686444480826,
-          "shared_scale_relative_residual": 0.14229037356307506,
+          "orthonormalized_relative_residual": 0.006896686444480975,
+          "shared_scale_relative_residual": 0.142290373563075,
           "shared_scale_component_residuals": {
-            "a0": 0.12954513388741423,
-            "a1": 0.1686652885711247,
-            "a2": 0.14229037356619975
+            "a0": 0.1295451338874143,
+            "a1": 0.16866528857273688,
+            "a2": 0.1422903735661997
           },
           "component_best_complex_scale": {
             "a0": {
               "name": "a0",
-              "relative_residual": 0.1295451338874142,
+              "relative_residual": 0.12954513388741423,
               "scale_abs": 0.9999999999999993,
-              "scale_phase_rad": 0.0,
-              "mean_abs_ratio_recovered_over_asymptotic": 0.992401808283447
+              "scale_phase_rad": -1.4772818648284138e-17,
+              "mean_abs_ratio_recovered_over_asymptotic": 0.9924018082834473
             },
             "a1": {
               "name": "a1",
-              "relative_residual": 0.16866528857112473,
-              "scale_abs": 1.0000000000004692,
-              "scale_phase_rad": 3.144062094271656e-17,
-              "mean_abs_ratio_recovered_over_asymptotic": 1.0054093301737141
+              "relative_residual": 0.1686652885727369,
+              "scale_abs": 1.000000000000469,
+              "scale_phase_rad": 5.716476534929326e-18,
+              "mean_abs_ratio_recovered_over_asymptotic": 1.005409330173803
             },
             "a2": {
               "name": "a2",
               "relative_residual": 0.14229037356619975,
               "scale_abs": 1.0000000000000009,
-              "scale_phase_rad": 1.5196710739124334e-17,
+              "scale_phase_rad": 1.0131140492749557e-17,
               "mean_abs_ratio_recovered_over_asymptotic": 0.9916394582771579
             }
           },
           "injected_vs_bridge": {
             "label": "coefficient_map_audit::componentwise_complex_scale_map_vs_bridge",
-            "fwhm_delta_um": 0.0025827503021442766,
-            "psr_delta_db": 0.022169197372122085,
+            "fwhm_delta_um": 0.002582750302140724,
+            "psr_delta_db": 0.022169197372079452,
             "peakline_x_delta_um": 4.0,
-            "centroid_opd_delta_um": 2.2330225801114878e-05,
-            "image_relative_l2": 0.0036511272166576516,
-            "max_abs_delta": 0.0045505768505892386,
+            "centroid_opd_delta_um": 2.2330225801799226e-05,
+            "image_relative_l2": 0.003651127216658812,
+            "max_abs_delta": 0.004550576850589794,
             "max_delta_index": [
               20,
               300
             ],
             "max_delta_x_um": 0.0,
             "max_delta_opd_um": 0.0,
-            "raw_image_relative_l2": 0.0029307228032861656,
-            "raw_peak_relative_delta": 0.005437954135604319,
-            "raw_max_abs_delta": 6.528097276791134e-12,
+            "raw_image_relative_l2": 0.0029307228032879884,
+            "raw_peak_relative_delta": 0.005437954135608108,
+            "raw_max_abs_delta": 6.528097276793822e-12,
             "raw_max_delta_index": [
               0,
               301
@@ -235,70 +235,70 @@
             "raw_max_delta_x_um": -2.0,
             "raw_max_delta_opd_um": 0.05999999999999872,
             "peakline_x_um": -2.0,
-            "centroid_opd_um": -0.006949026940161502,
-            "raw_peak_intensity": 1.2069457675977765e-09
+            "centroid_opd_um": -0.006949026940160818,
+            "raw_peak_intensity": 1.206945767597781e-09
           },
           "field_assembly_model_id": "directional_field_expansion_first_order",
           "basis_condition_number": 18468483.807517402,
           "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
           "is_best_model": false,
           "injection_improvement_vs_native": {
-            "image_relative_l2_delta": 0.11971219234512283,
+            "image_relative_l2_delta": 0.11971219234512168,
             "peakline_x_delta_um_delta": -2.0,
-            "centroid_opd_delta_um_delta": 5.040298536988265e-05,
+            "centroid_opd_delta_um_delta": 5.040298536933708e-05,
             "raw_peak_relative_delta_delta": 492.1547660520095
           }
         },
         {
           "coefficient_map_model_id": "low_order_coupled_odd_even_map",
-          "raw_rendered_relative_residual": 0.005562996610629593,
-          "orthonormalized_relative_residual": 0.00028736095200808577,
-          "shared_scale_relative_residual": 0.005562996610629594,
+          "raw_rendered_relative_residual": 0.0055629966112262725,
+          "orthonormalized_relative_residual": 0.00028736093576893756,
+          "shared_scale_relative_residual": 0.0055629966112262725,
           "shared_scale_component_residuals": {
-            "a0": 0.005064608957633511,
-            "a1": 0.1686652885711247,
-            "a2": 0.005562996544354683
+            "a0": 0.005064608955979638,
+            "a1": 0.1686652885727369,
+            "a2": 0.005562996544951362
           },
           "component_best_complex_scale": {
             "a0": {
               "name": "a0",
-              "relative_residual": 0.005064608957633507,
-              "scale_abs": 0.9999999998124164,
-              "scale_phase_rad": -6.6196034122256714e-12,
-              "mean_abs_ratio_recovered_over_asymptotic": 0.9999110826705689
+              "relative_residual": 0.00506460895597964,
+              "scale_abs": 0.9999999998310114,
+              "scale_phase_rad": -1.2669391194469143e-11,
+              "mean_abs_ratio_recovered_over_asymptotic": 0.9999110826894975
             },
             "a1": {
               "name": "a1",
-              "relative_residual": 0.16866528857112473,
-              "scale_abs": 1.0000000000000013,
-              "scale_phase_rad": 2.8582382675183483e-18,
-              "mean_abs_ratio_recovered_over_asymptotic": 1.005409330173243
+              "relative_residual": 0.16866528857273694,
+              "scale_abs": 0.9999999999999997,
+              "scale_phase_rad": 0.0,
+              "mean_abs_ratio_recovered_over_asymptotic": 1.005409330173331
             },
             "a2": {
               "name": "a2",
-              "relative_residual": 0.0055629965443546835,
-              "scale_abs": 0.9999999998404193,
-              "scale_phase_rad": -9.157468483930121e-12,
-              "mean_abs_ratio_recovered_over_asymptotic": 0.9999020587596997
+              "relative_residual": 0.005562996544951358,
+              "scale_abs": 0.9999999997615223,
+              "scale_phase_rad": -8.870875569109684e-12,
+              "mean_abs_ratio_recovered_over_asymptotic": 0.999902058677729
             }
           },
           "injected_vs_bridge": {
             "label": "coefficient_map_audit::low_order_coupled_odd_even_map_vs_bridge",
-            "fwhm_delta_um": 0.0003134311279788804,
-            "psr_delta_db": 0.002009217385669615,
+            "fwhm_delta_um": 0.0003134311900767628,
+            "psr_delta_db": 0.0020092270729605843,
             "peakline_x_delta_um": 4.0,
-            "centroid_opd_delta_um": 2.4347244646278146e-05,
-            "image_relative_l2": 0.0006645753123745747,
-            "max_abs_delta": 0.0007941513248810317,
+            "centroid_opd_delta_um": 2.4347260506956368e-05,
+            "image_relative_l2": 0.0006645751711132583,
+            "max_abs_delta": 0.000794151157645806,
             "max_delta_index": [
               20,
               300
             ],
             "max_delta_x_um": 0.0,
             "max_delta_opd_um": 0.0,
-            "raw_image_relative_l2": 0.000493771685188649,
-            "raw_peak_relative_delta": 0.0009645915822615003,
-            "raw_max_abs_delta": 1.1749038433046898e-12,
+            "raw_image_relative_l2": 0.0004937731016795251,
+            "raw_peak_relative_delta": 0.000964593347717023,
+            "raw_max_abs_delta": 1.174905952751323e-12,
             "raw_max_delta_index": [
               40,
               304
@@ -306,70 +306,70 @@
             "raw_max_delta_x_um": 2.0,
             "raw_max_delta_opd_um": 0.23999999999999844,
             "peakline_x_um": -2.0,
-            "centroid_opd_um": -0.006995704410608895,
-            "raw_peak_intensity": 1.1992600367933601e-09
+            "centroid_opd_um": -0.006995704426469573,
+            "raw_peak_intensity": 1.1992600346740756e-09
           },
           "field_assembly_model_id": "directional_field_expansion_first_order",
           "basis_condition_number": 18468483.807517402,
           "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
           "is_best_model": false,
           "injection_improvement_vs_native": {
-            "image_relative_l2_delta": 0.12269874424940591,
+            "image_relative_l2_delta": 0.12269874439066722,
             "peakline_x_delta_um_delta": -2.0,
-            "centroid_opd_delta_um_delta": 4.838596652471938e-05,
-            "raw_peak_relative_delta_delta": 492.1592394145629
+            "centroid_opd_delta_um_delta": 4.838595066417994e-05,
+            "raw_peak_relative_delta_delta": 492.15923941279743
           }
         },
         {
           "coefficient_map_model_id": "fitted_linear_map_3x3",
-          "raw_rendered_relative_residual": 0.00556289020141297,
-          "orthonormalized_relative_residual": 0.0002688671362899423,
-          "shared_scale_relative_residual": 0.0055628901926713225,
+          "raw_rendered_relative_residual": 0.005562890318586214,
+          "orthonormalized_relative_residual": 0.00026897509177697504,
+          "shared_scale_relative_residual": 0.0055628901942141725,
           "shared_scale_component_residuals": {
-            "a0": 0.005064512139956856,
-            "a1": 0.00599811653588051,
-            "a2": 0.005562890192811052
+            "a0": 0.005064512208618539,
+            "a1": 0.005998116634342791,
+            "a2": 0.005562890194353892
           },
           "component_best_complex_scale": {
             "a0": {
               "name": "a0",
-              "relative_residual": 0.005064512129485549,
-              "scale_abs": 0.9999994232489329,
-              "scale_phase_rad": 1.1527373520592517e-08,
-              "mean_abs_ratio_recovered_over_asymptotic": 0.9999104937660176
+              "relative_residual": 0.0050645121294588084,
+              "scale_abs": 0.9999997168780884,
+              "scale_phase_rad": -2.1448307885265993e-08,
+              "mean_abs_ratio_recovered_over_asymptotic": 0.9999107946326886
             },
             "a1": {
               "name": "a1",
-              "relative_residual": 0.005998116523933153,
-              "scale_abs": 0.9999993575234289,
-              "scale_phase_rad": -9.917586496036583e-09,
-              "mean_abs_ratio_recovered_over_asymptotic": 0.9998937559270537
+              "relative_residual": 0.005998116523144739,
+              "scale_abs": 0.9999999768568157,
+              "scale_phase_rad": -2.717745948966024e-08,
+              "mean_abs_ratio_recovered_over_asymptotic": 0.9998943820131764
             },
             "a2": {
               "name": "a2",
-              "relative_residual": 0.005562890192811051,
-              "scale_abs": 0.9999997165441792,
-              "scale_phase_rad": -1.3005134408129484e-07,
-              "mean_abs_ratio_recovered_over_asymptotic": 0.9999017692974801
+              "relative_residual": 0.005562890194353895,
+              "scale_abs": 0.9999988252568667,
+              "scale_phase_rad": 6.127188322514706e-08,
+              "mean_abs_ratio_recovered_over_asymptotic": 0.9999008521251057
             }
           },
           "injected_vs_bridge": {
             "label": "coefficient_map_audit::fitted_linear_map_3x3_vs_bridge",
-            "fwhm_delta_um": 0.00031462495605261154,
-            "psr_delta_db": 0.001791219635443042,
+            "fwhm_delta_um": 0.00031465622098814094,
+            "psr_delta_db": 0.0017916683259180388,
             "peakline_x_delta_um": 0.0,
-            "centroid_opd_delta_um": 6.360366643330586e-05,
-            "image_relative_l2": 0.0006675108575822419,
-            "max_abs_delta": 0.0007979282489618544,
+            "centroid_opd_delta_um": 6.357117704048829e-05,
+            "image_relative_l2": 0.0006658167696037488,
+            "max_abs_delta": 0.0007958480444750782,
             "max_delta_index": [
               20,
               300
             ],
             "max_delta_x_um": 0.0,
             "max_delta_opd_um": 0.0,
-            "raw_image_relative_l2": 0.00048743256792411853,
-            "raw_peak_relative_delta": 0.0009619937536874446,
-            "raw_max_abs_delta": 1.1563961376545761e-12,
+            "raw_image_relative_l2": 0.0005053053177172765,
+            "raw_peak_relative_delta": 0.000984178457024292,
+            "raw_max_abs_delta": 1.1830074544333056e-12,
             "raw_max_delta_index": [
               0,
               301
@@ -377,18 +377,18 @@
             "raw_max_delta_x_um": -2.0,
             "raw_max_delta_opd_um": 0.05999999999999872,
             "peakline_x_um": 2.0,
-            "centroid_opd_um": -0.007034960832395923,
-            "raw_peak_intensity": 1.199263155273411e-09
+            "centroid_opd_um": -0.007034928343003105,
+            "raw_peak_intensity": 1.1992365243573136e-09
           },
           "field_assembly_model_id": "directional_field_expansion_first_order",
           "basis_condition_number": 18468483.807517402,
           "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
           "is_best_model": true,
           "injection_improvement_vs_native": {
-            "image_relative_l2_delta": 0.12269580870419824,
+            "image_relative_l2_delta": 0.12269750279217673,
             "peakline_x_delta_um_delta": 2.0,
-            "centroid_opd_delta_um_delta": 9.129544737691668e-06,
-            "raw_peak_relative_delta_delta": 492.1592420123915
+            "centroid_opd_delta_um_delta": 9.16203413064802e-06,
+            "raw_peak_relative_delta_delta": 492.1592198276881
           }
         }
       ]
@@ -397,21 +397,21 @@
       "case_name": "mild_shape_medium_tilt",
       "native_asymptotic_vs_bridge": {
         "label": "low_na_asymptotic_vs_bridge",
-        "fwhm_delta_um": 0.022984234211252286,
-        "psr_delta_db": 0.38410862307955895,
+        "fwhm_delta_um": 0.02298423421124518,
+        "psr_delta_db": 0.3841086230795625,
         "peakline_x_delta_um": 2.0,
-        "centroid_opd_delta_um": 0.09659912180865071,
-        "image_relative_l2": 0.5897479754375583,
-        "max_abs_delta": 0.5405931602725207,
+        "centroid_opd_delta_um": 0.09659912180865055,
+        "image_relative_l2": 0.5897479754375572,
+        "max_abs_delta": 0.5405931602725198,
         "max_delta_index": [
           20,
           290
         ],
         "max_delta_x_um": 0.0,
         "max_delta_opd_um": -0.6000000000000014,
-        "raw_image_relative_l2": 1016.2315478585135,
-        "raw_peak_relative_delta": 698.0248088533815,
-        "raw_max_abs_delta": 0.0001857883056944289,
+        "raw_image_relative_l2": 1016.2315478585136,
+        "raw_peak_relative_delta": 698.0248088533821,
+        "raw_max_abs_delta": 0.00018578830569442907,
         "raw_max_delta_index": [
           20,
           293
@@ -419,57 +419,57 @@
         "raw_max_delta_x_um": 0.0,
         "raw_max_delta_opd_um": -0.4200000000000017,
         "peakline_x_um": 0.0,
-        "centroid_opd_um": -0.42733275659912473,
-        "raw_peak_intensity": 0.0001859107721306827
+        "centroid_opd_um": -0.42733275659912484,
+        "raw_peak_intensity": 0.00018591077213068286
       },
       "best_model_id": "fitted_linear_map_3x3",
       "best_model_selection_metric": {
         "peakline_x_delta_um": 0.0,
-        "image_relative_l2": 0.0031502485882607717,
-        "raw_rendered_relative_residual": 0.011136075576081074
+        "image_relative_l2": 0.0031309255784201843,
+        "raw_rendered_relative_residual": 0.011136076318744045
       },
       "map_models": [
         {
           "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
-          "raw_rendered_relative_residual": 1.8105701092640272,
+          "raw_rendered_relative_residual": 1.8105701092640274,
           "orthonormalized_relative_residual": 29.874265304179172,
-          "shared_scale_relative_residual": 0.13320181223567137,
+          "shared_scale_relative_residual": 0.13320181223567143,
           "shared_scale_component_residuals": {
-            "a0": 0.8365738742214482,
-            "a1": 0.9999992875212694,
+            "a0": 0.8365738742214484,
+            "a1": 0.9999992875212695,
             "a2": 0.13320180004724802
           },
           "component_best_complex_scale": {
             "a0": {
               "name": "a0",
-              "relative_residual": 0.12600650570647545,
+              "relative_residual": 0.12600650570647548,
               "scale_abs": 2.1265965779889373,
-              "scale_phase_rad": 0.05315344087624574,
+              "scale_phase_rad": 0.05315344087624564,
               "mean_abs_ratio_recovered_over_asymptotic": 2.184093992217983
             },
             "a1": {
               "name": "a1",
-              "relative_residual": 0.2516351147035725,
-              "scale_abs": 462562.9361006371,
-              "scale_phase_rad": -0.12228114388158787,
-              "mean_abs_ratio_recovered_over_asymptotic": 470876.2565641215
+              "relative_residual": 0.25163511470359284,
+              "scale_abs": 462562.936101159,
+              "scale_phase_rad": -0.12228114388103693,
+              "mean_abs_ratio_recovered_over_asymptotic": 470876.25656460377
             },
             "a2": {
               "name": "a2",
               "relative_residual": 0.13320180004724802,
-              "scale_abs": 0.35437208081792937,
-              "scale_phase_rad": -0.0027894679093989987,
+              "scale_abs": 0.3543720808179293,
+              "scale_phase_rad": -0.002789467909398999,
               "mean_abs_ratio_recovered_over_asymptotic": 0.36485416925550695
             }
           },
           "injected_vs_bridge": {
             "label": "coefficient_map_audit::identity_slice_projected_rendered_basis_vs_bridge",
-            "fwhm_delta_um": 0.023271860500648778,
-            "psr_delta_db": 0.41443168219785065,
+            "fwhm_delta_um": 0.023271860500651442,
+            "psr_delta_db": 0.4144316821978471,
             "peakline_x_delta_um": 2.0,
-            "centroid_opd_delta_um": 0.10200084829675887,
-            "image_relative_l2": 0.5878140304518624,
-            "max_abs_delta": 0.5407481822520949,
+            "centroid_opd_delta_um": 0.10200084829675854,
+            "image_relative_l2": 0.5878140304518631,
+            "max_abs_delta": 0.5407481822520965,
             "max_delta_index": [
               20,
               290
@@ -477,8 +477,79 @@
             "max_delta_x_um": 0.0,
             "max_delta_opd_um": -0.6000000000000014,
             "raw_image_relative_l2": 775.3190995179455,
-            "raw_peak_relative_delta": 534.6938501665334,
-            "raw_max_abs_delta": 0.00014234923993061916,
+            "raw_peak_relative_delta": 534.693850166533,
+            "raw_max_abs_delta": 0.00014234923993061908,
+            "raw_max_delta_index": [
+              20,
+              293
+            ],
+            "raw_max_delta_x_um": 0.0,
+            "raw_max_delta_opd_um": -0.4200000000000017,
+            "peakline_x_um": 0.0,
+            "centroid_opd_um": -0.43273448308723284,
+            "raw_peak_intensity": 0.00014247170636687287
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "basis_condition_number": 1144956.9785340584,
+          "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
+          "is_best_model": false,
+          "injection_improvement_vs_native": {
+            "image_relative_l2_delta": 0.0019339449856941027,
+            "peakline_x_delta_um_delta": 0.0,
+            "centroid_opd_delta_um_delta": -0.005401726488107994,
+            "raw_peak_relative_delta_delta": 163.33095868684904
+          }
+        },
+        {
+          "coefficient_map_model_id": "shared_complex_scale_map",
+          "raw_rendered_relative_residual": 0.13320181223567143,
+          "orthonormalized_relative_residual": 11.10350968830912,
+          "shared_scale_relative_residual": 0.13320181223567143,
+          "shared_scale_component_residuals": {
+            "a0": 0.8365738742214484,
+            "a1": 0.9999992875212695,
+            "a2": 0.13320180004724802
+          },
+          "component_best_complex_scale": {
+            "a0": {
+              "name": "a0",
+              "relative_residual": 0.12600650570647548,
+              "scale_abs": 6.00102742775807,
+              "scale_phase_rad": 0.05594290874237669,
+              "mean_abs_ratio_recovered_over_asymptotic": 6.163278963091569
+            },
+            "a1": {
+              "name": "a1",
+              "relative_residual": 0.25163511470359284,
+              "scale_abs": 1305302.9875710602,
+              "scale_phase_rad": -0.11949167601490625,
+              "mean_abs_ratio_recovered_over_asymptotic": 1328762.2861673452
+            },
+            "a2": {
+              "name": "a2",
+              "relative_residual": 0.13320180004724805,
+              "scale_abs": 0.999999999356322,
+              "scale_phase_rad": -4.326820969076987e-11,
+              "mean_abs_ratio_recovered_over_asymptotic": 1.0295793285366477
+            }
+          },
+          "injected_vs_bridge": {
+            "label": "coefficient_map_audit::shared_complex_scale_map_vs_bridge",
+            "fwhm_delta_um": 0.02327186050065233,
+            "psr_delta_db": 0.41443168219782933,
+            "peakline_x_delta_um": 2.0,
+            "centroid_opd_delta_um": 0.1020008482967586,
+            "image_relative_l2": 0.5878140304518633,
+            "max_abs_delta": 0.5407481822520968,
+            "max_delta_index": [
+              20,
+              290
+            ],
+            "max_delta_x_um": 0.0,
+            "max_delta_opd_um": -0.6000000000000014,
+            "raw_image_relative_l2": 96.53371275573313,
+            "raw_peak_relative_delta": 66.27220433314251,
+            "raw_max_abs_delta": 1.7769069446460232e-05,
             "raw_max_delta_index": [
               20,
               293
@@ -487,140 +558,69 @@
             "raw_max_delta_opd_um": -0.4200000000000017,
             "peakline_x_um": 0.0,
             "centroid_opd_um": -0.4327344830872329,
-            "raw_peak_intensity": 0.00014247170636687295
+            "raw_peak_intensity": 1.789153588271402e-05
           },
           "field_assembly_model_id": "directional_field_expansion_first_order",
           "basis_condition_number": 1144956.9785340584,
           "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
           "is_best_model": false,
           "injection_improvement_vs_native": {
-            "image_relative_l2_delta": 0.001933944985695879,
+            "image_relative_l2_delta": 0.0019339449856938806,
             "peakline_x_delta_um_delta": 0.0,
-            "centroid_opd_delta_um_delta": -0.005401726488108161,
-            "raw_peak_relative_delta_delta": 163.33095868684813
-          }
-        },
-        {
-          "coefficient_map_model_id": "shared_complex_scale_map",
-          "raw_rendered_relative_residual": 0.13320181223567137,
-          "orthonormalized_relative_residual": 11.103509688309122,
-          "shared_scale_relative_residual": 0.13320181223567137,
-          "shared_scale_component_residuals": {
-            "a0": 0.8365738742214482,
-            "a1": 0.9999992875212694,
-            "a2": 0.13320180004724802
-          },
-          "component_best_complex_scale": {
-            "a0": {
-              "name": "a0",
-              "relative_residual": 0.12600650570647545,
-              "scale_abs": 6.00102742775807,
-              "scale_phase_rad": 0.05594290874237669,
-              "mean_abs_ratio_recovered_over_asymptotic": 6.163278963091569
-            },
-            "a1": {
-              "name": "a1",
-              "relative_residual": 0.2516351147035725,
-              "scale_abs": 1305302.9875695885,
-              "scale_phase_rad": -0.11949167601545713,
-              "mean_abs_ratio_recovered_over_asymptotic": 1328762.2861659846
-            },
-            "a2": {
-              "name": "a2",
-              "relative_residual": 0.13320180004724802,
-              "scale_abs": 0.999999999356322,
-              "scale_phase_rad": -4.326815309373118e-11,
-              "mean_abs_ratio_recovered_over_asymptotic": 1.0295793285366477
-            }
-          },
-          "injected_vs_bridge": {
-            "label": "coefficient_map_audit::shared_complex_scale_map_vs_bridge",
-            "fwhm_delta_um": 0.023271860500651442,
-            "psr_delta_db": 0.41443168219782933,
-            "peakline_x_delta_um": 2.0,
-            "centroid_opd_delta_um": 0.10200084829675937,
-            "image_relative_l2": 0.587814030451863,
-            "max_abs_delta": 0.5407481822520974,
-            "max_delta_index": [
-              20,
-              290
-            ],
-            "max_delta_x_um": 0.0,
-            "max_delta_opd_um": -0.6000000000000014,
-            "raw_image_relative_l2": 96.53371275573313,
-            "raw_peak_relative_delta": 66.27220433314254,
-            "raw_max_abs_delta": 1.776906944646024e-05,
-            "raw_max_delta_index": [
-              20,
-              293
-            ],
-            "raw_max_delta_x_um": 0.0,
-            "raw_max_delta_opd_um": -0.4200000000000017,
-            "peakline_x_um": 0.0,
-            "centroid_opd_um": -0.4327344830872334,
-            "raw_peak_intensity": 1.7891535882714026e-05
-          },
-          "field_assembly_model_id": "directional_field_expansion_first_order",
-          "basis_condition_number": 1144956.9785340584,
-          "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
-          "is_best_model": false,
-          "injection_improvement_vs_native": {
-            "image_relative_l2_delta": 0.001933944985695324,
-            "peakline_x_delta_um_delta": 0.0,
-            "centroid_opd_delta_um_delta": -0.00540172648810866,
-            "raw_peak_relative_delta_delta": 631.752604520239
+            "centroid_opd_delta_um_delta": -0.0054017264881080496,
+            "raw_peak_relative_delta_delta": 631.7526045202395
           }
         },
         {
           "coefficient_map_model_id": "componentwise_complex_scale_map",
-          "raw_rendered_relative_residual": 0.13320180002967738,
-          "orthonormalized_relative_residual": 0.1667645855906393,
-          "shared_scale_relative_residual": 0.13320180002967738,
+          "raw_rendered_relative_residual": 0.13320180002967744,
+          "orthonormalized_relative_residual": 0.16676458559063906,
+          "shared_scale_relative_residual": 0.13320180002967744,
           "shared_scale_component_residuals": {
-            "a0": 0.12600650570647545,
-            "a1": 0.2516351147035725,
-            "a2": 0.13320180004724802
+            "a0": 0.12600650570647548,
+            "a1": 0.25163511470359284,
+            "a2": 0.13320180004724805
           },
           "component_best_complex_scale": {
             "a0": {
               "name": "a0",
               "relative_residual": 0.12600650570647545,
-              "scale_abs": 1.0000000000000009,
-              "scale_phase_rad": 2.2701130704094476e-16,
+              "scale_abs": 1.0000000000000002,
+              "scale_phase_rad": 3.6321809126551173e-16,
               "mean_abs_ratio_recovered_over_asymptotic": 1.0270372927447382
             },
             "a1": {
               "name": "a1",
-              "relative_residual": 0.25163511470357247,
-              "scale_abs": 1.0000000000000004,
-              "scale_phase_rad": -7.944649485240916e-17,
-              "mean_abs_ratio_recovered_over_asymptotic": 1.0179723013122608
+              "relative_residual": 0.25163511470359284,
+              "scale_abs": 1.0000000000000009,
+              "scale_phase_rad": 7.944649485222985e-17,
+              "mean_abs_ratio_recovered_over_asymptotic": 1.0179723013121542
             },
             "a2": {
               "name": "a2",
               "relative_residual": 0.13320180004724802,
-              "scale_abs": 1.0000000000000002,
-              "scale_phase_rad": -5.659703872697917e-16,
-              "mean_abs_ratio_recovered_over_asymptotic": 1.0295793291993653
+              "scale_abs": 1.0,
+              "scale_phase_rad": -6.225674259967713e-16,
+              "mean_abs_ratio_recovered_over_asymptotic": 1.0295793291993656
             }
           },
           "injected_vs_bridge": {
             "label": "coefficient_map_audit::componentwise_complex_scale_map_vs_bridge",
-            "fwhm_delta_um": 0.02365659027839584,
-            "psr_delta_db": 0.09085414314538554,
+            "fwhm_delta_um": 0.02365659027839051,
+            "psr_delta_db": 0.0908541431453962,
             "peakline_x_delta_um": 0.0,
-            "centroid_opd_delta_um": 0.1936076843439396,
-            "image_relative_l2": 0.06566055421625297,
-            "max_abs_delta": 0.049156971866971766,
+            "centroid_opd_delta_um": 0.1936076843439392,
+            "image_relative_l2": 0.0656605542162526,
+            "max_abs_delta": 0.04915697186697421,
             "max_delta_index": [
               0,
               253
             ],
             "max_delta_x_um": -2.0,
             "max_delta_opd_um": -2.8200000000000003,
-            "raw_image_relative_l2": 0.06368779380737341,
-            "raw_peak_relative_delta": 0.003991816268321195,
-            "raw_max_abs_delta": 1.3675613165813021e-08,
+            "raw_image_relative_l2": 0.06368779380737544,
+            "raw_peak_relative_delta": 0.003991816268316219,
+            "raw_max_abs_delta": 1.36756131658131e-08,
             "raw_max_delta_index": [
               0,
               254
@@ -628,70 +628,70 @@
             "raw_max_delta_x_um": -2.0,
             "raw_max_delta_opd_um": -2.76,
             "peakline_x_um": 2.0,
-            "centroid_opd_um": -0.13712595044653442,
-            "raw_peak_intensity": 2.648956777224682e-07
+            "centroid_opd_um": -0.13712595044653508,
+            "raw_peak_intensity": 2.6489567772246954e-07
           },
           "field_assembly_model_id": "directional_field_expansion_first_order",
           "basis_condition_number": 1144956.9785340584,
           "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
           "is_best_model": false,
           "injection_improvement_vs_native": {
-            "image_relative_l2_delta": 0.5240874212213054,
+            "image_relative_l2_delta": 0.5240874212213046,
             "peakline_x_delta_um_delta": 2.0,
-            "centroid_opd_delta_um_delta": -0.09700856253528889,
-            "raw_peak_relative_delta_delta": 698.0208170371131
+            "centroid_opd_delta_um_delta": -0.09700856253528867,
+            "raw_peak_relative_delta_delta": 698.0208170371137
           }
         },
         {
           "coefficient_map_model_id": "low_order_coupled_odd_even_map",
-          "raw_rendered_relative_residual": 0.033119075447145624,
-          "orthonormalized_relative_residual": 0.008566312905044102,
-          "shared_scale_relative_residual": 0.033119075447145624,
+          "raw_rendered_relative_residual": 0.033119075447145645,
+          "orthonormalized_relative_residual": 0.008566312905044225,
+          "shared_scale_relative_residual": 0.03311907544714564,
           "shared_scale_component_residuals": {
-            "a0": 0.0316177979632725,
-            "a1": 0.2516351147035725,
-            "a2": 0.033119075372248924
+            "a0": 0.03161779796327252,
+            "a1": 0.25163511470359284,
+            "a2": 0.03311907537224893
           },
           "component_best_complex_scale": {
             "a0": {
               "name": "a0",
-              "relative_residual": 0.031617797963272506,
-              "scale_abs": 0.999999999999999,
-              "scale_phase_rad": 1.2970566877356513e-15,
-              "mean_abs_ratio_recovered_over_asymptotic": 1.0033571605655058
+              "relative_residual": 0.03161779796327253,
+              "scale_abs": 0.9999999999999994,
+              "scale_phase_rad": 2.057400263304828e-15,
+              "mean_abs_ratio_recovered_over_asymptotic": 1.0033571605655065
             },
             "a1": {
               "name": "a1",
-              "relative_residual": 0.25163511470357247,
-              "scale_abs": 0.9999999999999999,
-              "scale_phase_rad": 7.94464948524091e-17,
-              "mean_abs_ratio_recovered_over_asymptotic": 1.0179723013122597
+              "relative_residual": 0.25163511470359284,
+              "scale_abs": 1.0000000000000004,
+              "scale_phase_rad": -7.944649485222978e-17,
+              "mean_abs_ratio_recovered_over_asymptotic": 1.0179723013121533
             },
             "a2": {
               "name": "a2",
-              "relative_residual": 0.03311907537224893,
-              "scale_abs": 0.999999999999999,
-              "scale_phase_rad": 1.224385769410345e-15,
-              "mean_abs_ratio_recovered_over_asymptotic": 1.003432603669895
+              "relative_residual": 0.033119075372248945,
+              "scale_abs": 1.0,
+              "scale_phase_rad": 4.007080699888406e-15,
+              "mean_abs_ratio_recovered_over_asymptotic": 1.003432603669896
             }
           },
           "injected_vs_bridge": {
             "label": "coefficient_map_audit::low_order_coupled_odd_even_map_vs_bridge",
-            "fwhm_delta_um": 0.0007433975700159579,
-            "psr_delta_db": 0.00838853100046677,
+            "fwhm_delta_um": 0.0007433975700124051,
+            "psr_delta_db": 0.008388531000541377,
             "peakline_x_delta_um": 0.0,
-            "centroid_opd_delta_um": 0.00027504394077787486,
-            "image_relative_l2": 0.005134129219486319,
-            "max_abs_delta": 0.004846847106838248,
+            "centroid_opd_delta_um": 0.0002750439407770422,
+            "image_relative_l2": 0.005134129219499508,
+            "max_abs_delta": 0.004846847106848906,
             "max_delta_index": [
               20,
               295
             ],
             "max_delta_x_um": 0.0,
             "max_delta_opd_um": -0.3000000000000007,
-            "raw_image_relative_l2": 0.007579023884388066,
-            "raw_peak_relative_delta": 0.010462743995121418,
-            "raw_max_abs_delta": 2.783602978546531e-09,
+            "raw_image_relative_l2": 0.007579023884371139,
+            "raw_peak_relative_delta": 0.01046274399511047,
+            "raw_max_abs_delta": 2.7836029785436193e-09,
             "raw_max_delta_index": [
               40,
               295
@@ -699,89 +699,89 @@
             "raw_max_delta_x_um": 2.0,
             "raw_max_delta_opd_um": -0.3000000000000007,
             "peakline_x_um": 2.0,
-            "centroid_opd_um": -0.33045859084969614,
-            "raw_peak_intensity": 2.687399739839901e-07
+            "centroid_opd_um": -0.33045859084969725,
+            "raw_peak_intensity": 2.687399739839872e-07
           },
           "field_assembly_model_id": "directional_field_expansion_first_order",
           "basis_condition_number": 1144956.9785340584,
           "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
           "is_best_model": false,
           "injection_improvement_vs_native": {
-            "image_relative_l2_delta": 0.584613846218072,
+            "image_relative_l2_delta": 0.5846138462180577,
             "peakline_x_delta_um_delta": 2.0,
-            "centroid_opd_delta_um_delta": 0.09632407786787284,
-            "raw_peak_relative_delta_delta": 698.0143461093863
+            "centroid_opd_delta_um_delta": 0.0963240778678735,
+            "raw_peak_relative_delta_delta": 698.0143461093869
           }
         },
         {
           "coefficient_map_model_id": "fitted_linear_map_3x3",
-          "raw_rendered_relative_residual": 0.011136075576081074,
-          "orthonormalized_relative_residual": 0.002848327492353383,
-          "shared_scale_relative_residual": 0.011136075206377502,
+          "raw_rendered_relative_residual": 0.011136076318744045,
+          "orthonormalized_relative_residual": 0.0028480836919555293,
+          "shared_scale_relative_residual": 0.01113607521923772,
           "shared_scale_component_residuals": {
-            "a0": 0.010628297009102653,
-            "a1": 0.007805315829604084,
-            "a2": 0.011136075208923764
+            "a0": 0.010628296772544682,
+            "a1": 0.007805316765757937,
+            "a2": 0.011136075221783984
           },
           "component_best_complex_scale": {
             "a0": {
               "name": "a0",
-              "relative_residual": 0.01062829648153759,
-              "scale_abs": 0.9999949291802064,
-              "scale_phase_rad": -1.054867036061923e-07,
-              "mean_abs_ratio_recovered_over_asymptotic": 0.9998338055696375
+              "relative_residual": 0.010628296471917549,
+              "scale_abs": 0.9999984984987771,
+              "scale_phase_rad": -2.181183775719013e-06,
+              "mean_abs_ratio_recovered_over_asymptotic": 0.9998373307842591
             },
             "a1": {
               "name": "a1",
-              "relative_residual": 0.007805315606074828,
-              "scale_abs": 0.9999964830240717,
-              "scale_phase_rad": -5.080727493443566e-07,
-              "mean_abs_ratio_recovered_over_asymptotic": 0.9999033596154306
+              "relative_residual": 0.007805315602404833,
+              "scale_abs": 0.9999995508942956,
+              "scale_phase_rad": -5.417501300709263e-07,
+              "mean_abs_ratio_recovered_over_asymptotic": 0.99990639394512
             },
             "a2": {
               "name": "a2",
-              "relative_residual": 0.011136075208923762,
-              "scale_abs": 0.9999977955836267,
-              "scale_phase_rad": -1.8372899863715043e-06,
-              "mean_abs_ratio_recovered_over_asymptotic": 0.9998187895772866
+              "relative_residual": 0.011136075221783986,
+              "scale_abs": 0.9999961442420745,
+              "scale_phase_rad": -3.102319751166714e-06,
+              "mean_abs_ratio_recovered_over_asymptotic": 0.999817156934406
             }
           },
           "injected_vs_bridge": {
             "label": "coefficient_map_audit::fitted_linear_map_3x3_vs_bridge",
-            "fwhm_delta_um": 0.0036557074861196526,
-            "psr_delta_db": 0.04168709940205062,
+            "fwhm_delta_um": 0.0036567126002697847,
+            "psr_delta_db": 0.041681643792571776,
             "peakline_x_delta_um": 0.0,
-            "centroid_opd_delta_um": 0.003584683908887887,
-            "image_relative_l2": 0.0031502485882607717,
-            "max_abs_delta": 0.002380192695641048,
+            "centroid_opd_delta_um": 0.0035824433757462026,
+            "image_relative_l2": 0.0031309255784201843,
+            "max_abs_delta": 0.0023658422439057913,
             "max_delta_index": [
               9,
               288
             ],
             "max_delta_x_um": -1.1,
             "max_delta_opd_um": -0.7199999999999989,
-            "raw_image_relative_l2": 0.0029685424141176267,
-            "raw_peak_relative_delta": 0.004821454866789531,
-            "raw_max_abs_delta": 1.3666766878734225e-09,
+            "raw_image_relative_l2": 0.003052951129992773,
+            "raw_peak_relative_delta": 0.004920399415581933,
+            "raw_max_abs_delta": 1.391265838856668e-09,
             "raw_max_delta_index": [
               40,
-              310
+              309
             ],
             "raw_max_delta_x_um": 2.0,
-            "raw_max_delta_opd_um": 0.5999999999999979,
+            "raw_max_delta_opd_um": 0.5399999999999991,
             "peakline_x_um": 2.0,
-            "centroid_opd_um": -0.3343183186993619,
-            "raw_peak_intensity": 2.646750292555223e-07
+            "centroid_opd_um": -0.3343160781662205,
+            "raw_peak_intensity": 2.6464871422745585e-07
           },
           "field_assembly_model_id": "directional_field_expansion_first_order",
           "basis_condition_number": 1144956.9785340584,
           "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
           "is_best_model": true,
           "injection_improvement_vs_native": {
-            "image_relative_l2_delta": 0.5865977268492976,
+            "image_relative_l2_delta": 0.586617049859137,
             "peakline_x_delta_um_delta": 2.0,
-            "centroid_opd_delta_um_delta": 0.09301443789976283,
-            "raw_peak_relative_delta_delta": 698.0199873985147
+            "centroid_opd_delta_um_delta": 0.09301667843290434,
+            "raw_peak_relative_delta_delta": 698.0198884539665
           }
         }
       ]
@@ -790,12 +790,12 @@
       "case_name": "failure_domain_high_tilt_high_contrast",
       "native_asymptotic_vs_bridge": {
         "label": "low_na_asymptotic_vs_bridge",
-        "fwhm_delta_um": 0.03291642497046432,
-        "psr_delta_db": 0.015494191296628657,
+        "fwhm_delta_um": 0.03291642497045899,
+        "psr_delta_db": 0.015494191296589577,
         "peakline_x_delta_um": 3.0,
-        "centroid_opd_delta_um": 0.07613849060643219,
-        "image_relative_l2": 1.1672801741602539,
-        "max_abs_delta": 0.8957779282027839,
+        "centroid_opd_delta_um": 0.07613849060643263,
+        "image_relative_l2": 1.167280174160255,
+        "max_abs_delta": 0.8957779282027838,
         "max_delta_index": [
           0,
           269
@@ -803,8 +803,8 @@
         "max_delta_x_um": -3.0,
         "max_delta_opd_um": -2.0666666666666664,
         "raw_image_relative_l2": 44.37858465733068,
-        "raw_peak_relative_delta": 31.586100329665037,
-        "raw_max_abs_delta": 6.382643845903441e-05,
+        "raw_peak_relative_delta": 31.586100329665,
+        "raw_max_abs_delta": 6.382643845903439e-05,
         "raw_max_delta_index": [
           30,
           268
@@ -812,21 +812,92 @@
         "raw_max_delta_x_um": 0.0,
         "raw_max_delta_opd_um": -2.133333333333333,
         "peakline_x_um": 0.0,
-        "centroid_opd_um": -2.2785798617228616,
-        "raw_peak_intensity": 6.416116509567938e-05
+        "centroid_opd_um": -2.278579861722862,
+        "raw_peak_intensity": 6.416116509567935e-05
       },
       "best_model_id": "fitted_linear_map_3x3",
       "best_model_selection_metric": {
         "peakline_x_delta_um": 0.0,
-        "image_relative_l2": 0.022053161128826233,
-        "raw_rendered_relative_residual": 0.028938222630142924
+        "image_relative_l2": 0.022051789697714434,
+        "raw_rendered_relative_residual": 0.02893822263296195
       },
       "map_models": [
         {
           "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
           "raw_rendered_relative_residual": 1.5182534834174914,
           "orthonormalized_relative_residual": 6.408369659543241,
-          "shared_scale_relative_residual": 0.14446375710360562,
+          "shared_scale_relative_residual": 0.1444637571036056,
+          "shared_scale_component_residuals": {
+            "a0": 0.8132489707113904,
+            "a1": 0.9999996067065435,
+            "a2": 0.14446355809584627
+          },
+          "component_best_complex_scale": {
+            "a0": {
+              "name": "a0",
+              "relative_residual": 0.07248680136844628,
+              "scale_abs": 2.099600371891718,
+              "scale_phase_rad": 0.07508109835393306,
+              "mean_abs_ratio_recovered_over_asymptotic": 2.066962250816066
+            },
+            "a1": {
+              "name": "a1",
+              "relative_residual": 0.741017753941116,
+              "scale_abs": 146612.93970262204,
+              "scale_phase_rad": 1.2450048994239553,
+              "mean_abs_ratio_recovered_over_asymptotic": 206837.82766066477
+            },
+            "a2": {
+              "name": "a2",
+              "relative_residual": 0.14446355809584563,
+              "scale_abs": 0.3956669863570519,
+              "scale_phase_rad": 0.0033304814613464954,
+              "mean_abs_ratio_recovered_over_asymptotic": 0.3905963032165916
+            }
+          },
+          "injected_vs_bridge": {
+            "label": "coefficient_map_audit::identity_slice_projected_rendered_basis_vs_bridge",
+            "fwhm_delta_um": 0.039216892654358126,
+            "psr_delta_db": 0.5304867546389929,
+            "peakline_x_delta_um": 3.0,
+            "centroid_opd_delta_um": 0.10295424730913627,
+            "image_relative_l2": 1.1794397726623345,
+            "max_abs_delta": 0.9325043560048245,
+            "max_delta_index": [
+              0,
+              269
+            ],
+            "max_delta_x_um": -3.0,
+            "max_delta_opd_um": -2.0666666666666664,
+            "raw_image_relative_l2": 30.518973791664646,
+            "raw_peak_relative_delta": 22.068988013518243,
+            "raw_max_abs_delta": 4.508749736535204e-05,
+            "raw_max_delta_index": [
+              30,
+              268
+            ],
+            "raw_max_delta_x_um": 0.0,
+            "raw_max_delta_opd_um": -2.133333333333333,
+            "peakline_x_um": 0.0,
+            "centroid_opd_um": -2.3053956184255657,
+            "raw_peak_intensity": 4.5422224001997005e-05
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "basis_condition_number": 30181.497814001184,
+          "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
+          "is_best_model": false,
+          "injection_improvement_vs_native": {
+            "image_relative_l2_delta": -0.012159598502079483,
+            "peakline_x_delta_um_delta": 0.0,
+            "centroid_opd_delta_um_delta": -0.02681575670270364,
+            "raw_peak_relative_delta_delta": 9.517112316146758
+          }
+        },
+        {
+          "coefficient_map_model_id": "shared_complex_scale_map",
+          "raw_rendered_relative_residual": 0.1444637571036056,
+          "orthonormalized_relative_residual": 3.0399336752983603,
+          "shared_scale_relative_residual": 0.1444637571036056,
           "shared_scale_component_residuals": {
             "a0": 0.8132489707113904,
             "a1": 0.9999996067065435,
@@ -836,87 +907,16 @@
             "a0": {
               "name": "a0",
               "relative_residual": 0.07248680136844629,
-              "scale_abs": 2.099600371891718,
-              "scale_phase_rad": 0.07508109835393308,
-              "mean_abs_ratio_recovered_over_asymptotic": 2.066962250816066
-            },
-            "a1": {
-              "name": "a1",
-              "relative_residual": 0.7410177539411872,
-              "scale_abs": 146612.93970258738,
-              "scale_phase_rad": 1.2450048994239866,
-              "mean_abs_ratio_recovered_over_asymptotic": 206837.82766063878
-            },
-            "a2": {
-              "name": "a2",
-              "relative_residual": 0.14446355809584563,
-              "scale_abs": 0.3956669863570519,
-              "scale_phase_rad": 0.00333048146134644,
-              "mean_abs_ratio_recovered_over_asymptotic": 0.3905963032165916
-            }
-          },
-          "injected_vs_bridge": {
-            "label": "coefficient_map_audit::identity_slice_projected_rendered_basis_vs_bridge",
-            "fwhm_delta_um": 0.03921689265436257,
-            "psr_delta_db": 0.5304867546389644,
-            "peakline_x_delta_um": 3.0,
-            "centroid_opd_delta_um": 0.10295424730913583,
-            "image_relative_l2": 1.1794397726623325,
-            "max_abs_delta": 0.9325043560048246,
-            "max_delta_index": [
-              0,
-              269
-            ],
-            "max_delta_x_um": -3.0,
-            "max_delta_opd_um": -2.0666666666666664,
-            "raw_image_relative_l2": 30.518973791664646,
-            "raw_peak_relative_delta": 22.06898801351829,
-            "raw_max_abs_delta": 4.50874973653521e-05,
-            "raw_max_delta_index": [
-              30,
-              268
-            ],
-            "raw_max_delta_x_um": 0.0,
-            "raw_max_delta_opd_um": -2.133333333333333,
-            "peakline_x_um": 0.0,
-            "centroid_opd_um": -2.3053956184255653,
-            "raw_peak_intensity": 4.5422224001997066e-05
-          },
-          "field_assembly_model_id": "directional_field_expansion_first_order",
-          "basis_condition_number": 30181.497814001184,
-          "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
-          "is_best_model": false,
-          "injection_improvement_vs_native": {
-            "image_relative_l2_delta": -0.012159598502078595,
-            "peakline_x_delta_um_delta": 0.0,
-            "centroid_opd_delta_um_delta": -0.02681575670270364,
-            "raw_peak_relative_delta_delta": 9.517112316146747
-          }
-        },
-        {
-          "coefficient_map_model_id": "shared_complex_scale_map",
-          "raw_rendered_relative_residual": 0.14446375710360562,
-          "orthonormalized_relative_residual": 3.0399336752983595,
-          "shared_scale_relative_residual": 0.14446375710360562,
-          "shared_scale_component_residuals": {
-            "a0": 0.8132489707113904,
-            "a1": 0.9999996067065435,
-            "a2": 0.14446355809584627
-          },
-          "component_best_complex_scale": {
-            "a0": {
-              "name": "a0",
-              "relative_residual": 0.0724868013684463,
-              "scale_abs": 5.3064835211615895,
+              "scale_abs": 5.306483521161588,
               "scale_phase_rad": 0.07175061567195871,
               "mean_abs_ratio_recovered_over_asymptotic": 5.223994656152683
             },
             "a1": {
               "name": "a1",
-              "relative_residual": 0.7410177539411872,
-              "scale_abs": 370546.2996369483,
-              "scale_phase_rad": 1.2416744167420124,
-              "mean_abs_ratio_recovered_over_asymptotic": 522757.3488402133
+              "relative_residual": 0.741017753941116,
+              "scale_abs": 370546.29963703605,
+              "scale_phase_rad": 1.241674416741981,
+              "mean_abs_ratio_recovered_over_asymptotic": 522757.348840279
             },
             "a2": {
               "name": "a2",
@@ -928,11 +928,11 @@
           },
           "injected_vs_bridge": {
             "label": "coefficient_map_audit::shared_complex_scale_map_vs_bridge",
-            "fwhm_delta_um": 0.039216892654363456,
-            "psr_delta_db": 0.5304867546389715,
+            "fwhm_delta_um": 0.03921689265436079,
+            "psr_delta_db": 0.530486754639,
             "peakline_x_delta_um": 3.0,
             "centroid_opd_delta_um": 0.10295424730913627,
-            "image_relative_l2": 1.1794397726623331,
+            "image_relative_l2": 1.1794397726623336,
             "max_abs_delta": 0.9325043560048246,
             "max_delta_index": [
               0,
@@ -940,8 +940,8 @@
             ],
             "max_delta_x_um": -3.0,
             "max_delta_opd_um": -2.0666666666666664,
-            "raw_image_relative_l2": 4.413778651677609,
-            "raw_peak_relative_delta": 2.6115047102377145,
+            "raw_image_relative_l2": 4.4137786516776085,
+            "raw_peak_relative_delta": 2.611504710237712,
             "raw_max_abs_delta": 6.776230109119388e-06,
             "raw_max_delta_index": [
               30,
@@ -958,62 +958,62 @@
           "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
           "is_best_model": false,
           "injection_improvement_vs_native": {
-            "image_relative_l2_delta": -0.01215959850207926,
+            "image_relative_l2_delta": -0.012159598502078595,
             "peakline_x_delta_um_delta": 0.0,
-            "centroid_opd_delta_um_delta": -0.026815756702704086,
-            "raw_peak_relative_delta_delta": 28.974595619427323
+            "centroid_opd_delta_um_delta": -0.02681575670270364,
+            "raw_peak_relative_delta_delta": 28.97459561942729
           }
         },
         {
           "coefficient_map_model_id": "componentwise_complex_scale_map",
           "raw_rendered_relative_residual": 0.14446355429111943,
-          "orthonormalized_relative_residual": 0.19267302497984332,
-          "shared_scale_relative_residual": 0.14446355429111948,
+          "orthonormalized_relative_residual": 0.19267302497984337,
+          "shared_scale_relative_residual": 0.14446355429111946,
           "shared_scale_component_residuals": {
-            "a0": 0.07248680136844632,
-            "a1": 0.7410177539411872,
+            "a0": 0.0724868013684463,
+            "a1": 0.741017753941116,
             "a2": 0.14446355809584563
           },
           "component_best_complex_scale": {
             "a0": {
               "name": "a0",
               "relative_residual": 0.0724868013684463,
-              "scale_abs": 1.000000000000001,
-              "scale_phase_rad": -4.6010858031363555e-17,
+              "scale_abs": 1.0000000000000007,
+              "scale_phase_rad": -3.067390535424238e-17,
               "mean_abs_ratio_recovered_over_asymptotic": 0.9844550793986353
             },
             "a1": {
               "name": "a1",
-              "relative_residual": 0.7410177539411872,
-              "scale_abs": 0.9999999999999988,
-              "scale_phase_rad": -7.722777150547702e-16,
-              "mean_abs_ratio_recovered_over_asymptotic": 1.410774711155925
+              "relative_residual": 0.741017753941116,
+              "scale_abs": 0.9999999999999993,
+              "scale_phase_rad": -4.290431750302248e-17,
+              "mean_abs_ratio_recovered_over_asymptotic": 1.410774711155769
             },
             "a2": {
               "name": "a2",
-              "relative_residual": 0.14446355809584566,
+              "relative_residual": 0.14446355809584563,
               "scale_abs": 0.999999999999999,
-              "scale_phase_rad": 1.511156005575549e-16,
+              "scale_phase_rad": 4.649710786386305e-17,
               "mean_abs_ratio_recovered_over_asymptotic": 0.9871844674554564
             }
           },
           "injected_vs_bridge": {
             "label": "coefficient_map_audit::componentwise_complex_scale_map_vs_bridge",
-            "fwhm_delta_um": 0.05043455354453652,
-            "psr_delta_db": 0.40750816786000144,
+            "fwhm_delta_um": 0.05043455354454007,
+            "psr_delta_db": 0.4075081678599588,
             "peakline_x_delta_um": 6.0,
             "centroid_opd_delta_um": 0.10585754805939462,
-            "image_relative_l2": 0.08497989295254431,
-            "max_abs_delta": 0.04628627645927852,
+            "image_relative_l2": 0.08497989295254542,
+            "max_abs_delta": 0.046286276459278686,
             "max_delta_index": [
               52,
               296
             ],
             "max_delta_x_um": 2.2,
             "max_delta_opd_um": -0.2666666666666657,
-            "raw_image_relative_l2": 0.17361991073210647,
-            "raw_peak_relative_delta": 0.09847156270091978,
-            "raw_max_abs_delta": 2.141430470619761e-07,
+            "raw_image_relative_l2": 0.1736199107321064,
+            "raw_peak_relative_delta": 0.098471562700918,
+            "raw_max_abs_delta": 2.1414304706198394e-07,
             "raw_max_delta_index": [
               58,
               283
@@ -1022,7 +1022,7 @@
             "raw_max_delta_opd_um": -1.1333333333333329,
             "peakline_x_um": 3.0,
             "centroid_opd_um": -2.096583823057035,
-            "raw_peak_intensity": 2.162861298969281e-06
+            "raw_peak_intensity": 2.162861298969279e-06
           },
           "field_assembly_model_id": "directional_field_expansion_first_order",
           "basis_condition_number": 30181.497814001184,
@@ -1031,60 +1031,60 @@
           "injection_improvement_vs_native": {
             "image_relative_l2_delta": 1.0823002812077096,
             "peakline_x_delta_um_delta": -3.0,
-            "centroid_opd_delta_um_delta": -0.02971905745296244,
-            "raw_peak_relative_delta_delta": 31.487628766964118
+            "centroid_opd_delta_um_delta": -0.029719057452961994,
+            "raw_peak_relative_delta_delta": 31.487628766964082
           }
         },
         {
           "coefficient_map_model_id": "low_order_coupled_odd_even_map",
-          "raw_rendered_relative_residual": 0.049288714630340756,
-          "orthonormalized_relative_residual": 0.02890628141118476,
-          "shared_scale_relative_residual": 0.04928871463034076,
+          "raw_rendered_relative_residual": 0.04928871463034077,
+          "orthonormalized_relative_residual": 0.02890628141118475,
+          "shared_scale_relative_residual": 0.049288714630340756,
           "shared_scale_component_residuals": {
-            "a0": 0.043185879790621134,
-            "a1": 0.7410177539411872,
-            "a2": 0.04928871210079604
+            "a0": 0.04318587979062114,
+            "a1": 0.741017753941116,
+            "a2": 0.049288712100796044
           },
           "component_best_complex_scale": {
             "a0": {
               "name": "a0",
-              "relative_residual": 0.04318587979062113,
-              "scale_abs": 0.9999999999999998,
-              "scale_phase_rad": 3.0569747534716455e-17,
-              "mean_abs_ratio_recovered_over_asymptotic": 0.9921075120242422
+              "relative_residual": 0.04318587979062114,
+              "scale_abs": 0.9999999999999996,
+              "scale_phase_rad": 7.642436883679115e-17,
+              "mean_abs_ratio_recovered_over_asymptotic": 0.9921075120242424
             },
             "a1": {
               "name": "a1",
-              "relative_residual": 0.7410177539411874,
-              "scale_abs": 1.0000000000000002,
-              "scale_phase_rad": 2.145215875152143e-16,
-              "mean_abs_ratio_recovered_over_asymptotic": 1.4107747111559272
+              "relative_residual": 0.741017753941116,
+              "scale_abs": 0.9999999999999997,
+              "scale_phase_rad": 8.5808635006045e-17,
+              "mean_abs_ratio_recovered_over_asymptotic": 1.4107747111557698
             },
             "a2": {
               "name": "a2",
-              "relative_residual": 0.04928871210079603,
-              "scale_abs": 0.9999999999999991,
-              "scale_phase_rad": 3.422819789631399e-17,
-              "mean_abs_ratio_recovered_over_asymptotic": 0.9917244147243026
+              "relative_residual": 0.04928871210079606,
+              "scale_abs": 0.9999999999999986,
+              "scale_phase_rad": 1.711409894815698e-16,
+              "mean_abs_ratio_recovered_over_asymptotic": 0.9917244147243018
             }
           },
           "injected_vs_bridge": {
             "label": "coefficient_map_audit::low_order_coupled_odd_even_map_vs_bridge",
-            "fwhm_delta_um": 0.046773418863562455,
-            "psr_delta_db": 0.28282188493965066,
+            "fwhm_delta_um": 0.04677341886356157,
+            "psr_delta_db": 0.28282188493963645,
             "peakline_x_delta_um": 6.0,
-            "centroid_opd_delta_um": 0.08374694933266325,
-            "image_relative_l2": 0.027210052346797426,
-            "max_abs_delta": 0.027004682499160826,
+            "centroid_opd_delta_um": 0.08374694933266369,
+            "image_relative_l2": 0.02721005234679803,
+            "max_abs_delta": 0.027004682499161214,
             "max_delta_index": [
               60,
               310
             ],
             "max_delta_x_um": 3.0,
             "max_delta_opd_um": 0.6666666666666679,
-            "raw_image_relative_l2": 0.07988729191994698,
-            "raw_peak_relative_delta": 0.07357113959584885,
-            "raw_max_abs_delta": 1.598298789612709e-07,
+            "raw_image_relative_l2": 0.07988729191994559,
+            "raw_peak_relative_delta": 0.07357113959584816,
+            "raw_max_abs_delta": 1.5982987896126455e-07,
             "raw_max_delta_index": [
               60,
               285
@@ -1092,7 +1092,7 @@
             "raw_max_delta_x_um": 3.0,
             "raw_max_delta_opd_um": -1.0,
             "peakline_x_um": 3.0,
-            "centroid_opd_um": -2.118694421783766,
+            "centroid_opd_um": -2.1186944217837658,
             "raw_peak_intensity": 2.113833027969259e-06
           },
           "field_assembly_model_id": "directional_field_expansion_first_order",
@@ -1100,62 +1100,62 @@
           "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
           "is_best_model": false,
           "injection_improvement_vs_native": {
-            "image_relative_l2_delta": 1.1400701218134563,
+            "image_relative_l2_delta": 1.140070121813457,
             "peakline_x_delta_um_delta": -3.0,
             "centroid_opd_delta_um_delta": -0.00760845872623106,
-            "raw_peak_relative_delta_delta": 31.512529190069188
+            "raw_peak_relative_delta_delta": 31.512529190069152
           }
         },
         {
           "coefficient_map_model_id": "fitted_linear_map_3x3",
-          "raw_rendered_relative_residual": 0.028938222630142924,
-          "orthonormalized_relative_residual": 0.01693643092437445,
-          "shared_scale_relative_residual": 0.028938222629806287,
+          "raw_rendered_relative_residual": 0.02893822263296195,
+          "orthonormalized_relative_residual": 0.01693643070205457,
+          "shared_scale_relative_residual": 0.028938222629734278,
           "shared_scale_component_residuals": {
-            "a0": 0.025345891865976862,
-            "a1": 0.011351943015072408,
-            "a2": 0.028938222936163306
+            "a0": 0.025345891855775095,
+            "a1": 0.011351943015757754,
+            "a2": 0.028938222936091294
           },
           "component_best_complex_scale": {
             "a0": {
               "name": "a0",
-              "relative_residual": 0.025345891854938726,
-              "scale_abs": 0.9999991203993148,
-              "scale_phase_rad": -1.1336723820796569e-07,
-              "mean_abs_ratio_recovered_over_asymptotic": 1.0019229518890218
+              "relative_residual": 0.025345891854864227,
+              "scale_abs": 0.9999993604210106,
+              "scale_phase_rad": -8.88179250244857e-08,
+              "mean_abs_ratio_recovered_over_asymptotic": 1.0019231992746234
             },
             "a1": {
               "name": "a1",
-              "relative_residual": 0.01135194301492658,
-              "scale_abs": 0.9999999184798678,
-              "scale_phase_rad": -1.3620561141658502e-08,
-              "mean_abs_ratio_recovered_over_asymptotic": 1.0006920221033762
+              "relative_residual": 0.011351943014633607,
+              "scale_abs": 0.9999997282220137,
+              "scale_phase_rad": -2.1768909474500798e-08,
+              "mean_abs_ratio_recovered_over_asymptotic": 1.0006918193882033
             },
             "a2": {
               "name": "a2",
-              "relative_residual": 0.028938222936163306,
-              "scale_abs": 0.9999998643533254,
-              "scale_phase_rad": -3.3157846088635263e-08,
-              "mean_abs_ratio_recovered_over_asymptotic": 1.0024561582790372
+              "relative_residual": 0.028938222936091294,
+              "scale_abs": 0.999999569283649,
+              "scale_phase_rad": -3.802764222863219e-08,
+              "mean_abs_ratio_recovered_over_asymptotic": 1.0024558478986425
             }
           },
           "injected_vs_bridge": {
             "label": "coefficient_map_audit::fitted_linear_map_3x3_vs_bridge",
-            "fwhm_delta_um": 0.014226737975795878,
-            "psr_delta_db": 0.273126240928093,
+            "fwhm_delta_um": 0.014226709237342483,
+            "psr_delta_db": 0.2731262593831687,
             "peakline_x_delta_um": 0.0,
-            "centroid_opd_delta_um": 0.011564455515368,
-            "image_relative_l2": 0.022053161128826233,
-            "max_abs_delta": 0.016146740854692143,
+            "centroid_opd_delta_um": 0.011564477624268488,
+            "image_relative_l2": 0.022051789697714434,
+            "max_abs_delta": 0.01614604734480618,
             "max_delta_index": [
               52,
               273
             ],
             "max_delta_x_um": 2.2,
             "max_delta_opd_um": -1.8000000000000007,
-            "raw_image_relative_l2": 0.031439915862314906,
-            "raw_peak_relative_delta": 0.04519353752507744,
-            "raw_max_abs_delta": 8.970151650787562e-08,
+            "raw_image_relative_l2": 0.031441667156749016,
+            "raw_peak_relative_delta": 0.045194890980090996,
+            "raw_max_abs_delta": 8.970416202128342e-08,
             "raw_max_delta_index": [
               0,
               265
@@ -1163,18 +1163,18 @@
             "raw_max_delta_x_um": -3.0,
             "raw_max_delta_opd_um": -2.333333333333332,
             "peakline_x_um": -3.0,
-            "centroid_opd_um": -2.1908769156010615,
-            "raw_peak_intensity": 1.8799885366309137e-06
+            "centroid_opd_um": -2.190876893492161,
+            "raw_peak_intensity": 1.8799858717139811e-06
           },
           "field_assembly_model_id": "directional_field_expansion_first_order",
           "basis_condition_number": 30181.497814001184,
           "coefficient_bundle_artifact_candidate": "round6p1_vector_pupil_overlap_bridge_native_identity_coefficient_bundle.npz",
           "is_best_model": true,
           "injection_improvement_vs_native": {
-            "image_relative_l2_delta": 1.1452270130314277,
+            "image_relative_l2_delta": 1.1452283844625406,
             "peakline_x_delta_um_delta": 3.0,
-            "centroid_opd_delta_um_delta": 0.06457403509106419,
-            "raw_peak_relative_delta_delta": 31.54090679213996
+            "centroid_opd_delta_um_delta": 0.06457401298216414,
+            "raw_peak_relative_delta_delta": 31.54090543868491
           }
         }
       ]

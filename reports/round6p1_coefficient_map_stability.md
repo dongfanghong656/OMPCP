@@ -42,11 +42,11 @@ Promoted shared-map shift target: `baseline_envelope_ratio`
 
 | case A | case B | normalized Frobenius distance |
 |---|---|---:|
-| sphere_low_na_low_contrast | mild_shape_medium_tilt | 6.08319 |
+| sphere_low_na_low_contrast | mild_shape_medium_tilt | 6.08318 |
 | sphere_low_na_low_contrast | failure_domain_high_tilt_high_contrast | 52.5849 |
 | sphere_low_na_low_contrast | mild_shape_higher_na_transition | 13.4186 |
 | sphere_low_na_low_contrast | high_contrast_lower_tilt_transition | 67.9036 |
-| mild_shape_medium_tilt | failure_domain_high_tilt_high_contrast | 9.80146 |
+| mild_shape_medium_tilt | failure_domain_high_tilt_high_contrast | 9.80147 |
 | mild_shape_medium_tilt | mild_shape_higher_na_transition | 1.31796 |
 | mild_shape_medium_tilt | high_contrast_lower_tilt_transition | 12.2743 |
 | failure_domain_high_tilt_high_contrast | mild_shape_higher_na_transition | 1.21287 |
@@ -73,7 +73,7 @@ Mean peakline delta `2.5`, mean image L2 `0.855074`, mean raw coeff residual `0.
 |---|---:|---:|---:|---:|---|---|
 | sphere_low_na_low_contrast | 0.122935 | 2 | 0.157214 | 8.16107 | no | yes |
 | mild_shape_medium_tilt | 0.587814 | 2 | 0.146684 | 11.739 | no | no |
-| failure_domain_high_tilt_high_contrast | 1.17944 | 3 | 0.172456 | 2.83465 | no | no |
+| failure_domain_high_tilt_high_contrast | 1.17944 | 3 | 0.172456 | 2.83465 | no | yes |
 | mild_shape_higher_na_transition | 1.25862 | 2.5 | 0.14296 | 6.67911 | no | yes |
 | high_contrast_lower_tilt_transition | 1.12656 | 3 | 0.178202 | 2.59757 | no | no |
 
@@ -103,12 +103,12 @@ Mean peakline delta `0`, mean image L2 `0.19553`, mean raw coeff residual `0.141
 
 ## fitted_linear_map_3x3
 
-Mean peakline delta `2.4`, mean image L2 `0.164842`, mean raw coeff residual `0.133679`.
+Mean peakline delta `2.4`, mean image L2 `0.164841`, mean raw coeff residual `0.133679`.
 
 | held-out case | image L2 | peakline delta | raw coeff residual | orth coeff residual | improves identity peakline | improves identity image L2 |
 |---|---:|---:|---:|---:|---|---|
-| sphere_low_na_low_contrast | 0.112864 | 0 | 0.164556 | 3.27873 | yes | yes |
-| mild_shape_medium_tilt | 0.272747 | 0 | 0.138434 | 0.532257 | yes | yes |
-| failure_domain_high_tilt_high_contrast | 0.0641798 | 6 | 0.113419 | 0.196044 | no | yes |
-| mild_shape_higher_na_transition | 0.115607 | 0 | 0.121783 | 0.388746 | yes | yes |
-| high_contrast_lower_tilt_transition | 0.258811 | 6 | 0.130202 | 0.287524 | no | yes |
+| sphere_low_na_low_contrast | 0.112863 | 0 | 0.164556 | 3.27866 | yes | yes |
+| mild_shape_medium_tilt | 0.27274 | 0 | 0.138434 | 0.532246 | yes | yes |
+| failure_domain_high_tilt_high_contrast | 0.0641794 | 6 | 0.11342 | 0.196044 | no | yes |
+| mild_shape_higher_na_transition | 0.115607 | 0 | 0.121783 | 0.388745 | yes | yes |
+| high_contrast_lower_tilt_transition | 0.258814 | 6 | 0.130202 | 0.287525 | no | yes |

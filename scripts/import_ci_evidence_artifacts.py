@@ -82,7 +82,7 @@ def iter_rebuild_files(rebuild_dir: Path, *, include_npz: bool = False) -> list[
     )
 
 
-def iter_support_files(artifact_dir: Path) -> list[Path]:
+def iter_support_files(artifact_dir: Path, *, include_particle_sweep_cases: bool = False) -> list[Path]:
     paths: list[Path] = []
     for name in sorted(SUPPORT_TOP_LEVEL_FILES):
         path = artifact_dir / name
@@ -90,13 +90,12 @@ def iter_support_files(artifact_dir: Path) -> list[Path]:
             paths.append(path)
     sweep_dir = artifact_dir / "particle_size_sweep_ci"
     if sweep_dir.is_dir():
-        paths.extend(
-            sorted(
-                path
-                for path in sweep_dir.rglob("*")
-                if path.is_file() and path.suffix.lower() in SUPPORTED_SUFFIXES
-            )
-        )
+        allowed_names = {"particle_size_sweep_summary.json", "particle_size_sweep_summary.md"}
+        for path in sorted(sweep_dir.rglob("*")):
+            if not path.is_file() or path.suffix.lower() not in SUPPORTED_SUFFIXES:
+                continue
+            if include_particle_sweep_cases or path.name in allowed_names:
+                paths.append(path)
     return paths
 
 
@@ -109,6 +108,7 @@ def build_import_plan(
     reports_dir: Path,
     *,
     include_npz: bool = False,
+    include_particle_sweep_cases: bool = False,
 ) -> dict:
     artifact_dir = artifact_dir.resolve()
     reports_dir = reports_dir.resolve()
@@ -128,7 +128,7 @@ def build_import_plan(
             }
         )
 
-    for source in iter_support_files(artifact_dir):
+    for source in iter_support_files(artifact_dir, include_particle_sweep_cases=include_particle_sweep_cases):
         rel = source.relative_to(artifact_dir).as_posix()
         planned_files.append(
             {
@@ -223,10 +223,16 @@ def import_ci_evidence_artifacts(
     dry_run: bool = False,
     overwrite: bool = True,
     include_npz: bool = False,
+    include_particle_sweep_cases: bool = False,
     source_run_id: str | None = None,
     source_head_sha: str | None = None,
 ) -> dict:
-    plan = build_import_plan(artifact_dir, reports_dir, include_npz=include_npz)
+    plan = build_import_plan(
+        artifact_dir,
+        reports_dir,
+        include_npz=include_npz,
+        include_particle_sweep_cases=include_particle_sweep_cases,
+    )
     imported_at_utc = datetime.now(timezone.utc).isoformat()
     reports_dir = Path(plan["reports_dir"])
     copied: list[dict] = []
@@ -286,6 +292,7 @@ def import_ci_evidence_artifacts(
         "source_run_id": effective_run_id,
         "source_head_sha": source_head_sha,
         "include_npz": include_npz,
+        "include_particle_sweep_cases": include_particle_sweep_cases,
         "overwrite": overwrite,
         "copied_file_count": len(copied),
         "copied_files": copied,
@@ -309,6 +316,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--source-run-id", default=None)
     parser.add_argument("--source-head-sha", default=None)
     parser.add_argument("--include-npz", action="store_true")
+    parser.add_argument(
+        "--include-particle-sweep-cases",
+        action="store_true",
+        help="Also import large per-case particle sweep solver outputs. By default only sweep summaries are imported.",
+    )
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--no-overwrite", action="store_true")
     return parser
@@ -323,6 +335,7 @@ def main(argv: list[str] | None = None) -> int:
             dry_run=args.dry_run,
             overwrite=not args.no_overwrite,
             include_npz=args.include_npz,
+            include_particle_sweep_cases=args.include_particle_sweep_cases,
             source_run_id=args.source_run_id,
             source_head_sha=args.source_head_sha,
         )

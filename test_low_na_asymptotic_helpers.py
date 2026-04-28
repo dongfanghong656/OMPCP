@@ -1151,6 +1151,10 @@ class LowNaAsymptoticHelperTests(unittest.TestCase):
                 json.dumps({"sweep_status": "complete"}) + "\n",
                 encoding="utf-8",
             )
+            (sweep_dir / "vector_pupil_overlap_bridge_d0200nm.json").write_text(
+                json.dumps({"large_raw_case_output": True}) + "\n",
+                encoding="utf-8",
+            )
             (rebuild_dir / "round6p1_validation_summary.json").write_text(
                 json.dumps(
                     {
@@ -1180,6 +1184,7 @@ class LowNaAsymptoticHelperTests(unittest.TestCase):
             self.assertTrue((reports_dir / "round6p1_ci_evidence_import_manifest.md").exists())
             self.assertTrue((reports_dir / "round6p1_measurement_protocol_bias.json").exists())
             self.assertTrue((reports_dir / "particle_size_sweep_ci" / "particle_size_sweep_summary.json").exists())
+            self.assertFalse((reports_dir / "particle_size_sweep_ci" / "vector_pupil_overlap_bridge_d0200nm.json").exists())
             summary = json.loads((reports_dir / "round6p1_validation_summary.json").read_text(encoding="utf-8"))
             self.assertEqual(summary["ci_evidence_import_status"], "imported_from_github_actions_artifact")
             self.assertEqual(summary["ci_evidence_source_run_id"], "789")
