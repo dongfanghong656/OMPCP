@@ -16,6 +16,8 @@ This note freezes the current known limits without mixing them with implementati
 - The sphere-only Mie branch is still a scalar fixed-basis pupil-field model, not a full vector Debye / calibrated OCT
   instrument model. It should be read as the exact homogeneous-sphere scattering route inside the current forward-
   diagnostic stack, not as final device-level PSF truth.
+- The sphere-only sweep runner now records the `sample_arm_spectral_cube` contract and FD-OCT measurement-scaffold
+  availability, but these are route-contract checks. They do not by themselves make the sweep paper-safe.
 - The old `low_na_separable_baseline` remains an axial spectral smoke path with a Gaussian lateral surrogate; it still
   must not be used as evidence that particle scattering does not affect the lateral PSF.
 

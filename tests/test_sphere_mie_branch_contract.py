@@ -84,6 +84,10 @@ class SphereBranchSolverTests(unittest.TestCase):
         self.assertEqual(result.get("scattering_branch"), "sphere_mie_full_na")
         self.assertEqual(result.get("lateral_response_model"), "sphere_mie_angle_resolved_pupil_field")
         self.assertTrue(result.get("particle_lateral_scattering_enters_profile"))
+        self.assertEqual(result.get("sample_arm_spectral_cube_shape"), [source.n_lambda, grid.n_x])
+        self.assertEqual(result.get("sample_arm_spectral_cube_axis_order"), "lambda_x")
+        self.assertEqual(result.get("sample_arm_spectral_cube_quantity_kind"), "complex_sample_arm_spectral_field")
+        self.assertTrue(result.get("fd_oct_measurement_scaffold_route_available"))
         self.assertTrue(np.all(np.isfinite(result["raw_intensity_xz"])))
         self.assertGreater(float(result["raw_peak_intensity"]), 0.0)
 

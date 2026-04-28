@@ -295,6 +295,11 @@ Solver summaries and sweep reports may expose:
 - `sphere_mie_metadata`
 - `sphere_mie_nmax_min`
 - `sphere_mie_nmax_max`
+- `sample_arm_spectral_cube_shape`
+- `sample_arm_spectral_cube_axis_order`
+- `sample_arm_spectral_cube_quantity_kind`
+- `sample_arm_spectral_cube_contract_status`
+- `fd_oct_measurement_scaffold_route_available`
 
 Expected exact-sphere full-NA values are:
 
@@ -304,17 +309,26 @@ Expected exact-sphere full-NA values are:
 - `scattering_branch = "sphere_mie_full_na"`
 - `lateral_response_model = "sphere_mie_angle_resolved_pupil_field"`
 - `particle_lateral_scattering_enters_profile = true`
+- `sample_arm_spectral_cube_axis_order = "lambda_x"`
+- `sample_arm_spectral_cube_quantity_kind = "complex_sample_arm_spectral_field"`
+- `sample_arm_spectral_cube_contract_status = "valid_lambda_x_complex_field"`
+- `fd_oct_measurement_scaffold_route_available = true`
 
 The standalone sphere sweep runner writes `sphere_mie_full_na_sweep_summary.json` with:
 
 - `schema_version = "sphere_mie_sweep_v1"`
 - `sweep_status`
+- `interpretation_status`
+- `paper_safety_status`
 - `sphere_branch_contract`
+- `sphere_branch_contract_checks`
 - `metric_ranges`
 - `rows[*].sphere_mie_used`
 - `rows[*].tmatrix_used`
 - `rows[*].scattering_branch`
 - `rows[*].lateral_response_model`
+- `rows[*].sample_arm_spectral_cube_contract_status`
+- `rows[*].fd_oct_measurement_scaffold_route_available`
 
 This branch is a particle-aware scalar pupil-field path for homogeneous spheres. It is not a substitute for the
 non-spherical T-matrix route, and it is still bounded by the scalar fixed-basis / FD-OCT measurement-scaffold limits.

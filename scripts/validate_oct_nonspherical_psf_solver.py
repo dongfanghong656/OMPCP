@@ -2025,6 +2025,8 @@ def validate(
         and full_na_sphere.get("scattering_branch") == "sphere_mie_full_na"
         and full_na_sphere.get("lateral_response_model") == "sphere_mie_angle_resolved_pupil_field"
         and full_na_sphere.get("particle_lateral_scattering_enters_profile")
+        and full_na_sphere.get("sample_arm_spectral_cube_contract_status") == "valid_lambda_x_complex_field"
+        and full_na_sphere.get("fd_oct_measurement_scaffold_route_available")
         and np.isfinite(full_na_sphere["raw_intensity_xz"]).all()
         and full_na_sphere["raw_peak_intensity"] > 0
     )
@@ -2032,6 +2034,10 @@ def validate(
     report["sphere_mie_branch_scope"] = "full_na_exact_sphere_eps0_force_tmatrix_false"
     report["sphere_full_na_without_tmatrix_backend"] = bool(full_na_sphere.get("sphere_mie_used") and not full_na_sphere.get("tmatrix_used"))
     report["sphere_lateral_scattering_enters_profile"] = bool(full_na_sphere.get("particle_lateral_scattering_enters_profile"))
+    report["sphere_sample_arm_spectral_cube_contract_status"] = full_na_sphere.get("sample_arm_spectral_cube_contract_status")
+    report["sphere_fd_oct_measurement_scaffold_route_available"] = bool(
+        full_na_sphere.get("fd_oct_measurement_scaffold_route_available")
+    )
     report["sphere_mie_reference_validation_status"] = (
         "s22_backscatter_convention_covered_by_unit_test"
         if sphere_mie_branch_passed
@@ -2048,6 +2054,11 @@ def validate(
             "lateral_response_model": full_na_sphere.get("lateral_response_model"),
             "particle_lateral_scattering_enters_profile": bool(
                 full_na_sphere.get("particle_lateral_scattering_enters_profile")
+            ),
+            "sample_arm_spectral_cube_contract_status": full_na_sphere.get("sample_arm_spectral_cube_contract_status"),
+            "sample_arm_spectral_cube_shape": full_na_sphere.get("sample_arm_spectral_cube_shape"),
+            "fd_oct_measurement_scaffold_route_available": bool(
+                full_na_sphere.get("fd_oct_measurement_scaffold_route_available")
             ),
             "raw_peak_intensity": float(full_na_sphere.get("raw_peak_intensity", 0.0)),
         }

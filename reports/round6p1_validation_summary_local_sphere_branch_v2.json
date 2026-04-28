@@ -1,0 +1,106 @@
+{
+  "checks": [
+    {
+      "name": "na_geometry_convention",
+      "passed": true,
+      "k0_na_equivalence_error": 0.0,
+      "sin_theta_max_1p40": 0.03571428571428572,
+      "sin_theta_max_1p70": 0.029411764705882356
+    },
+    {
+      "name": "low_na_ideal",
+      "passed": true,
+      "metrics": {
+        "axis_kind": "opd",
+        "quantity_kind": "intensity",
+        "normalization_mode": "unit_peak_profile",
+        "shape_metric_note": "profile is normalized to unit peak before FWHM/centroid/PSR evaluation; metrics are shape-oriented, not absolute-amplitude observables",
+        "peak_opd_um": 0.0,
+        "centroid_opd_um": 2.3035070173780576e-16,
+        "fwhm_opd_um": 5.787724606940706,
+        "psr_db": -26.54057725758546,
+        "psr_definition": "sidelobe_to_main_db",
+        "psr_reference": "intensity",
+        "sidelobe_to_main_db": -26.54057725758546,
+        "main_to_sidelobe_rejection_db": 26.54057725758546,
+        "peak_value": 1.0,
+        "strongest_sidelobe_value": 0.0022179016001174032,
+        "sidelobe_energy_fraction": 0.0005113042727024621
+      }
+    },
+    {
+      "name": "low_na_mie_smoke",
+      "passed": true,
+      "metrics": {
+        "axis_kind": "opd",
+        "quantity_kind": "intensity",
+        "normalization_mode": "unit_peak_profile",
+        "shape_metric_note": "profile is normalized to unit peak before FWHM/centroid/PSR evaluation; metrics are shape-oriented, not absolute-amplitude observables",
+        "peak_opd_um": -0.04999999999999716,
+        "centroid_opd_um": -0.05305904199695052,
+        "fwhm_opd_um": 5.689395226331035,
+        "psr_db": -26.50028535989625,
+        "psr_definition": "sidelobe_to_main_db",
+        "psr_reference": "intensity",
+        "sidelobe_to_main_db": -26.50028535989625,
+        "main_to_sidelobe_rejection_db": 26.50028535989625,
+        "peak_value": 1.0,
+        "strongest_sidelobe_value": 0.0022385740447711843,
+        "sidelobe_energy_fraction": 0.0005162326399383861
+      }
+    },
+    {
+      "name": "full_na_sphere_mie_branch_without_tmatrix",
+      "passed": true,
+      "sphere_mie_used": true,
+      "tmatrix_used": false,
+      "tmatrix_backend_required": false,
+      "scattering_branch": "sphere_mie_full_na",
+      "lateral_response_model": "sphere_mie_angle_resolved_pupil_field",
+      "particle_lateral_scattering_enters_profile": true,
+      "sample_arm_spectral_cube_contract_status": "valid_lambda_x_complex_field",
+      "sample_arm_spectral_cube_shape": [
+        21,
+        41
+      ],
+      "fd_oct_measurement_scaffold_route_available": true,
+      "raw_peak_intensity": 0.007761256511021586
+    },
+    {
+      "name": "strict_material_range_requires_explicit_support",
+      "passed": true,
+      "error": "particle_material=_unranged_debug_particle_material does not have an explicit encoded wavelength support range; strict_material_range=True requires a validated range-backed material model.",
+      "note": "Built-in project materials now carry encoded support ranges; this gate uses an intentionally unranged debug callable to keep strict-mode protection active."
+    },
+    {
+      "name": "analytic_material_range_warning_dedup",
+      "passed": true,
+      "warning_count": 2,
+      "messages": [
+        "medium_material=_unranged_debug_medium_material is being used without an explicit encoded wavelength support range; set strict_material_range=True for paper-grade runs.",
+        "particle_material=_unranged_debug_particle_material is being used without an explicit encoded wavelength support range; set strict_material_range=True for paper-grade runs."
+      ],
+      "note": "Built-in project materials now validate against encoded support ranges; this warning-dedup gate uses intentionally unranged debug callables."
+    },
+    {
+      "name": "tmatrix_available",
+      "passed": false,
+      "skipped": true,
+      "reason": "Unable to load libpytmatrix. C:\\codex-data\\OMPCP\\scripts\\libpytmatrix.dll: Could not find module 'C:\\codex-data\\OMPCP\\scripts\\libpytmatrix.dll' (or one of its dependencies). Try using the full path with constructor syntax. | C:\\codex-data\\OMPCP\\scripts\\libpytmatrix.so: Could not find module 'C:\\codex-data\\OMPCP\\scripts\\libpytmatrix.so' (or one of its dependencies). Try using the full path with constructor syntax. | C:\\codex-data\\OMPCP\\scripts\\libpytmatrix.dylib: Could not find module 'C:\\codex-data\\OMPCP\\scripts\\libpytmatrix.dylib' (or one of its dependencies). Try using the full path with constructor syntax. | C:\\codex-data\\OMPCP\\libpytmatrix.dll: Could not find module 'C:\\codex-data\\OMPCP\\libpytmatrix.dll' (or one of its dependencies). Try using the full path with constructor syntax. | C:\\codex-data\\OMPCP\\libpytmatrix.so: Could not find module 'C:\\codex-data\\OMPCP\\libpytmatrix.so' (or one of its dependencies). Try using the full path with constructor syntax. | C:\\codex-data\\OMPCP\\libpytmatrix.dylib: Could not find module 'C:\\codex-data\\OMPCP\\libpytmatrix.dylib' (or one of its dependencies). Try using the full path with constructor syntax. | python:pytmatrix.fortran_tm.pytmatrix: cannot import name 'pytmatrix' from 'pytmatrix.fortran_tm' (C:\\codex-data\\OMPCP\\vendor\\pytmatrix-0.3.3\\pytmatrix\\fortran_tm\\__init__.py) | vendored pytmatrix backend inventory is incompatible with the current runtime (platform=win32, python=cp313); found: pytmatrix.cp310-win_amd64.pyd, pytmatrix.pyf"
+    }
+  ],
+  "report_version_tag": "round6p1",
+  "sphere_mie_branch_status": "available",
+  "sphere_mie_branch_scope": "full_na_exact_sphere_eps0_force_tmatrix_false",
+  "sphere_full_na_without_tmatrix_backend": true,
+  "sphere_lateral_scattering_enters_profile": true,
+  "sphere_sample_arm_spectral_cube_contract_status": "valid_lambda_x_complex_field",
+  "sphere_fd_oct_measurement_scaffold_route_available": true,
+  "sphere_mie_reference_validation_status": "s22_backscatter_convention_covered_by_unit_test",
+  "tmatrix_backend_status": {
+    "available": false,
+    "backend": null,
+    "library_path": null,
+    "reason": "Unable to load libpytmatrix. C:\\codex-data\\OMPCP\\scripts\\libpytmatrix.dll: Could not find module 'C:\\codex-data\\OMPCP\\scripts\\libpytmatrix.dll' (or one of its dependencies). Try using the full path with constructor syntax. | C:\\codex-data\\OMPCP\\scripts\\libpytmatrix.so: Could not find module 'C:\\codex-data\\OMPCP\\scripts\\libpytmatrix.so' (or one of its dependencies). Try using the full path with constructor syntax. | C:\\codex-data\\OMPCP\\scripts\\libpytmatrix.dylib: Could not find module 'C:\\codex-data\\OMPCP\\scripts\\libpytmatrix.dylib' (or one of its dependencies). Try using the full path with constructor syntax. | C:\\codex-data\\OMPCP\\libpytmatrix.dll: Could not find module 'C:\\codex-data\\OMPCP\\libpytmatrix.dll' (or one of its dependencies). Try using the full path with constructor syntax. | C:\\codex-data\\OMPCP\\libpytmatrix.so: Could not find module 'C:\\codex-data\\OMPCP\\libpytmatrix.so' (or one of its dependencies). Try using the full path with constructor syntax. | C:\\codex-data\\OMPCP\\libpytmatrix.dylib: Could not find module 'C:\\codex-data\\OMPCP\\libpytmatrix.dylib' (or one of its dependencies). Try using the full path with constructor syntax. | python:pytmatrix.fortran_tm.pytmatrix: cannot import name 'pytmatrix' from 'pytmatrix.fortran_tm' (C:\\codex-data\\OMPCP\\vendor\\pytmatrix-0.3.3\\pytmatrix\\fortran_tm\\__init__.py) | vendored pytmatrix backend inventory is incompatible with the current runtime (platform=win32, python=cp313); found: pytmatrix.cp310-win_amd64.pyd, pytmatrix.pyf"
+  }
+}

@@ -169,6 +169,9 @@ def extract_row(diameter_nm: float, na: float, result: dict) -> dict:
         "scattering_branch": result.get("scattering_branch"),
         "lateral_response_model": result.get("lateral_response_model"),
         "particle_lateral_scattering_enters_profile": bool(result.get("particle_lateral_scattering_enters_profile")),
+        "sample_arm_spectral_cube_shape": result.get("sample_arm_spectral_cube_shape"),
+        "sample_arm_spectral_cube_contract_status": result.get("sample_arm_spectral_cube_contract_status"),
+        "fd_oct_measurement_scaffold_route_available": bool(result.get("fd_oct_measurement_scaffold_route_available")),
         "peakline_x_um": finite_or_none(result.get("peakline_x_um")),
         "lateral_fwhm_um": finite_or_none(lateral.get("lateral_fwhm_um")),
         "lateral_centroid_um": finite_or_none(lateral.get("lateral_centroid_um")),
@@ -301,12 +304,28 @@ def main(argv: list[str] | None = None) -> int:
     package = {
         "schema_version": SCHEMA_VERSION,
         "sweep_status": "complete" if all(r.get("status") == "ok" for r in rows) else "has_failed_cases",
+        "interpretation_status": "contract_smoke_only_not_final_particle_size_psf_conclusion",
+        "paper_safety_status": (
+            "not_paper_safe"
+            if any(not bool(r.get("paper_safe")) for r in rows if r.get("status") == "ok")
+            else "paper_safe_rows_reported"
+        ),
         "diameter_nm_values": diameters,
         "na_values": na_values,
         "case_count": len(rows),
         "ok_count": sum(1 for r in rows if r.get("status") == "ok"),
         "failed_count": sum(1 for r in rows if r.get("status") != "ok"),
         "sphere_branch_contract": "full_na_eps0_force_tmatrix_false_must_use_sphere_mie_no_tmatrix",
+        "sphere_branch_contract_checks": {
+            "all_ok_rows_use_sphere_mie": all(bool(r.get("sphere_mie_used")) for r in rows if r.get("status") == "ok"),
+            "all_ok_rows_avoid_tmatrix": all(not bool(r.get("tmatrix_used")) for r in rows if r.get("status") == "ok"),
+            "all_ok_rows_particle_lateral_scattering_enters_profile": all(
+                bool(r.get("particle_lateral_scattering_enters_profile")) for r in rows if r.get("status") == "ok"
+            ),
+            "all_ok_rows_fd_oct_scaffold_route_available": all(
+                bool(r.get("fd_oct_measurement_scaffold_route_available")) for r in rows if r.get("status") == "ok"
+            ),
+        },
         "metric_ranges": metric_ranges(rows),
         "rows": rows,
     }

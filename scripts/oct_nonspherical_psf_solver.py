@@ -1042,6 +1042,23 @@ def should_use_sphere_mie_full_na_branch(solver):
     )
 
 
+def sample_arm_spectral_cube_contract(sample_arm_spectral_cube):
+    cube = np.asarray(sample_arm_spectral_cube)
+    return {
+        "sample_arm_spectral_cube_shape": [int(v) for v in cube.shape],
+        "sample_arm_spectral_cube_axis_order": "lambda_x",
+        "sample_arm_spectral_cube_quantity_kind": "complex_sample_arm_spectral_field",
+        "sample_arm_spectral_cube_contract_status": (
+            "valid_lambda_x_complex_field" if cube.ndim == 2 and np.iscomplexobj(cube) else "inspect_sample_arm_spectral_cube"
+        ),
+        "fd_oct_measurement_scaffold_route_available": bool(cube.ndim == 2 and np.iscomplexobj(cube)),
+        "fd_oct_measurement_scaffold_route_note": (
+            "sample_arm_spectral_cube is the solver-level sample-arm spectrum consumed by the minimal FD-OCT "
+            "measurement scaffold; this is not yet a calibrated raw detector model."
+        ),
+    }
+
+
 def pupil_field_to_lateral_line(bundle, lambda_nm, x_um, sin_theta_max, medium_material, lateral_slice_axis="x"):
     medium_fn = resolve_material_model(medium_material)
     sin_theta_max_values = np.asarray(sin_theta_max, dtype=float)
@@ -1123,6 +1140,7 @@ def solve_low_na_slice(source, grid, solver):
         "opd_um": opd_um,
         "lambda_nm": lambda_nm,
         "sample_arm_spectral_cube": sample_arm_spectral_cube,
+        **sample_arm_spectral_cube_contract(sample_arm_spectral_cube),
         "axial_field": axial_field,
         "raw_envelope_xz": raw_envelope_xz,
         "raw_intensity_xz": raw_intensity_xz,
@@ -1289,6 +1307,7 @@ def solve_full_na_slice(source, grid, solver):
         "opd_um": opd_um,
         "lambda_nm": lambda_nm,
         "sample_arm_spectral_cube": sample_arm_spectral_cube,
+        **sample_arm_spectral_cube_contract(sample_arm_spectral_cube),
         "field_xz": field_xz,
         "raw_envelope_xz": raw_envelope_xz,
         "raw_intensity_xz": raw_intensity_xz,
