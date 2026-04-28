@@ -8,9 +8,12 @@ on:
       - "scripts/bootstrap_pytmatrix_workspace_backend.py"
       - "scripts/controlled_cp310_evidence_rebuild.py"
       - "scripts/diagnose_pytmatrix_backend.py"
+      - "scripts/import_ci_evidence_artifacts.py"
       - "scripts/oct_nonspherical_psf_solver.py"
       - "scripts/particle_size_sweep_runner.py"
       - "scripts/validate_oct_nonspherical_psf_solver.py"
+      - "12_test_low_na_asymptotic_helpers.py"
+      - "test_low_na_asymptotic_helpers.py"
       - "vendor/**"
   pull_request:
     paths:
@@ -18,9 +21,12 @@ on:
       - "scripts/bootstrap_pytmatrix_workspace_backend.py"
       - "scripts/controlled_cp310_evidence_rebuild.py"
       - "scripts/diagnose_pytmatrix_backend.py"
+      - "scripts/import_ci_evidence_artifacts.py"
       - "scripts/oct_nonspherical_psf_solver.py"
       - "scripts/particle_size_sweep_runner.py"
       - "scripts/validate_oct_nonspherical_psf_solver.py"
+      - "12_test_low_na_asymptotic_helpers.py"
+      - "test_low_na_asymptotic_helpers.py"
       - "vendor/**"
 
 permissions:
