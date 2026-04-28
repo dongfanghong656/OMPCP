@@ -16,13 +16,23 @@ DEFAULT_REPORTS_DIR = PROJECT_ROOT / "reports"
 DEFAULT_REBUILD_DIR_NAME = "round6p1_cp310_ci_rebuild"
 MANIFEST_JSON_NAME = "round6p1_ci_evidence_import_manifest.json"
 MANIFEST_MD_NAME = "round6p1_ci_evidence_import_manifest.md"
-SUPPORTED_SUFFIXES = {".json", ".md", ".txt"}
+SUPPORTED_SUFFIXES = {".csv", ".json", ".md", ".txt"}
 SUPPORT_TOP_LEVEL_FILES = {
+    "round6p1_sphere_convergence_progress_20260428.md",
     "round6p1_cp310_evidence_rebuild_readiness.json",
     "round6p1_cp310_evidence_rebuild_readiness.md",
     "pytmatrix-diagnose.json",
     "pytmatrix-built-files.json",
     "particle_size_sweep_ci_backend_provenance.json",
+}
+SPHERE_CONVERGENCE_DIRS = {
+    "sphere_mie_convergence_20260428",
+    "sphere_mie_convergence_ci_smoke",
+}
+SPHERE_CONVERGENCE_SUMMARY_FILES = {
+    "sphere_mie_convergence_summary.csv",
+    "sphere_mie_convergence_summary.json",
+    "sphere_mie_convergence_summary.md",
 }
 RUN_ID_RE = re.compile(r"actions_run_(\d+)")
 
@@ -95,6 +105,17 @@ def iter_support_files(artifact_dir: Path, *, include_particle_sweep_cases: bool
             if not path.is_file() or path.suffix.lower() not in SUPPORTED_SUFFIXES:
                 continue
             if include_particle_sweep_cases or path.name in allowed_names:
+                paths.append(path)
+    for dirname in sorted(SPHERE_CONVERGENCE_DIRS):
+        convergence_dir = artifact_dir / dirname
+        if not convergence_dir.is_dir():
+            continue
+        for path in sorted(convergence_dir.rglob("*")):
+            if (
+                path.is_file()
+                and path.suffix.lower() in SUPPORTED_SUFFIXES
+                and path.name in SPHERE_CONVERGENCE_SUMMARY_FILES
+            ):
                 paths.append(path)
     return paths
 

@@ -1,20 +1,23 @@
 # Pro Review Handoff - 2026-04-28
 
-This handoff indexes the current review-ready state after the sphere Mie branch
-and CPython 3.10 T-matrix evidence refresh.
+This handoff indexes the current review-ready state after the sphere Mie branch,
+the CPython 3.10 T-matrix evidence refresh, and the first sphere Mie convergence
+scaffold import from CI.
 
 ## Current Remote State
 
 - Repository: <https://github.com/dongfanghong656/OMPCP>
-- Current `main` commit: `cae977d72c65dce16d550d8679af8539804b1bd1`
-- Sphere branch code/evidence commit: `5dc1840f913f3835de64ccd364f28fc96f2b1ae2`
-- CPython 3.10 + T-matrix CI run: <https://github.com/dongfanghong656/OMPCP/actions/runs/25055145522>
+- Current source commit for the imported CI evidence:
+  `aebf9466c350e34608966f2632af7a948bd3feb3`
+- Sphere convergence scaffold commit:
+  `aebf9466c350e34608966f2632af7a948bd3feb3`
+- CPython 3.10 + T-matrix CI run:
+  <https://github.com/dongfanghong656/OMPCP/actions/runs/25060075362>
 - CI result used for imported evidence: `completed / success`
 
-The latest `main` commit is report-only. The full CPython 3.10 T-matrix rebuild
-was performed by CI run `25055145522` at commit `5dc1840f...`; its lightweight
-reports were imported into the canonical `reports/` directory and then published
-in commit `cae977d...`.
+The full CPython 3.10 T-matrix rebuild was performed by CI run `25060075362` at
+commit `aebf946...`; its lightweight reports were imported into the canonical
+`reports/` directory. The import intentionally excludes large NPZ artifacts.
 
 ## What Changed Since The Previous Pro Packet
 
@@ -40,6 +43,9 @@ in commit `cae977d...`.
 - Added the first sphere Mie full-NA convergence scaffold:
   `reports/round6p1_sphere_convergence_progress_20260428.md` and
   `reports/sphere_mie_convergence_20260428/sphere_mie_convergence_summary.md`.
+- Updated the CI evidence importer so sphere Mie convergence summaries are
+  included in canonical imports instead of remaining only inside downloaded
+  artifacts.
 
 ## Primary Evidence Files
 
@@ -57,6 +63,7 @@ in commit `cae977d...`.
 - `reports/sphere_mie_full_na_psf_bias_20260428/sphere_mie_full_na_sweep_summary.md`
 - `reports/round6p1_sphere_convergence_progress_20260428.md`
 - `reports/sphere_mie_convergence_20260428/sphere_mie_convergence_summary.md`
+- `reports/sphere_mie_convergence_ci_smoke/sphere_mie_convergence_summary.md`
 
 ## Verified Status
 
@@ -64,8 +71,8 @@ in commit `cae977d...`.
 - Local full helper suite: `82 tests OK`.
 - Local sphere Mie full-NA acceptance sweep: `3 / 3 cases OK`.
 - Local validator: `exit 0`.
-- GitHub Actions CPython 3.10 T-matrix run: `success`.
-- Imported CI reports: `35` files, checksummed in
+- GitHub Actions CPython 3.10 T-matrix run `25060075362`: `success`.
+- Imported CI reports: `42` files, checksummed in
   `round6p1_ci_evidence_import_manifest`.
 - Sphere Mie convergence scaffold: `preliminary_convergence_attention_not_paper_safe`.
 
