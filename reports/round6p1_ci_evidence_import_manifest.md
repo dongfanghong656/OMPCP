@@ -1,10 +1,10 @@
 # round6p1 CI Evidence Import Manifest
 
 - import_status: `imported`
-- source_run_id: `25039954436`
-- source_head_sha: `d8f51fc50c916676cb1db00eca65903d19a6e112`
-- source_artifact_dir: `C:\codex-data\OMPCP\reports\actions_run_25039954436_reports`
-- source_rebuild_dir: `C:\codex-data\OMPCP\reports\actions_run_25039954436_reports\round6p1_cp310_ci_rebuild`
+- source_run_id: `25053221805`
+- source_head_sha: `3355e6e973c7cecc1f2367526805176f66f95d76`
+- source_artifact_dir: `C:\codex-data\OMPCP\reports\actions_run_25053221805_reports`
+- source_rebuild_dir: `C:\codex-data\OMPCP\reports\actions_run_25053221805_reports\round6p1_cp310_ci_rebuild`
 - copied_file_count: `35`
 - skipped_existing_count: `0`
 
@@ -33,20 +33,20 @@ It prevents source/report drift by attaching CI provenance and checksums to the 
 - `round6p1_effective_channel_fit_sensitivity.md` (cp310_rebuild_report, sha256 `3dc90b758702030fcad9279909c111b6575a4524471f46e59f2bc64d300cd21f`)
 - `round6p1_effective_channel_fit_strategy_ablation.json` (cp310_rebuild_report, sha256 `0a73461cedb1117337eead3cbb6a743db9e6bc4a760a4a6a3880b06de980ded7`)
 - `round6p1_effective_channel_fit_strategy_ablation.md` (cp310_rebuild_report, sha256 `0cfe81c146a87a7383f7a94a930980a6d965e44611c991e77c0d8d5f6b969793`)
-- `round6p1_error_attribution.json` (cp310_rebuild_report, sha256 `b933f779c8fe2d6d4f94eb36728b8875e4409374cfb8b3101cdb35b69e8f0474`)
-- `round6p1_error_attribution.md` (cp310_rebuild_report, sha256 `3c05b2cd66d46b7f0e36cddfc0fc23bf2c6e9fffba46cc6e9f1b81ac35987121`)
+- `round6p1_error_attribution.json` (cp310_rebuild_report, sha256 `a0f545e61b2a87c1c71e3def1da6e66f40626dacb82a8d4ae2c4377e589fcc34`)
+- `round6p1_error_attribution.md` (cp310_rebuild_report, sha256 `0f6853c6a78b56aa1d6824f99556b1fcfbbaaf09c7b2b5d02e6c2fe9851c9339`)
 - `round6p1_lateral_slice_axis_crosscheck.json` (cp310_rebuild_report, sha256 `17bd8c75225c867c8ec0ca84f1952965b6c95081dc0f8378f7b38f1c92e9a3d9`)
 - `round6p1_lateral_slice_axis_crosscheck.md` (cp310_rebuild_report, sha256 `41bab74629ed87c72cb74e166f89c2eac4cf5a715c5bafa85beac894745cd9a9`)
-- `round6p1_measurement_protocol_bias.json` (cp310_rebuild_report, sha256 `3f8cc0da515ca31d2431075f891fb6112eec701e7737ae7427700f726d29496c`)
-- `round6p1_measurement_protocol_bias.md` (cp310_rebuild_report, sha256 `b6bf1b46d95b42dd7401cc807c44827381feac6fb2cbfcba4861c318075999a6`)
+- `round6p1_measurement_protocol_bias.json` (cp310_rebuild_report, sha256 `b44f8b4479eadf204f3f0ddc16c4157f0e2d2543134f108e37fc09e31a5f9d96`)
+- `round6p1_measurement_protocol_bias.md` (cp310_rebuild_report, sha256 `e29f677903bd2fc303ee1ebf93dc77d402a523029277ef2975f342c90f6bddce`)
 - `round6p1_particle_size_sweep.json` (cp310_rebuild_report, sha256 `ff27aa4adaa84c20c3eb509f2be68fb4b03a82d2290f8855ac86c7886498070c`)
 - `round6p1_particle_size_sweep.md` (cp310_rebuild_report, sha256 `c566488b6adf67e625aa125b1083f33f7fb8566764b0e17a8b2dc1fb54bd3868`)
 - `round6p1_validation_failure_summary.txt` (cp310_rebuild_report, sha256 `327d39b8fca96447a9881e8fb9557e3bc360f7ea37f2f6d6a818c7a46757675b`)
-- `round6p1_validation_summary.json` (cp310_rebuild_report, sha256 `0b14a1b11eb5a0898c8946408975df03020f62d7a487ecc1ac2814bdf4cb42c2`)
+- `round6p1_validation_summary.json` (cp310_rebuild_report, sha256 `d5bf7b8b36904e90aed1fc01aa51596fccd02caaad34ecf076ecca2cace1bbb9`)
 - `particle_size_sweep_ci_backend_provenance.json` (ci_support_report, sha256 `55cdc41c83b6e60ce9abc294c5bb0cd7043b3856c35cab87b179df599f63a3d6`)
 - `pytmatrix-built-files.json` (ci_support_report, sha256 `ee6fc7f1a9998ef0c6f47940ed828bc3e4475cc23a40787be4d81184aa59e7fd`)
 - `pytmatrix-diagnose.json` (ci_support_report, sha256 `5079f262b164201482472678f39bf6d5f0ddfa663f07e7e28d1f7fbd7b635e2b`)
-- `round6p1_cp310_evidence_rebuild_readiness.json` (ci_support_report, sha256 `e980d722e46aceb37596895a4a500361c5fc99a99e0d42c5588e93aa202fff46`)
+- `round6p1_cp310_evidence_rebuild_readiness.json` (ci_support_report, sha256 `d4f5b1529ab38784df21b4235bc87479e3f84a45c0191668adf7b3b8e847a838`)
 - `round6p1_cp310_evidence_rebuild_readiness.md` (ci_support_report, sha256 `9ccd012f504be77b0460aa421c13903a4a3f5079f4af9533c37863f0f2787ade`)
 - `particle_size_sweep_ci/particle_size_sweep_summary.json` (ci_support_report, sha256 `e8b999196ca874db1a5a97dfd5199f671839b4fe0826b7174acab8e9e5fbb9ab`)
 - `particle_size_sweep_ci/particle_size_sweep_summary.md` (ci_support_report, sha256 `41932ae9278e8ed584aa0822af52f26ddbb2dc849a91099ed6f05e7d3bf7bd9c`)

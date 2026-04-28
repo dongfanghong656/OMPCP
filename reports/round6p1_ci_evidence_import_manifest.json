@@ -7,7 +7,7 @@
       "destination_relative_path": "round6p1_ablation_results.json",
       "sha256": "3385c113099e56b016bfe5ad2c4cbb9299191d4bba99e815738347d031d82edc",
       "size_bytes": 42781,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_ablation_results.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_ablation_results.json",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_ablation_results.json"
     },
     {
@@ -16,7 +16,7 @@
       "destination_relative_path": "round6p1_ablation_results.md",
       "sha256": "084e194230ca995e127dc8baf29aaf0c3b4129e91b41db9e66e612cf6ba73bc3",
       "size_bytes": 8330,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_ablation_results.md",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_ablation_results.md",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_ablation_results.md"
     },
     {
@@ -25,7 +25,7 @@
       "destination_relative_path": "round6p1_basis_coefficient_recovery.json",
       "sha256": "f99989ea976c74a6efbef12365be23b4d8649bb96b4d6a78d0a6ad5f865755dd",
       "size_bytes": 17286,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_basis_coefficient_recovery.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_basis_coefficient_recovery.json",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_basis_coefficient_recovery.json"
     },
     {
@@ -34,7 +34,7 @@
       "destination_relative_path": "round6p1_basis_coefficient_recovery.md",
       "sha256": "dbec9718967ab3488f346a4a9dce5e3954eae513c3406bb37cdf32e8c3565236",
       "size_bytes": 4647,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_basis_coefficient_recovery.md",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_basis_coefficient_recovery.md",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_basis_coefficient_recovery.md"
     },
     {
@@ -43,7 +43,7 @@
       "destination_relative_path": "round6p1_basis_projection_diagnostics.json",
       "sha256": "f1a4234c5c6fd79ce0e6f1a5a7fe7f44c21e0a7c7b3d44fb7049fb221d5c2f2c",
       "size_bytes": 7056,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_basis_projection_diagnostics.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_basis_projection_diagnostics.json",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_basis_projection_diagnostics.json"
     },
     {
@@ -52,7 +52,7 @@
       "destination_relative_path": "round6p1_basis_projection_diagnostics.md",
       "sha256": "b508543454623e50fb30ce3556be130242661cec498ff69dfedc8839dfa34aab",
       "size_bytes": 2396,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_basis_projection_diagnostics.md",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_basis_projection_diagnostics.md",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_basis_projection_diagnostics.md"
     },
     {
@@ -61,7 +61,7 @@
       "destination_relative_path": "round6p1_coefficient_injection_diagnostics.json",
       "sha256": "a06f4b480aae0af0c8c9280ddbac0f8759a4731c927aeaab445fd264c9f2bcf4",
       "size_bytes": 7467,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_injection_diagnostics.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_injection_diagnostics.json",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_coefficient_injection_diagnostics.json"
     },
     {
@@ -70,7 +70,7 @@
       "destination_relative_path": "round6p1_coefficient_injection_diagnostics.md",
       "sha256": "ca5caed74e11edf75b7e4253f2bc156448e88ad60dd35d9d80f73ab21dda5e72",
       "size_bytes": 1073,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_injection_diagnostics.md",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_injection_diagnostics.md",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_coefficient_injection_diagnostics.md"
     },
     {
@@ -79,7 +79,7 @@
       "destination_relative_path": "round6p1_coefficient_map_ablation.json",
       "sha256": "ed5f0fcbfcfdd872cc21396e3adbb8c3fea91fa1c4a0d72c08c7374e74ecae9c",
       "size_bytes": 48391,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_map_ablation.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_map_ablation.json",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_coefficient_map_ablation.json"
     },
     {
@@ -88,7 +88,7 @@
       "destination_relative_path": "round6p1_coefficient_map_ablation.md",
       "sha256": "d568443c2c56c78a8eeb664037fd41a4d156b407687eb14901aab502438f9b8a",
       "size_bytes": 4058,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_map_ablation.md",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_map_ablation.md",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_coefficient_map_ablation.md"
     },
     {
@@ -97,7 +97,7 @@
       "destination_relative_path": "round6p1_coefficient_map_audit.json",
       "sha256": "ffd45c1f5bc669e159a0d0342ed93e4667c6cf991bb236118a2a8b83016ea46f",
       "size_bytes": 52513,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_map_audit.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_map_audit.json",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_coefficient_map_audit.json"
     },
     {
@@ -106,7 +106,7 @@
       "destination_relative_path": "round6p1_coefficient_map_audit.md",
       "sha256": "55790c94d24ae4aa1b341c369c666e593a3ada100e415537cf9b0522755e63ea",
       "size_bytes": 2279,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_map_audit.md",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_map_audit.md",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_coefficient_map_audit.md"
     },
     {
@@ -115,7 +115,7 @@
       "destination_relative_path": "round6p1_coefficient_map_stability.json",
       "sha256": "0c8271e7aa4aa28d29a42f355265d638d4c2f0efa19bdb96e12a265f44317788",
       "size_bytes": 55757,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_map_stability.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_map_stability.json",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_coefficient_map_stability.json"
     },
     {
@@ -124,7 +124,7 @@
       "destination_relative_path": "round6p1_coefficient_map_stability.md",
       "sha256": "ede3922d2f31ea4645a88da3166733c021e6086352022485fdcd3e7f48a2b4fd",
       "size_bytes": 7047,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_map_stability.md",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_coefficient_map_stability.md",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_coefficient_map_stability.md"
     },
     {
@@ -133,7 +133,7 @@
       "destination_relative_path": "round6p1_effective_channel_fit_sensitivity.json",
       "sha256": "e4b9b379b1b6aa57f2a7f2810d60bc469721222752592df0f3eb8d9b7b5c2c88",
       "size_bytes": 15954,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_effective_channel_fit_sensitivity.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_effective_channel_fit_sensitivity.json",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_effective_channel_fit_sensitivity.json"
     },
     {
@@ -142,7 +142,7 @@
       "destination_relative_path": "round6p1_effective_channel_fit_sensitivity.md",
       "sha256": "3dc90b758702030fcad9279909c111b6575a4524471f46e59f2bc64d300cd21f",
       "size_bytes": 3366,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_effective_channel_fit_sensitivity.md",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_effective_channel_fit_sensitivity.md",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_effective_channel_fit_sensitivity.md"
     },
     {
@@ -151,7 +151,7 @@
       "destination_relative_path": "round6p1_effective_channel_fit_strategy_ablation.json",
       "sha256": "0a73461cedb1117337eead3cbb6a743db9e6bc4a760a4a6a3880b06de980ded7",
       "size_bytes": 9709,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_effective_channel_fit_strategy_ablation.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_effective_channel_fit_strategy_ablation.json",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_effective_channel_fit_strategy_ablation.json"
     },
     {
@@ -160,25 +160,25 @@
       "destination_relative_path": "round6p1_effective_channel_fit_strategy_ablation.md",
       "sha256": "0cfe81c146a87a7383f7a94a930980a6d965e44611c991e77c0d8d5f6b969793",
       "size_bytes": 2260,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_effective_channel_fit_strategy_ablation.md",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_effective_channel_fit_strategy_ablation.md",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_effective_channel_fit_strategy_ablation.md"
     },
     {
       "category": "cp310_rebuild_report",
       "destination": "C:\\codex-data\\OMPCP\\reports\\round6p1_error_attribution.json",
       "destination_relative_path": "round6p1_error_attribution.json",
-      "sha256": "b933f779c8fe2d6d4f94eb36728b8875e4409374cfb8b3101cdb35b69e8f0474",
+      "sha256": "a0f545e61b2a87c1c71e3def1da6e66f40626dacb82a8d4ae2c4377e589fcc34",
       "size_bytes": 9642,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_error_attribution.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_error_attribution.json",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_error_attribution.json"
     },
     {
       "category": "cp310_rebuild_report",
       "destination": "C:\\codex-data\\OMPCP\\reports\\round6p1_error_attribution.md",
       "destination_relative_path": "round6p1_error_attribution.md",
-      "sha256": "3c05b2cd66d46b7f0e36cddfc0fc23bf2c6e9fffba46cc6e9f1b81ac35987121",
-      "size_bytes": 2787,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_error_attribution.md",
+      "sha256": "0f6853c6a78b56aa1d6824f99556b1fcfbbaaf09c7b2b5d02e6c2fe9851c9339",
+      "size_bytes": 2786,
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_error_attribution.md",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_error_attribution.md"
     },
     {
@@ -187,7 +187,7 @@
       "destination_relative_path": "round6p1_lateral_slice_axis_crosscheck.json",
       "sha256": "17bd8c75225c867c8ec0ca84f1952965b6c95081dc0f8378f7b38f1c92e9a3d9",
       "size_bytes": 15694,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_lateral_slice_axis_crosscheck.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_lateral_slice_axis_crosscheck.json",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_lateral_slice_axis_crosscheck.json"
     },
     {
@@ -196,25 +196,25 @@
       "destination_relative_path": "round6p1_lateral_slice_axis_crosscheck.md",
       "sha256": "41bab74629ed87c72cb74e166f89c2eac4cf5a715c5bafa85beac894745cd9a9",
       "size_bytes": 1073,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_lateral_slice_axis_crosscheck.md",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_lateral_slice_axis_crosscheck.md",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_lateral_slice_axis_crosscheck.md"
     },
     {
       "category": "cp310_rebuild_report",
       "destination": "C:\\codex-data\\OMPCP\\reports\\round6p1_measurement_protocol_bias.json",
       "destination_relative_path": "round6p1_measurement_protocol_bias.json",
-      "sha256": "3f8cc0da515ca31d2431075f891fb6112eec701e7737ae7427700f726d29496c",
-      "size_bytes": 107395,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_measurement_protocol_bias.json",
+      "sha256": "b44f8b4479eadf204f3f0ddc16c4157f0e2d2543134f108e37fc09e31a5f9d96",
+      "size_bytes": 107403,
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_measurement_protocol_bias.json",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_measurement_protocol_bias.json"
     },
     {
       "category": "cp310_rebuild_report",
       "destination": "C:\\codex-data\\OMPCP\\reports\\round6p1_measurement_protocol_bias.md",
       "destination_relative_path": "round6p1_measurement_protocol_bias.md",
-      "sha256": "b6bf1b46d95b42dd7401cc807c44827381feac6fb2cbfcba4861c318075999a6",
-      "size_bytes": 15546,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_measurement_protocol_bias.md",
+      "sha256": "e29f677903bd2fc303ee1ebf93dc77d402a523029277ef2975f342c90f6bddce",
+      "size_bytes": 15566,
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_measurement_protocol_bias.md",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_measurement_protocol_bias.md"
     },
     {
@@ -223,7 +223,7 @@
       "destination_relative_path": "round6p1_particle_size_sweep.json",
       "sha256": "ff27aa4adaa84c20c3eb509f2be68fb4b03a82d2290f8855ac86c7886498070c",
       "size_bytes": 14255,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_particle_size_sweep.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_particle_size_sweep.json",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_particle_size_sweep.json"
     },
     {
@@ -232,7 +232,7 @@
       "destination_relative_path": "round6p1_particle_size_sweep.md",
       "sha256": "c566488b6adf67e625aa125b1083f33f7fb8566764b0e17a8b2dc1fb54bd3868",
       "size_bytes": 1604,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_particle_size_sweep.md",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_particle_size_sweep.md",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_particle_size_sweep.md"
     },
     {
@@ -241,16 +241,16 @@
       "destination_relative_path": "round6p1_validation_failure_summary.txt",
       "sha256": "327d39b8fca96447a9881e8fb9557e3bc360f7ea37f2f6d6a818c7a46757675b",
       "size_bytes": 4063,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_validation_failure_summary.txt",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_validation_failure_summary.txt",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_validation_failure_summary.txt"
     },
     {
       "category": "cp310_rebuild_report",
       "destination": "C:\\codex-data\\OMPCP\\reports\\round6p1_validation_summary.json",
       "destination_relative_path": "round6p1_validation_summary.json",
-      "sha256": "0b14a1b11eb5a0898c8946408975df03020f62d7a487ecc1ac2814bdf4cb42c2",
-      "size_bytes": 100728,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild\\round6p1_validation_summary.json",
+      "sha256": "d5bf7b8b36904e90aed1fc01aa51596fccd02caaad34ecf076ecca2cace1bbb9",
+      "size_bytes": 101638,
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild\\round6p1_validation_summary.json",
       "source_relative_path": "round6p1_cp310_ci_rebuild/round6p1_validation_summary.json"
     },
     {
@@ -259,7 +259,7 @@
       "destination_relative_path": "particle_size_sweep_ci_backend_provenance.json",
       "sha256": "55cdc41c83b6e60ce9abc294c5bb0cd7043b3856c35cab87b179df599f63a3d6",
       "size_bytes": 856,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\particle_size_sweep_ci_backend_provenance.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\particle_size_sweep_ci_backend_provenance.json",
       "source_relative_path": "particle_size_sweep_ci_backend_provenance.json"
     },
     {
@@ -268,7 +268,7 @@
       "destination_relative_path": "pytmatrix-built-files.json",
       "sha256": "ee6fc7f1a9998ef0c6f47940ed828bc3e4475cc23a40787be4d81184aa59e7fd",
       "size_bytes": 1582,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\pytmatrix-built-files.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\pytmatrix-built-files.json",
       "source_relative_path": "pytmatrix-built-files.json"
     },
     {
@@ -277,16 +277,16 @@
       "destination_relative_path": "pytmatrix-diagnose.json",
       "sha256": "5079f262b164201482472678f39bf6d5f0ddfa663f07e7e28d1f7fbd7b635e2b",
       "size_bytes": 7018,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\pytmatrix-diagnose.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\pytmatrix-diagnose.json",
       "source_relative_path": "pytmatrix-diagnose.json"
     },
     {
       "category": "ci_support_report",
       "destination": "C:\\codex-data\\OMPCP\\reports\\round6p1_cp310_evidence_rebuild_readiness.json",
       "destination_relative_path": "round6p1_cp310_evidence_rebuild_readiness.json",
-      "sha256": "e980d722e46aceb37596895a4a500361c5fc99a99e0d42c5588e93aa202fff46",
+      "sha256": "d4f5b1529ab38784df21b4235bc87479e3f84a45c0191668adf7b3b8e847a838",
       "size_bytes": 7418,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_evidence_rebuild_readiness.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_evidence_rebuild_readiness.json",
       "source_relative_path": "round6p1_cp310_evidence_rebuild_readiness.json"
     },
     {
@@ -295,7 +295,7 @@
       "destination_relative_path": "round6p1_cp310_evidence_rebuild_readiness.md",
       "sha256": "9ccd012f504be77b0460aa421c13903a4a3f5079f4af9533c37863f0f2787ade",
       "size_bytes": 665,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_evidence_rebuild_readiness.md",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_evidence_rebuild_readiness.md",
       "source_relative_path": "round6p1_cp310_evidence_rebuild_readiness.md"
     },
     {
@@ -304,7 +304,7 @@
       "destination_relative_path": "particle_size_sweep_ci/particle_size_sweep_summary.json",
       "sha256": "e8b999196ca874db1a5a97dfd5199f671839b4fe0826b7174acab8e9e5fbb9ab",
       "size_bytes": 4952,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\particle_size_sweep_ci\\particle_size_sweep_summary.json",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\particle_size_sweep_ci\\particle_size_sweep_summary.json",
       "source_relative_path": "particle_size_sweep_ci/particle_size_sweep_summary.json"
     },
     {
@@ -313,7 +313,7 @@
       "destination_relative_path": "particle_size_sweep_ci/particle_size_sweep_summary.md",
       "sha256": "41932ae9278e8ed584aa0822af52f26ddbb2dc849a91099ed6f05e7d3bf7bd9c",
       "size_bytes": 757,
-      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\particle_size_sweep_ci\\particle_size_sweep_summary.md",
+      "source": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\particle_size_sweep_ci\\particle_size_sweep_summary.md",
       "source_relative_path": "particle_size_sweep_ci/particle_size_sweep_summary.md"
     }
   ],
@@ -326,12 +326,12 @@
   "report_kind": "round6p1_ci_evidence_import_manifest",
   "reports_dir": "C:\\codex-data\\OMPCP\\reports",
   "skipped_existing_files": [],
-  "source_artifact_dir": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports",
-  "source_head_sha": "d8f51fc50c916676cb1db00eca65903d19a6e112",
-  "source_rebuild_dir": "C:\\codex-data\\OMPCP\\reports\\actions_run_25039954436_reports\\round6p1_cp310_ci_rebuild",
-  "source_run_id": "25039954436",
+  "source_artifact_dir": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports",
+  "source_head_sha": "3355e6e973c7cecc1f2367526805176f66f95d76",
+  "source_rebuild_dir": "C:\\codex-data\\OMPCP\\reports\\actions_run_25053221805_reports\\round6p1_cp310_ci_rebuild",
+  "source_run_id": "25053221805",
   "stamped_files": [
     "round6p1_validation_summary.json"
   ],
-  "timestamp_utc": "2026-04-28T07:44:30.919022+00:00"
+  "timestamp_utc": "2026-04-28T12:53:40.142281+00:00"
 }

@@ -16,7 +16,7 @@ Sphere, low NA, low contrast. This should be the easiest alignment case.
 
 | mode | measured_lateral_peak_x_um | measured_lateral_fwhm_um | measured_axial_fwhm_opd_um | measured_psr_db | measured_psr_definition | measured_sidelobe_to_main_db | measured_main_to_sidelobe_rejection_db | raw_peak_intensity | measured_peak_shift_um_vs_bridge | measured_lateral_width_bias_um_vs_bridge | measured_axial_width_bias_um_vs_bridge | measured_sidelobe_distortion_vs_bridge | extraction_plane_opd_um |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| full_na_scalar_fixed_basis | 0 | 4 | 6.46551 | 5.48184 | main_to_sidelobe_rejection_db | -5.48184 | 5.48184 | 6.11036e-06 | -2 | 0 | 0.0019466 | 0.000170359 | 0 |
+| full_na_scalar_fixed_basis | -1.1 | 4 | 6.43161 | 5.54863 | main_to_sidelobe_rejection_db | -5.54863 | 5.54863 | 4.24373e-07 | -3.1 | 0 | -0.0319528 | -0.00282458 | 0 |
 | vector_pupil_overlap_bridge | 2 | 4 | 6.46357 | 5.48563 | main_to_sidelobe_rejection_db | -5.48563 | 5.48563 | 1.70849e-08 | 0 | 0 | 0 | 0 | 0 |
 | low_na_separable_baseline | 0 | 4 | 6.43147 | 5.54891 | main_to_sidelobe_rejection_db | -5.54891 | 5.54891 | 4.3119e-08 | -2 | 0 | -0.032092 | -0.00283695 | 0 |
 | low_na_asymptotic | 0 | 4 | 6.46551 | 5.48184 | main_to_sidelobe_rejection_db | -5.48184 | 5.48184 | 9.65568e-07 | -2 | 0 | 0.00194708 | 0.000170402 | 0 |
@@ -25,7 +25,7 @@ Sphere, low NA, low contrast. This should be the easiest alignment case.
 
 | mode | measured_lateral_peak_x_um | measured_lateral_fwhm_um | measured_axial_fwhm_opd_um | measured_psr_db | measured_psr_definition | measured_sidelobe_to_main_db | measured_main_to_sidelobe_rejection_db | raw_peak_intensity | measured_peak_shift_um_vs_bridge | measured_lateral_width_bias_um_vs_bridge | measured_axial_width_bias_um_vs_bridge | measured_sidelobe_distortion_vs_bridge | extraction_plane_opd_um |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| full_na_scalar_fixed_basis | 0 | 4 | 6.46551 | 5.48184 | main_to_sidelobe_rejection_db | -5.48184 | 5.48184 | 6.11036e-06 | -2 | 0 | 0.0019466 | 0.000170359 | 0 |
+| full_na_scalar_fixed_basis | -1.1 | 4 | 6.43161 | 5.54863 | main_to_sidelobe_rejection_db | -5.54863 | 5.54863 | 4.24373e-07 | -3.1 | 0 | -0.0319528 | -0.00282458 | 0 |
 | vector_pupil_overlap_bridge | 2 | 4 | 6.46357 | 5.48563 | main_to_sidelobe_rejection_db | -5.48563 | 5.48563 | 1.70849e-08 | 0 | 0 | 0 | 0 | 0 |
 | low_na_separable_baseline | 0 | 4 | 6.43147 | 5.54891 | main_to_sidelobe_rejection_db | -5.54891 | 5.54891 | 4.3119e-08 | -2 | 0 | -0.032092 | -0.00283695 | 0 |
 | low_na_asymptotic | 0 | 4 | 6.46551 | 5.48184 | main_to_sidelobe_rejection_db | -5.48184 | 5.48184 | 9.65568e-07 | -2 | 0 | 0.00194708 | 0.000170402 | 0 |
@@ -36,7 +36,7 @@ Sphere, low NA, low contrast. This should be the easiest alignment case.
 
 | mode | measured_lateral_peak_x_um | measured_lateral_fwhm_um | measured_axial_fwhm_opd_um | measured_psr_db | measured_psr_definition | measured_sidelobe_to_main_db | measured_main_to_sidelobe_rejection_db | raw_peak_intensity | measured_peak_shift_um_vs_bridge | measured_lateral_width_bias_um_vs_bridge | measured_axial_width_bias_um_vs_bridge | measured_sidelobe_distortion_vs_bridge | extraction_plane_opd_um |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| full_na_scalar_fixed_basis | 0 | 4 | 5.7862 | -26.5176 | sidelobe_to_main_db | -26.5176 | 26.5176 | 4.29708e-07 | -2 | 0 | 0.00258013 | 2.7565e-06 | 0 |
+| full_na_scalar_fixed_basis | 0 | 4 | 5.77492 | -26.6164 | sidelobe_to_main_db | -26.6164 | 26.6164 | 5.09733e-05 | -2 | 0 | -0.00869972 | -9.41227e-06 | 0 |
 | vector_pupil_overlap_bridge | 2 | 4 | 5.78362 | -26.5403 | sidelobe_to_main_db | -26.5403 | 26.5403 | 1.20042e-09 | 0 | 0 | 0 | 0 | 0 |
 | low_na_separable_baseline | 0 | 4 | 5.77492 | -26.6164 | sidelobe_to_main_db | -26.6164 | 26.6164 | 5.21196e-06 | -2 | 0 | -0.00869905 | -9.41158e-06 | 0 |
 | low_na_asymptotic | 0 | 4 | 5.7862 | -26.5176 | sidelobe_to_main_db | -26.5176 | 26.5176 | 6.79032e-08 | -2 | 0 | 0.00258077 | 2.75717e-06 | 0 |
@@ -45,7 +45,7 @@ Sphere, low NA, low contrast. This should be the easiest alignment case.
 
 | mode | measured_lateral_peak_x_um | measured_lateral_fwhm_um | measured_axial_fwhm_opd_um | measured_psr_db | measured_psr_definition | measured_sidelobe_to_main_db | measured_main_to_sidelobe_rejection_db | raw_peak_intensity | measured_peak_shift_um_vs_bridge | measured_lateral_width_bias_um_vs_bridge | measured_axial_width_bias_um_vs_bridge | measured_sidelobe_distortion_vs_bridge | extraction_plane_opd_um |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| full_na_scalar_fixed_basis | 0 | 4 | 5.7862 | -26.5176 | sidelobe_to_main_db | -26.5176 | 26.5176 | 4.29708e-07 | -2 | 0 | 0.00258013 | 2.7565e-06 | 0 |
+| full_na_scalar_fixed_basis | 0 | 4 | 5.77492 | -26.6164 | sidelobe_to_main_db | -26.6164 | 26.6164 | 5.09733e-05 | -2 | 0 | -0.00869972 | -9.41227e-06 | 0 |
 | vector_pupil_overlap_bridge | 2 | 4 | 5.78362 | -26.5403 | sidelobe_to_main_db | -26.5403 | 26.5403 | 1.20042e-09 | 0 | 0 | 0 | 0 | 0 |
 | low_na_separable_baseline | 0 | 4 | 5.77492 | -26.6164 | sidelobe_to_main_db | -26.6164 | 26.6164 | 5.21196e-06 | -2 | 0 | -0.00869905 | -9.41158e-06 | 0 |
 | low_na_asymptotic | 0 | 4 | 5.7862 | -26.5176 | sidelobe_to_main_db | -26.5176 | 26.5176 | 6.79032e-08 | -2 | 0 | 0.00258077 | 2.75717e-06 | 0 |
