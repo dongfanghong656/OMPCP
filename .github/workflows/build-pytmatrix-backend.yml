@@ -11,9 +11,12 @@ on:
       - "scripts/import_ci_evidence_artifacts.py"
       - "scripts/oct_nonspherical_psf_solver.py"
       - "scripts/particle_size_sweep_runner.py"
+      - "scripts/sphere_particle_sweep_runner.py"
       - "scripts/validate_oct_nonspherical_psf_solver.py"
+      - "physics/**"
       - "12_test_low_na_asymptotic_helpers.py"
       - "test_low_na_asymptotic_helpers.py"
+      - "tests/test_sphere_mie_branch_contract.py"
       - "vendor/**"
   pull_request:
     paths:
@@ -24,9 +27,12 @@ on:
       - "scripts/import_ci_evidence_artifacts.py"
       - "scripts/oct_nonspherical_psf_solver.py"
       - "scripts/particle_size_sweep_runner.py"
+      - "scripts/sphere_particle_sweep_runner.py"
       - "scripts/validate_oct_nonspherical_psf_solver.py"
+      - "physics/**"
       - "12_test_low_na_asymptotic_helpers.py"
       - "test_low_na_asymptotic_helpers.py"
+      - "tests/test_sphere_mie_branch_contract.py"
       - "vendor/**"
 
 permissions:
@@ -121,6 +127,21 @@ jobs:
       - name: Run solver validation
         run: |
           python scripts/validate_oct_nonspherical_psf_solver.py | Tee-Object -FilePath reports/pytmatrix-validate.json
+
+      - name: Run sphere Mie branch contract tests
+        run: |
+          python -m unittest discover -s tests -p test_sphere_mie_branch_contract.py
+
+      - name: Run sphere Mie full-NA smoke sweep
+        run: |
+          python scripts/sphere_particle_sweep_runner.py `
+            --diameters 200,500 `
+            --na-values 0.05 `
+            --n-lambda 21 `
+            --n-z 201 `
+            --n-x 41 `
+            --n-bfp-dense 31 `
+            --output-dir reports/sphere_mie_full_na_ci_smoke
 
       - name: Rebuild round6p1 evidence with required T-matrix backend
         run: |

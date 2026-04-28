@@ -1,0 +1,26 @@
+{
+  "00_PRO_REVIEW_ENTRY.md": {
+    "sha256": "860a3967fbedbd69618c49b814ae89926e943492bce788621596b9a5362364a8",
+    "bytes": 3008
+  },
+  "round6p1_validation_failure_summary_local_sphere_branch.txt": {
+    "sha256": "58759d7ee3a32640de36bcd007e3c927038d3d0987b11fd463cc9032850a53a3",
+    "bytes": 2871
+  },
+  "round6p1_validation_summary_local_sphere_branch.json": {
+    "sha256": "28f57692a0e0129b887c257abb91c171921bfabc43bd37500c5453e85207a808",
+    "bytes": 7359
+  },
+  "sphere_mie_full_na_cli_smoke_20260428.json": {
+    "sha256": "4ce0a9c3ae362e68452387ff8ea3aa70e33be7c5810db7c7464560dfb1a45034",
+    "bytes": 34718
+  },
+  "sphere_mie_full_na_sweep.csv": {
+    "sha256": "507c07181b86831dd4f413a74f6ba5a5cb6bb1ceea5a1e9facefb238eb2d4a36",
+    "bytes": 773
+  },
+  "sphere_mie_full_na_sweep_summary.json": {
+    "sha256": "bb9f911ee1deb07f765b668ed5eac2052018db069f0c3adb84a0f8fe8db0e9c5",
+    "bytes": 2291
+  }
+}

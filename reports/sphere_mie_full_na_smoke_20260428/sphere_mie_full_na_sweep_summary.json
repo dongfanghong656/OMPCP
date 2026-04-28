@@ -1,0 +1,79 @@
+{
+  "schema_version": "sphere_mie_sweep_v1",
+  "sweep_status": "complete",
+  "diameter_nm_values": [
+    200.0,
+    500.0
+  ],
+  "na_values": [
+    0.05
+  ],
+  "case_count": 2,
+  "ok_count": 2,
+  "failed_count": 0,
+  "sphere_branch_contract": "full_na_eps0_force_tmatrix_false_must_use_sphere_mie_no_tmatrix",
+  "metric_ranges": {
+    "peakline_x_um": [
+      0.0,
+      0.0
+    ],
+    "lateral_fwhm_um": [
+      8.0,
+      8.0
+    ],
+    "lateral_centroid_um": [
+      -1.2717897124276671e-05,
+      9.409347650341545e-06
+    ],
+    "axial_fwhm_opd_um": [
+      5.724991951714786,
+      5.739178760062021
+    ],
+    "raw_peak_intensity": [
+      0.014289703242932212,
+      0.3029025945464821
+    ]
+  },
+  "rows": [
+    {
+      "diameter_nm": 200.0,
+      "na": 0.05,
+      "status": "ok",
+      "mode_returned": "full_na_scalar_fixed_basis",
+      "sphere_mie_used": true,
+      "tmatrix_used": false,
+      "tmatrix_backend_required": false,
+      "scattering_branch": "sphere_mie_full_na",
+      "lateral_response_model": "sphere_mie_angle_resolved_pupil_field",
+      "particle_lateral_scattering_enters_profile": true,
+      "peakline_x_um": 0.0,
+      "lateral_fwhm_um": 8.0,
+      "lateral_centroid_um": 9.409347650341545e-06,
+      "axial_fwhm_opd_um": 5.724991951714786,
+      "axial_peak_opd_um": 0.0,
+      "main_to_sidelobe_rejection_db": 26.95618839646861,
+      "raw_peak_intensity": 0.014289703242932212,
+      "paper_safe": false
+    },
+    {
+      "diameter_nm": 500.0,
+      "na": 0.05,
+      "status": "ok",
+      "mode_returned": "full_na_scalar_fixed_basis",
+      "sphere_mie_used": true,
+      "tmatrix_used": false,
+      "tmatrix_backend_required": false,
+      "scattering_branch": "sphere_mie_full_na",
+      "lateral_response_model": "sphere_mie_angle_resolved_pupil_field",
+      "particle_lateral_scattering_enters_profile": true,
+      "peakline_x_um": 0.0,
+      "lateral_fwhm_um": 8.0,
+      "lateral_centroid_um": -1.2717897124276671e-05,
+      "axial_fwhm_opd_um": 5.739178760062021,
+      "axial_peak_opd_um": -1.1999999999999957,
+      "main_to_sidelobe_rejection_db": 26.63582730797602,
+      "raw_peak_intensity": 0.3029025945464821,
+      "paper_safe": false
+    }
+  ]
+}

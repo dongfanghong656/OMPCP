@@ -1,0 +1,56 @@
+round6p1 validation failure summary
+Hard gate failures: none
+Model-limit failures: none
+Expected-fail checks: none
+Worst case: unavailable
+Worst metric: unavailable
+Dominant error bucket: unavailable
+Directional first-order is promising: False
+Most critical open model limit: none
+Recommended next action: inspect_open_model_limit_manually
+Recommended action source: open_model_limit
+Evidence dependency status: both_missing
+Guidance confidence: fallback_only
+Coefficient-map audit recommended next action: coefficient_map_audit_not_supplied
+Coefficient-map stability recommended next action: coefficient_map_stability_not_supplied
+Best generalizing coefficient-map model: None
+Promoted shared coefficient-map model: None
+Promoted shared coefficient-map runtime scope: unknown
+Promoted shared coefficient-map contract status: unknown
+Promoted shared coefficient-map supported lateral-shift models: none declared
+Promoted shared coefficient-map lateral-shift constraint: unknown
+Promoted shared coefficient-map shift target: none
+Coefficient-map ablation recommended next action: coefficient_map_ablation_not_supplied
+Best ablated coefficient-map model: None
+Fit sensitivity recommended next action: fit_sensitivity_not_supplied
+Fit-window sensitivity status: unknown
+Effective-channel fit strategy recommended next action: fit_strategy_ablation_not_supplied
+Effective-channel fit strategy status: unknown
+Slice-axis crosscheck recommended next action: slice_axis_crosscheck_not_supplied
+Slice-axis crosscheck status: unknown
+Measurement pipeline evidence status: not_supplied
+Measurement pipeline default mode: not_supplied
+Measurement pipeline modes: none declared
+FD-OCT measurement wrapper status: unknown
+Measurement reference-arm policy: not_supplied
+Measurement reference-arm policy status: unknown
+Measurement FD-OCT depth policy status: not_supplied
+Measurement FD-OCT k-axis kinds: none declared
+Measurement FD-OCT medium-index policies: none declared
+Measurement FD-OCT depth conventions: none declared
+Measurement artifact freshness status: not_supplied
+Measurement contract refreshed row count: 0
+CPython 3.10 evidence rebuild readiness status: not_supplied
+CPython 3.10 evidence rebuild ready: False
+CPython 3.10 evidence rebuild selected Python version: None
+CPython 3.10 evidence rebuild status: not_supplied
+CPython 3.10 evidence rebuild recommended next action: cp310_readiness_not_supplied
+Particle-size sweep status: not_supplied
+Particle-size sweep mode: not_supplied
+Particle-size sweep diameter range nm: None
+Particle-size sweep cases: None ok / None failed (0 total)
+Particle-size sweep recommended next action: not_supplied
+Particle-size sweep scope note: not_supplied
+Basis conditioning status: unknown
+Coefficient interpretability status: unknown
+Shared-scale consistency status: unknown

@@ -6,6 +6,18 @@ This note freezes the current known limits without mixing them with implementati
 
 - `full_na_scalar_fixed_basis` is not a strict `c_rx^H T c_tx` OCT forward model.
 - It remains a fixed-basis scalar pupil-propagation baseline, not a measured-channel solver.
+- Exact spherical particles now have a separated pure Mie full-NA branch:
+  - `scattering_branch = "sphere_mie_full_na"`
+  - `sphere_mie_used = true`
+  - `tmatrix_used = false`
+  - `lateral_response_model = "sphere_mie_angle_resolved_pupil_field"`
+  This avoids requiring the non-spherical T-matrix backend for `eps = 0`, `ideal = false`, `force_tmatrix = false`
+  sphere cases.
+- The sphere-only Mie branch is still a scalar fixed-basis pupil-field model, not a full vector Debye / calibrated OCT
+  instrument model. It should be read as the exact homogeneous-sphere scattering route inside the current forward-
+  diagnostic stack, not as final device-level PSF truth.
+- The old `low_na_separable_baseline` remains an axial spectral smoke path with a Gaussian lateral surrogate; it still
+  must not be used as evidence that particle scattering does not affect the lateral PSF.
 
 ## Bridge limits
 

@@ -25,6 +25,7 @@ from physics.tmatrix_backend_registry import (
     require_backend_available,
     write_backend_provenance,
 )
+from physics.sphere_mie_pupil import build_sphere_mie_bfp_field
 from solvers.coefficient_path_bundle import (
     COEFFICIENT_MAP_MODEL_IDS,
     RENDERED_BASIS_SHIFT_TARGETS,
@@ -36,6 +37,7 @@ COEFFICIENT_MAP_RUNTIME_MODES = (
     "native_branch_assembly",
     "rendered_basis_override",
 )
+SPHERE_MIE_EPS_TOL = 1e-12
 
 _ROUND6_EXTENSION_ALIASES = {
     "10_vector_pupil_overlap_bridge.py": ("10_vector_pupil_overlap_bridge.py", "02_vector_pupil_overlap_bridge.py"),
@@ -1032,6 +1034,14 @@ def build_ideal_bfp_field(lambda_nm, *, n_bfp_dense=129):
     }
 
 
+def should_use_sphere_mie_full_na_branch(solver):
+    return (
+        not bool(getattr(solver, "ideal", False))
+        and not bool(getattr(solver, "force_tmatrix", False))
+        and abs(float(getattr(solver, "eps", 0.0))) <= SPHERE_MIE_EPS_TOL
+    )
+
+
 def pupil_field_to_lateral_line(bundle, lambda_nm, x_um, sin_theta_max, medium_material, lateral_slice_axis="x"):
     medium_fn = resolve_material_model(medium_material)
     sin_theta_max_values = np.asarray(sin_theta_max, dtype=float)
@@ -1203,10 +1213,45 @@ def solve_full_na_slice(source, grid, solver):
         "medium_material": validate_material_support(solver.medium_material, lambda_nm, strict_material_range=solver.strict_material_range, role="medium_material"),
     }
     geometry = derive_na_geometry_series(lambda_nm, solver.medium_material, grid.na)
+    sphere_mie_metadata = None
+    sphere_mie_nmax_min = None
+    sphere_mie_nmax_max = None
+    sphere_mie_used = False
+    tmatrix_backend_required = False
+    scattering_branch = "unresolved"
+    lateral_response_model = "unresolved"
+    particle_lateral_scattering_enters_profile = False
     if solver.ideal:
         bundle = build_ideal_bfp_field(lambda_nm, n_bfp_dense=grid.n_bfp_dense)
         tmatrix_used = False
+        scattering_branch = "ideal_uniform_pupil_reference"
+        lateral_response_model = "ideal_uniform_pupil_reference"
         material_support["particle_material"] = {"role": "particle_material", "status": "skipped_ideal_mode"}
+    elif should_use_sphere_mie_full_na_branch(solver):
+        material_support["particle_material"] = validate_material_support(
+            solver.particle_material,
+            lambda_nm,
+            strict_material_range=solver.strict_material_range,
+            role="particle_material",
+        )
+        bundle = build_sphere_mie_bfp_field(
+            diameter_nm=solver.diameter_nm,
+            particle_index_fn=resolve_material_model(solver.particle_material),
+            medium_index_fn=resolve_material_model(solver.medium_material),
+            lambda_nm=lambda_nm,
+            sin_theta_max=geometry["sin_theta_max"],
+            n_bfp_dense=grid.n_bfp_dense,
+            amp_component=solver.amp_component,
+        )
+        tmatrix_used = False
+        sphere_mie_used = True
+        tmatrix_backend_required = False
+        scattering_branch = "sphere_mie_full_na"
+        lateral_response_model = "sphere_mie_angle_resolved_pupil_field"
+        particle_lateral_scattering_enters_profile = True
+        sphere_mie_metadata = bundle.get("sphere_mie_metadata")
+        sphere_mie_nmax_min = bundle.get("sphere_mie_nmax_min")
+        sphere_mie_nmax_max = bundle.get("sphere_mie_nmax_max")
     else:
         material_support["particle_material"] = validate_material_support(
             solver.particle_material,
@@ -1216,6 +1261,10 @@ def solve_full_na_slice(source, grid, solver):
         )
         bundle = build_particle_bfp_field(solver.diameter_nm, solver.eps, solver.beta_deg, solver.particle_material, solver.medium_material, lambda_nm, sin_theta_max=geometry["sin_theta_max"], n_bfp_dense=grid.n_bfp_dense, n_bfp_sparse=grid.n_bfp_sparse, amp_component=solver.amp_component, library_path=solver.library_path)
         tmatrix_used = True
+        tmatrix_backend_required = True
+        scattering_branch = "non_spherical_tmatrix_full_na"
+        lateral_response_model = "tmatrix_angle_resolved_pupil_field"
+        particle_lateral_scattering_enters_profile = True
     lateral_slice_axis = str(getattr(solver, "lateral_slice_axis", "x")).strip().lower()
     lateral_field = pupil_field_to_lateral_line(
         bundle,
@@ -1301,6 +1350,14 @@ def solve_full_na_slice(source, grid, solver):
         },
         "tmatrix_used": tmatrix_used,
         "tmatrix_library": _TMATRIX_LIB_PATH if tmatrix_used else None,
+        "sphere_mie_used": sphere_mie_used,
+        "tmatrix_backend_required": tmatrix_backend_required,
+        "scattering_branch": scattering_branch,
+        "lateral_response_model": lateral_response_model,
+        "particle_lateral_scattering_enters_profile": particle_lateral_scattering_enters_profile,
+        "sphere_mie_metadata": sphere_mie_metadata,
+        "sphere_mie_nmax_min": sphere_mie_nmax_min,
+        "sphere_mie_nmax_max": sphere_mie_nmax_max,
         "pupil_shape": list(bundle["field_cube"].shape),
         "amp_component_semantics": AMP_COMPONENT_SEMANTICS,
         "propagation_note": FULL_NA_PROPAGATION_NOTE,
@@ -1612,6 +1669,14 @@ def main():
         "paper_safe": result.get("paper_safe"),
         "tmatrix_used": result["tmatrix_used"],
         "tmatrix_library": result["tmatrix_library"],
+        "sphere_mie_used": result.get("sphere_mie_used"),
+        "tmatrix_backend_required": result.get("tmatrix_backend_required"),
+        "scattering_branch": result.get("scattering_branch"),
+        "lateral_response_model": result.get("lateral_response_model"),
+        "particle_lateral_scattering_enters_profile": result.get("particle_lateral_scattering_enters_profile"),
+        "sphere_mie_metadata": result.get("sphere_mie_metadata"),
+        "sphere_mie_nmax_min": result.get("sphere_mie_nmax_min"),
+        "sphere_mie_nmax_max": result.get("sphere_mie_nmax_max"),
         "tmatrix_backend_requested_id": args.tmatrix_backend,
         "tmatrix_backend_available": backend_provenance.get("backend_available"),
         "tmatrix_backend_id": backend_provenance.get("backend_id"),

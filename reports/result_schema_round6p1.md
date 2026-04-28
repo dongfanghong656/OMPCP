@@ -281,6 +281,44 @@ Current expected values for complete round6p1 evidence packages:
 
 These fields are measurement-evidence metadata. They should not by themselves override the coefficient-path recommended action unless future measurement-grade gates are added.
 
+## Sphere-only Mie full-NA branch fields
+
+The `full_na_scalar_fixed_basis` result now separates exact spherical particles from the non-spherical T-matrix route.
+When `eps = 0`, `ideal = false`, and `force_tmatrix = false`, the expected branch is the pure Mie sphere branch.
+Solver summaries and sweep reports may expose:
+
+- `sphere_mie_used`
+- `scattering_branch`
+- `tmatrix_backend_required`
+- `lateral_response_model`
+- `particle_lateral_scattering_enters_profile`
+- `sphere_mie_metadata`
+- `sphere_mie_nmax_min`
+- `sphere_mie_nmax_max`
+
+Expected exact-sphere full-NA values are:
+
+- `sphere_mie_used = true`
+- `tmatrix_used = false`
+- `tmatrix_backend_required = false`
+- `scattering_branch = "sphere_mie_full_na"`
+- `lateral_response_model = "sphere_mie_angle_resolved_pupil_field"`
+- `particle_lateral_scattering_enters_profile = true`
+
+The standalone sphere sweep runner writes `sphere_mie_full_na_sweep_summary.json` with:
+
+- `schema_version = "sphere_mie_sweep_v1"`
+- `sweep_status`
+- `sphere_branch_contract`
+- `metric_ranges`
+- `rows[*].sphere_mie_used`
+- `rows[*].tmatrix_used`
+- `rows[*].scattering_branch`
+- `rows[*].lateral_response_model`
+
+This branch is a particle-aware scalar pupil-field path for homogeneous spheres. It is not a substitute for the
+non-spherical T-matrix route, and it is still bounded by the scalar fixed-basis / FD-OCT measurement-scaffold limits.
+
 ## Validation-summary CPython 3.10 evidence-rebuild fields
 
 The round6p1 evidence package may include a controlled CPython 3.10 / T-matrix rebuild readiness report.

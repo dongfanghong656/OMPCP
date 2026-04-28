@@ -1,0 +1,3 @@
+diameter_nm,na,status,mode_returned,sphere_mie_used,tmatrix_used,tmatrix_backend_required,scattering_branch,lateral_response_model,particle_lateral_scattering_enters_profile,peakline_x_um,lateral_fwhm_um,lateral_centroid_um,axial_fwhm_opd_um,axial_peak_opd_um,main_to_sidelobe_rejection_db,raw_peak_intensity,paper_safe
+200.0,0.05,ok,full_na_scalar_fixed_basis,True,False,False,sphere_mie_full_na,sphere_mie_angle_resolved_pupil_field,True,0.0,8.0,9.409347650341545e-06,5.724991951714786,0.0,26.95618839646861,0.014289703242932212,False
+500.0,0.05,ok,full_na_scalar_fixed_basis,True,False,False,sphere_mie_full_na,sphere_mie_angle_resolved_pupil_field,True,0.0,8.0,-1.2717897124276671e-05,5.739178760062021,-1.1999999999999957,26.63582730797602,0.3029025945464821,False
