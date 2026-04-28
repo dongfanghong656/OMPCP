@@ -61,24 +61,24 @@
   "particle_lateral_scattering_scope_note": "The selected mode may include particle-aware lateral structure; interpret against the solver mode contract.",
   "metric_ranges": {
     "fwhm_opd_um": [
-      5.348535052131476,
-      5.706790982096506
+      5.348535052131479,
+      5.706790982096512
     ],
     "peak_opd_um": [
       -1.9600000000000009,
       -0.1599999999999966
     ],
     "centroid_opd_um": [
-      -2.0273147196177486,
-      -0.14985146440917196
+      -2.027314719617748,
+      -0.1498514644091719
     ],
     "main_to_sidelobe_rejection_db": [
-      25.110183518742666,
-      26.573469800409505
+      25.110183518742662,
+      26.57346980040947
     ],
     "raw_peak_intensity": [
-      1.0815698579950464e-06,
-      1.98415240593364e-06
+      1.081569857995046e-06,
+      1.9841524059336374e-06
     ],
     "peakline_x_um": [
       4.0,
@@ -93,16 +93,16 @@
       "mode_returned": "vector_pupil_overlap_bridge",
       "tmatrix_used": true,
       "paper_safe": false,
-      "fwhm_opd_um": 5.706790982096506,
+      "fwhm_opd_um": 5.706790982096512,
       "peak_opd_um": -0.1599999999999966,
-      "centroid_opd_um": -0.14985146440917196,
+      "centroid_opd_um": -0.1498514644091719,
       "psr_definition": "sidelobe_to_main_db",
-      "sidelobe_to_main_db": -26.573469800409505,
-      "main_to_sidelobe_rejection_db": 26.573469800409505,
-      "strongest_sidelobe_value": 0.002201167135500879,
+      "sidelobe_to_main_db": -26.57346980040947,
+      "main_to_sidelobe_rejection_db": 26.57346980040947,
+      "strongest_sidelobe_value": 0.0022011671355008956,
       "sidelobe_energy_fraction": 0.0004922805709794399,
-      "raw_peak_intensity": 1.98415240593364e-06,
-      "raw_peak_envelope": 0.0014085994483648075,
+      "raw_peak_intensity": 1.9841524059336374e-06,
+      "raw_peak_envelope": 0.0014085994483648066,
       "peakline_x_um": 4.0,
       "lateral_response_model": null,
       "particle_lateral_scattering_enters_profile": null,
@@ -120,16 +120,16 @@
       "mode_returned": "vector_pupil_overlap_bridge",
       "tmatrix_used": true,
       "paper_safe": false,
-      "fwhm_opd_um": 5.348535052131476,
+      "fwhm_opd_um": 5.348535052131479,
       "peak_opd_um": -1.9600000000000009,
-      "centroid_opd_um": -2.0273147196177486,
+      "centroid_opd_um": -2.027314719617748,
       "psr_definition": "sidelobe_to_main_db",
-      "sidelobe_to_main_db": -25.110183518742666,
-      "main_to_sidelobe_rejection_db": 25.110183518742666,
-      "strongest_sidelobe_value": 0.0030830576674931004,
+      "sidelobe_to_main_db": -25.110183518742662,
+      "main_to_sidelobe_rejection_db": 25.110183518742662,
+      "strongest_sidelobe_value": 0.003083057667493104,
       "sidelobe_energy_fraction": 0.0007970535922443781,
-      "raw_peak_intensity": 1.0815698579950464e-06,
-      "raw_peak_envelope": 0.001039985508550502,
+      "raw_peak_intensity": 1.081569857995046e-06,
+      "raw_peak_envelope": 0.0010399855085505018,
       "peakline_x_um": 4.0,
       "lateral_response_model": null,
       "particle_lateral_scattering_enters_profile": null,

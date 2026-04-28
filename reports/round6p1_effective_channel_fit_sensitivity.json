@@ -19,8 +19,8 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 2.9386374594820277e-07,
           "abs_C2_over_abs_B": 312881.5165039636,
-          "a1_vs_D1_slice_k_relative_residual": 0.16866528857273688,
-          "a2_vs_C2_slice_k_relative_residual": 0.14229037356619975
+          "a1_vs_D1_slice_k_relative_residual": 0.16866528857112467,
+          "a2_vs_C2_slice_k_relative_residual": 0.14229037356619972
         },
         {
           "variant": "wider_theta_window",
@@ -38,8 +38,8 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 5.123214069421872e-07,
           "abs_C2_over_abs_B": 212741.79164561757,
-          "a1_vs_D1_slice_k_relative_residual": 0.11518234237617928,
-          "a2_vs_C2_slice_k_relative_residual": 0.14228992155540354
+          "a1_vs_D1_slice_k_relative_residual": 0.11518234237458948,
+          "a2_vs_C2_slice_k_relative_residual": 0.14228992155540351
         },
         {
           "variant": "denser_angular_sampling",
@@ -57,14 +57,14 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 5.879033864189842e-07,
           "abs_C2_over_abs_B": 494273.5752178575,
-          "a1_vs_D1_slice_k_relative_residual": 0.11517147190368124,
-          "a2_vs_C2_slice_k_relative_residual": 0.14229036067373774
+          "a1_vs_D1_slice_k_relative_residual": 0.11517147190209244,
+          "a2_vs_C2_slice_k_relative_residual": 0.1422903606737377
         }
       ],
       "sensitivity_summary": {
         "max_abs_D1_over_abs_B_ratio_vs_default": 2.0005985580902848,
         "max_abs_C2_over_abs_B_ratio_vs_default": 1.5797468023701424,
-        "max_a1_residual_delta_vs_default": 0.053493816669055644,
+        "max_a1_residual_delta_vs_default": 0.05349381666903223,
         "max_a2_residual_delta_vs_default": 4.5201079620915685e-07
       }
     },
@@ -87,7 +87,7 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 6.313724056955261e-07,
           "abs_C2_over_abs_B": 87955.07917209528,
-          "a1_vs_D1_slice_k_relative_residual": 0.25163511470359284,
+          "a1_vs_D1_slice_k_relative_residual": 0.2516351147035725,
           "a2_vs_C2_slice_k_relative_residual": 0.13320180004724802
         },
         {
@@ -106,7 +106,7 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 1.0535174151883415e-06,
           "abs_C2_over_abs_B": 62856.69888665132,
-          "a1_vs_D1_slice_k_relative_residual": 0.2619222527439378,
+          "a1_vs_D1_slice_k_relative_residual": 0.26192225274415587,
           "a2_vs_C2_slice_k_relative_residual": 0.13320981495737452
         },
         {
@@ -125,14 +125,14 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 1.2392169350338301e-06,
           "abs_C2_over_abs_B": 149704.94802122022,
-          "a1_vs_D1_slice_k_relative_residual": 0.2619126486701515,
-          "a2_vs_C2_slice_k_relative_residual": 0.13320201710812543
+          "a1_vs_D1_slice_k_relative_residual": 0.26191264867036956,
+          "a2_vs_C2_slice_k_relative_residual": 0.1332020171081254
         }
       ],
       "sensitivity_summary": {
         "max_abs_D1_over_abs_B_ratio_vs_default": 1.9627353426520064,
         "max_abs_C2_over_abs_B_ratio_vs_default": 1.7020614321579255,
-        "max_a1_residual_delta_vs_default": 0.010287138040344979,
+        "max_a1_residual_delta_vs_default": 0.010287138040583343,
         "max_a2_residual_delta_vs_default": 8.014910126502572e-06
       }
     },
@@ -155,7 +155,7 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 7.829120518936101e-07,
           "abs_C2_over_abs_B": 17844.171510376986,
-          "a1_vs_D1_slice_k_relative_residual": 0.741017753941116,
+          "a1_vs_D1_slice_k_relative_residual": 0.7410177539411872,
           "a2_vs_C2_slice_k_relative_residual": 0.14446355809584563
         },
         {
@@ -174,8 +174,8 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 1.0412217399736392e-06,
           "abs_C2_over_abs_B": 11653.160656504024,
-          "a1_vs_D1_slice_k_relative_residual": 0.780431627751867,
-          "a2_vs_C2_slice_k_relative_residual": 0.14429802850790802
+          "a1_vs_D1_slice_k_relative_residual": 0.7804316277519453,
+          "a2_vs_C2_slice_k_relative_residual": 0.144298028507908
         },
         {
           "variant": "denser_angular_sampling",
@@ -193,15 +193,15 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 1.1707177403514298e-06,
           "abs_C2_over_abs_B": 26530.693468891288,
-          "a1_vs_D1_slice_k_relative_residual": 0.7804002563335704,
+          "a1_vs_D1_slice_k_relative_residual": 0.7804002563336485,
           "a2_vs_C2_slice_k_relative_residual": 0.1444596686401135
         }
       ],
       "sensitivity_summary": {
         "max_abs_D1_over_abs_B_ratio_vs_default": 1.495337487167101,
         "max_abs_C2_over_abs_B_ratio_vs_default": 1.4867988381227337,
-        "max_a1_residual_delta_vs_default": 0.03941387381075101,
-        "max_a2_residual_delta_vs_default": 0.00016552958793761285
+        "max_a1_residual_delta_vs_default": 0.039413873810758115,
+        "max_a2_residual_delta_vs_default": 0.0001655295879376406
       }
     },
     {
@@ -223,7 +223,7 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 6.313783861679269e-07,
           "abs_C2_over_abs_B": 39076.08162799216,
-          "a1_vs_D1_slice_k_relative_residual": 0.25305981614032413,
+          "a1_vs_D1_slice_k_relative_residual": 0.25305981614019474,
           "a2_vs_C2_slice_k_relative_residual": 0.13051330174426554
         },
         {
@@ -242,8 +242,8 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 1.0535451998038325e-06,
           "abs_C2_over_abs_B": 27924.17867134322,
-          "a1_vs_D1_slice_k_relative_residual": 0.26304552107845464,
-          "a2_vs_C2_slice_k_relative_residual": 0.13053131069618296
+          "a1_vs_D1_slice_k_relative_residual": 0.26304552107820234,
+          "a2_vs_C2_slice_k_relative_residual": 0.13053131069618298
         },
         {
           "variant": "denser_angular_sampling",
@@ -261,15 +261,15 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 1.2392102542775662e-06,
           "abs_C2_over_abs_B": 66510.41052112367,
-          "a1_vs_D1_slice_k_relative_residual": 0.26303783627176447,
+          "a1_vs_D1_slice_k_relative_residual": 0.26303783627151217,
           "a2_vs_C2_slice_k_relative_residual": 0.13051378949989972
         }
       ],
       "sensitivity_summary": {
         "max_abs_D1_over_abs_B_ratio_vs_default": 1.9627061702235322,
         "max_abs_C2_over_abs_B_ratio_vs_default": 1.7020747155333746,
-        "max_a1_residual_delta_vs_default": 0.009985704938130502,
-        "max_a2_residual_delta_vs_default": 1.8008951917419802e-05
+        "max_a1_residual_delta_vs_default": 0.0099857049380076,
+        "max_a2_residual_delta_vs_default": 1.8008951917447558e-05
       }
     },
     {
@@ -291,7 +291,7 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 7.745053758614051e-07,
           "abs_C2_over_abs_B": 17581.746635526528,
-          "a1_vs_D1_slice_k_relative_residual": 0.681025885877758,
+          "a1_vs_D1_slice_k_relative_residual": 0.681025885877735,
           "a2_vs_C2_slice_k_relative_residual": 0.13048176451304805
         },
         {
@@ -310,8 +310,8 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 1.0060513739260259e-06,
           "abs_C2_over_abs_B": 11336.13602890098,
-          "a1_vs_D1_slice_k_relative_residual": 0.7252247681029508,
-          "a2_vs_C2_slice_k_relative_residual": 0.13033630405754806
+          "a1_vs_D1_slice_k_relative_residual": 0.7252247681029215,
+          "a2_vs_C2_slice_k_relative_residual": 0.1303363040575481
         },
         {
           "variant": "denser_angular_sampling",
@@ -329,15 +329,15 @@
           "reference_rendered_coefficients_source": "none",
           "abs_D1_over_abs_B": 1.1228640884091068e-06,
           "abs_C2_over_abs_B": 25618.696644108975,
-          "a1_vs_D1_slice_k_relative_residual": 0.7251860947840427,
+          "a1_vs_D1_slice_k_relative_residual": 0.7251860947840133,
           "a2_vs_C2_slice_k_relative_residual": 0.13047796805149747
         }
       ],
       "sensitivity_summary": {
         "max_abs_D1_over_abs_B_ratio_vs_default": 1.4497821750562507,
         "max_abs_C2_over_abs_B_ratio_vs_default": 1.4571189754459661,
-        "max_a1_residual_delta_vs_default": 0.04419888222519275,
-        "max_a2_residual_delta_vs_default": 0.00014546045549998499
+        "max_a1_residual_delta_vs_default": 0.04419888222518642,
+        "max_a2_residual_delta_vs_default": 0.00014546045549995723
       }
     }
   ],

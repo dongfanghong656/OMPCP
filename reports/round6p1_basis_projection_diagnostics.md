@@ -14,7 +14,7 @@ Bridge peakline_x_um: `2.0`; bridge centroid_opd_um: `-0.006971357165962617`; la
 
 ## mild_shape_medium_tilt
 
-Bridge peakline_x_um: `2.0`; bridge centroid_opd_um: `-0.3307336347904743`; lateral_slice_axis: `x`
+Bridge peakline_x_um: `2.0`; bridge centroid_opd_um: `-0.330733634790474`; lateral_slice_axis: `x`
 
 | Family | field_relative_l2 | intensity_relative_l2 | peakline_x_um | peakline_x_delta_um_vs_bridge | centroid_opd_um | centroid_opd_delta_um_vs_bridge | raw_peak_relative_delta | |a1|/|a0| | |a2|/|a0| |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
