@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import sys
 import unittest
+import uuid
 from pathlib import Path
 
 import numpy as np
@@ -37,6 +39,16 @@ def load_solver():
             spec.loader.exec_module(module)
             return module
     raise FileNotFoundError("Cannot find solver module.")
+
+
+def load_sphere_runner():
+    candidate = ROOT / "scripts" / "sphere_particle_sweep_runner.py"
+    spec = importlib.util.spec_from_file_location("sphere_particle_sweep_runner_for_tests", candidate)
+    assert spec and spec.loader
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
 
 
 class SphereMieKernelTests(unittest.TestCase):
@@ -107,6 +119,56 @@ class SphereBranchSolverTests(unittest.TestCase):
             return
         self.assertTrue(result.get("tmatrix_used"))
         self.assertFalse(result.get("sphere_mie_used", False))
+
+
+class SphereSweepRunnerTests(unittest.TestCase):
+    def test_sweep_reports_psf_bias_against_ideal_reference(self):
+        runner = load_sphere_runner()
+        unit_tmp = ROOT / "reports" / "_unit_test_tmp"
+        unit_tmp.mkdir(parents=True, exist_ok=True)
+        tmp = unit_tmp / f"sphere_runner_bias_{uuid.uuid4().hex}"
+        tmp.mkdir(parents=True, exist_ok=False)
+        code = runner.main(
+            [
+                "--project-root",
+                str(ROOT),
+                "--output-dir",
+                str(tmp),
+                "--diameters",
+                "200",
+                "--na-values",
+                "0.05",
+                "--n-lambda",
+                "7",
+                "--n-z",
+                "81",
+                "--n-x",
+                "31",
+                "--n-bfp-dense",
+                "15",
+                "--z-span-um",
+                "8",
+                "--x-span-um",
+                "4",
+            ]
+        )
+        self.assertEqual(code, 0)
+        summary = json.loads((tmp / "sphere_mie_full_na_sweep_summary.json").read_text(encoding="utf-8"))
+        self.assertTrue((tmp / "sphere_mie_full_na_sweep_summary.md").exists())
+        self.assertEqual(summary["ideal_reference_comparison"]["status"], "computed_for_all_na_values")
+        self.assertEqual(summary["psf_bias_against_ideal_reference_status"], "computed_not_paper_safe")
+        self.assertTrue(summary["ideal_reference_comparison"]["all_ok_rows_have_ideal_reference"])
+        row = summary["rows"][0]
+        self.assertTrue(row["ideal_reference_available"])
+        self.assertEqual(row["psf_bias_against_ideal_reference_status"], "computed_against_ideal_full_na_reference")
+        for key in (
+            "peakline_x_delta_um_vs_ideal",
+            "ideal_peak_plane_lateral_profile_relative_l2_vs_ideal",
+            "normalized_image_relative_l2_vs_ideal",
+        ):
+            self.assertIn(key, row)
+            self.assertIsNotNone(row[key])
+        self.assertIn("normalized_image_relative_l2_vs_ideal", summary["metric_ranges"])
 
 
 if __name__ == "__main__":

@@ -320,6 +320,8 @@ The standalone sphere sweep runner writes `sphere_mie_full_na_sweep_summary.json
 - `sweep_status`
 - `interpretation_status`
 - `paper_safety_status`
+- `psf_bias_against_ideal_reference_status`
+- `ideal_reference_comparison`
 - `sphere_branch_contract`
 - `sphere_branch_contract_checks`
 - `metric_ranges`
@@ -329,6 +331,19 @@ The standalone sphere sweep runner writes `sphere_mie_full_na_sweep_summary.json
 - `rows[*].lateral_response_model`
 - `rows[*].sample_arm_spectral_cube_contract_status`
 - `rows[*].fd_oct_measurement_scaffold_route_available`
+- `rows[*].ideal_reference_available`
+- `rows[*].peakline_x_delta_um_vs_ideal`
+- `rows[*].self_peak_lateral_fwhm_delta_um_vs_ideal`
+- `rows[*].self_peak_lateral_centroid_delta_um_vs_ideal`
+- `rows[*].self_peak_lateral_profile_relative_l2_vs_ideal`
+- `rows[*].ideal_peak_plane_peak_x_delta_um_vs_ideal`
+- `rows[*].ideal_peak_plane_lateral_fwhm_delta_um_vs_ideal`
+- `rows[*].ideal_peak_plane_lateral_profile_relative_l2_vs_ideal`
+- `rows[*].normalized_image_relative_l2_vs_ideal`
+
+The runner also writes `sphere_mie_full_na_sweep_summary.md` as a lightweight review
+summary. The ideal-reference comparison uses an ideal uniform-pupil full-NA reference
+computed with the same grid, NA, spectrum, and scalar fixed-basis propagation settings.
 
 This branch is a particle-aware scalar pupil-field path for homogeneous spheres. It is not a substitute for the
 non-spherical T-matrix route, and it is still bounded by the scalar fixed-basis / FD-OCT measurement-scaffold limits.

@@ -1,0 +1,233 @@
+{
+  "schema_version": "sphere_mie_sweep_v1",
+  "sweep_status": "complete",
+  "interpretation_status": "contract_smoke_only_not_final_particle_size_psf_conclusion",
+  "paper_safety_status": "not_paper_safe",
+  "diameter_nm_values": [
+    200.0,
+    500.0,
+    1000.0
+  ],
+  "na_values": [
+    0.05
+  ],
+  "case_count": 3,
+  "ok_count": 3,
+  "failed_count": 0,
+  "sphere_branch_contract": "full_na_eps0_force_tmatrix_false_must_use_sphere_mie_no_tmatrix",
+  "sphere_branch_contract_checks": {
+    "all_ok_rows_use_sphere_mie": true,
+    "all_ok_rows_avoid_tmatrix": true,
+    "all_ok_rows_particle_lateral_scattering_enters_profile": true,
+    "all_ok_rows_fd_oct_scaffold_route_available": true
+  },
+  "ideal_reference_comparison": {
+    "status": "computed_for_all_na_values",
+    "reference_kind": "ideal_uniform_pupil_full_na",
+    "comparison_modes": [
+      "self_peak_plane",
+      "ideal_peak_plane",
+      "normalized_full_xz_image"
+    ],
+    "all_ok_rows_have_ideal_reference": true
+  },
+  "psf_bias_against_ideal_reference_status": "computed_not_paper_safe",
+  "metric_ranges": {
+    "peakline_x_um": [
+      0.0,
+      0.0
+    ],
+    "lateral_fwhm_um": [
+      8.0,
+      8.0
+    ],
+    "lateral_centroid_um": [
+      -6.195193756675924e-06,
+      -6.8063379718729e-08
+    ],
+    "axial_fwhm_opd_um": [
+      5.714375332486749,
+      6.103160617145909
+    ],
+    "raw_peak_intensity": [
+      0.014337781804444947,
+      10.423934199378543
+    ],
+    "peakline_x_delta_um_vs_ideal": [
+      0.0,
+      0.0
+    ],
+    "self_peak_lateral_fwhm_delta_um_vs_ideal": [
+      0.0,
+      0.0
+    ],
+    "self_peak_lateral_centroid_delta_um_vs_ideal": [
+      -6.195193756831669e-06,
+      -6.806337987447368e-08
+    ],
+    "self_peak_lateral_profile_relative_l2_vs_ideal": [
+      0.00021292078824326936,
+      0.0015233724070887462
+    ],
+    "ideal_peak_plane_peak_x_delta_um_vs_ideal": [
+      0.0,
+      0.0
+    ],
+    "ideal_peak_plane_lateral_fwhm_delta_um_vs_ideal": [
+      0.0,
+      0.0
+    ],
+    "ideal_peak_plane_lateral_centroid_delta_um_vs_ideal": [
+      5.1518099490442904e-06,
+      9.741542855407386e-05
+    ],
+    "ideal_peak_plane_lateral_profile_relative_l2_vs_ideal": [
+      0.0004119694058447278,
+      0.0016839331089368544
+    ],
+    "normalized_image_relative_l2_vs_ideal": [
+      0.043283978876534984,
+      0.8443749282065282
+    ]
+  },
+  "rows": [
+    {
+      "diameter_nm": 200.0,
+      "na": 0.05,
+      "status": "ok",
+      "mode_returned": "full_na_scalar_fixed_basis",
+      "sphere_mie_used": true,
+      "tmatrix_used": false,
+      "tmatrix_backend_required": false,
+      "scattering_branch": "sphere_mie_full_na",
+      "lateral_response_model": "sphere_mie_angle_resolved_pupil_field",
+      "particle_lateral_scattering_enters_profile": true,
+      "sample_arm_spectral_cube_shape": [
+        41,
+        81
+      ],
+      "sample_arm_spectral_cube_contract_status": "valid_lambda_x_complex_field",
+      "fd_oct_measurement_scaffold_route_available": true,
+      "peakline_x_um": 0.0,
+      "lateral_fwhm_um": 8.0,
+      "lateral_centroid_um": -1.773554370685786e-06,
+      "axial_fwhm_opd_um": 5.714375332486749,
+      "axial_peak_opd_um": -0.19999999999999574,
+      "main_to_sidelobe_rejection_db": 26.268875178280556,
+      "raw_peak_intensity": 0.014337781804444947,
+      "paper_safe": false,
+      "ideal_reference_available": true,
+      "ideal_reference_scattering_branch": "ideal_uniform_pupil_reference",
+      "ideal_reference_sample_arm_spectral_cube_contract_status": "valid_lambda_x_complex_field",
+      "psf_bias_against_ideal_reference_status": "computed_against_ideal_full_na_reference",
+      "ideal_reference_peakline_x_um": 0.0,
+      "peakline_x_delta_um_vs_ideal": 0.0,
+      "ideal_reference_self_peak_lateral_fwhm_um": 8.0,
+      "ideal_reference_self_peak_lateral_centroid_um": 1.5574467013127317e-16,
+      "self_peak_lateral_fwhm_delta_um_vs_ideal": 0.0,
+      "self_peak_lateral_centroid_delta_um_vs_ideal": -1.7735543708415305e-06,
+      "self_peak_lateral_profile_relative_l2_vs_ideal": 0.0005610878264152426,
+      "ideal_peak_plane_z_index": 200,
+      "ideal_peak_plane_particle_lateral_peak_x_um": 0.0,
+      "ideal_peak_plane_lateral_fwhm_um": 8.0,
+      "ideal_peak_plane_lateral_centroid_um": 5.151809949200035e-06,
+      "ideal_peak_plane_peak_x_delta_um_vs_ideal": 0.0,
+      "ideal_peak_plane_lateral_fwhm_delta_um_vs_ideal": 0.0,
+      "ideal_peak_plane_lateral_centroid_delta_um_vs_ideal": 5.1518099490442904e-06,
+      "ideal_peak_plane_lateral_profile_relative_l2_vs_ideal": 0.0005563797784281013,
+      "normalized_image_relative_l2_vs_ideal": 0.043283978876534984
+    },
+    {
+      "diameter_nm": 500.0,
+      "na": 0.05,
+      "status": "ok",
+      "mode_returned": "full_na_scalar_fixed_basis",
+      "sphere_mie_used": true,
+      "tmatrix_used": false,
+      "tmatrix_backend_required": false,
+      "scattering_branch": "sphere_mie_full_na",
+      "lateral_response_model": "sphere_mie_angle_resolved_pupil_field",
+      "particle_lateral_scattering_enters_profile": true,
+      "sample_arm_spectral_cube_shape": [
+        41,
+        81
+      ],
+      "sample_arm_spectral_cube_contract_status": "valid_lambda_x_complex_field",
+      "fd_oct_measurement_scaffold_route_available": true,
+      "peakline_x_um": 0.0,
+      "lateral_fwhm_um": 8.0,
+      "lateral_centroid_um": -6.8063379718729e-08,
+      "axial_fwhm_opd_um": 5.732058029804423,
+      "axial_peak_opd_um": -1.0,
+      "main_to_sidelobe_rejection_db": 25.612065498999495,
+      "raw_peak_intensity": 0.3036832034907422,
+      "paper_safe": false,
+      "ideal_reference_available": true,
+      "ideal_reference_scattering_branch": "ideal_uniform_pupil_reference",
+      "ideal_reference_sample_arm_spectral_cube_contract_status": "valid_lambda_x_complex_field",
+      "psf_bias_against_ideal_reference_status": "computed_against_ideal_full_na_reference",
+      "ideal_reference_peakline_x_um": 0.0,
+      "peakline_x_delta_um_vs_ideal": 0.0,
+      "ideal_reference_self_peak_lateral_fwhm_um": 8.0,
+      "ideal_reference_self_peak_lateral_centroid_um": 1.5574467013127317e-16,
+      "self_peak_lateral_fwhm_delta_um_vs_ideal": 0.0,
+      "self_peak_lateral_centroid_delta_um_vs_ideal": -6.806337987447368e-08,
+      "self_peak_lateral_profile_relative_l2_vs_ideal": 0.0015233724070887462,
+      "ideal_peak_plane_z_index": 200,
+      "ideal_peak_plane_particle_lateral_peak_x_um": 0.0,
+      "ideal_peak_plane_lateral_fwhm_um": 8.0,
+      "ideal_peak_plane_lateral_centroid_um": 3.4375817984270727e-05,
+      "ideal_peak_plane_peak_x_delta_um_vs_ideal": 0.0,
+      "ideal_peak_plane_lateral_fwhm_delta_um_vs_ideal": 0.0,
+      "ideal_peak_plane_lateral_centroid_delta_um_vs_ideal": 3.437581798411498e-05,
+      "ideal_peak_plane_lateral_profile_relative_l2_vs_ideal": 0.0016839331089368544,
+      "normalized_image_relative_l2_vs_ideal": 0.3080226534742257
+    },
+    {
+      "diameter_nm": 1000.0,
+      "na": 0.05,
+      "status": "ok",
+      "mode_returned": "full_na_scalar_fixed_basis",
+      "sphere_mie_used": true,
+      "tmatrix_used": false,
+      "tmatrix_backend_required": false,
+      "scattering_branch": "sphere_mie_full_na",
+      "lateral_response_model": "sphere_mie_angle_resolved_pupil_field",
+      "particle_lateral_scattering_enters_profile": true,
+      "sample_arm_spectral_cube_shape": [
+        41,
+        81
+      ],
+      "sample_arm_spectral_cube_contract_status": "valid_lambda_x_complex_field",
+      "fd_oct_measurement_scaffold_route_available": true,
+      "peakline_x_um": 0.0,
+      "lateral_fwhm_um": 8.0,
+      "lateral_centroid_um": -6.195193756675924e-06,
+      "axial_fwhm_opd_um": 6.103160617145909,
+      "axial_peak_opd_um": -3.1999999999999957,
+      "main_to_sidelobe_rejection_db": 21.086515844468543,
+      "raw_peak_intensity": 10.423934199378543,
+      "paper_safe": false,
+      "ideal_reference_available": true,
+      "ideal_reference_scattering_branch": "ideal_uniform_pupil_reference",
+      "ideal_reference_sample_arm_spectral_cube_contract_status": "valid_lambda_x_complex_field",
+      "psf_bias_against_ideal_reference_status": "computed_against_ideal_full_na_reference",
+      "ideal_reference_peakline_x_um": 0.0,
+      "peakline_x_delta_um_vs_ideal": 0.0,
+      "ideal_reference_self_peak_lateral_fwhm_um": 8.0,
+      "ideal_reference_self_peak_lateral_centroid_um": 1.5574467013127317e-16,
+      "self_peak_lateral_fwhm_delta_um_vs_ideal": 0.0,
+      "self_peak_lateral_centroid_delta_um_vs_ideal": -6.195193756831669e-06,
+      "self_peak_lateral_profile_relative_l2_vs_ideal": 0.00021292078824326936,
+      "ideal_peak_plane_z_index": 200,
+      "ideal_peak_plane_particle_lateral_peak_x_um": 0.0,
+      "ideal_peak_plane_lateral_fwhm_um": 8.0,
+      "ideal_peak_plane_lateral_centroid_um": 9.741542855422961e-05,
+      "ideal_peak_plane_peak_x_delta_um_vs_ideal": 0.0,
+      "ideal_peak_plane_lateral_fwhm_delta_um_vs_ideal": 0.0,
+      "ideal_peak_plane_lateral_centroid_delta_um_vs_ideal": 9.741542855407386e-05,
+      "ideal_peak_plane_lateral_profile_relative_l2_vs_ideal": 0.0004119694058447278,
+      "normalized_image_relative_l2_vs_ideal": 0.8443749282065282
+    }
+  ]
+}
