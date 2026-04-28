@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import sys
 import shutil
 import subprocess
 import urllib.request
@@ -17,6 +18,12 @@ PYF_URL = "https://raw.githubusercontent.com/jleinonen/pytmatrix/master/pytmatri
 ZIP_PATH = TMP_ROOT / "pytmatrix-0.3.3.zip"
 PYF_RELATIVE = Path("pytmatrix") / "fortran_tm" / "pytmatrix.pyf"
 DEFAULT_BUILD_PYTHON = Path(r"C:\Users\1\anaconda3\envs\oct_psf\python.exe")
+MINGW_RUNTIME_DLL_PATTERNS = (
+    "libgcc_s*.dll",
+    "libgfortran*.dll",
+    "libquadmath*.dll",
+    "libwinpthread*.dll",
+)
 
 
 def download(url: str, dest: Path):
@@ -125,6 +132,67 @@ def ensure_python_shim():
     return shim_file
 
 
+def _candidate_toolchain_bins() -> list[Path]:
+    candidates: list[Path] = []
+    for tool in ("gfortran", "gcc"):
+        tool_path = shutil.which(tool)
+        if tool_path:
+            candidates.append(Path(tool_path).resolve().parent)
+    for raw in os.environ.get("PATH", "").split(os.pathsep):
+        if not raw:
+            continue
+        path = Path(raw)
+        lower = str(path).lower()
+        if ("mingw" in lower or "msys" in lower or "ucrt64" in lower) and path.exists():
+            candidates.append(path.resolve())
+    seen: set[str] = set()
+    unique: list[Path] = []
+    for path in candidates:
+        key = str(path).lower()
+        if key not in seen:
+            seen.add(key)
+            unique.append(path)
+    return unique
+
+
+def copy_mingw_runtime_dlls(extension_paths: list[Path]) -> dict:
+    """Place MinGW runtime DLLs next to Windows .pyd files for import-time discovery."""
+    report = {
+        "attempted": sys.platform.startswith("win"),
+        "copied": [],
+        "missing_patterns": [],
+        "candidate_toolchain_bins": [str(path) for path in _candidate_toolchain_bins()],
+    }
+    if not report["attempted"] or not extension_paths:
+        return report
+
+    destination_dirs = {
+        path.parent for path in extension_paths
+        if path.suffix.lower() == ".pyd"
+    }
+    if not destination_dirs:
+        return report
+
+    copied_sources: set[str] = set()
+    for pattern in MINGW_RUNTIME_DLL_PATTERNS:
+        matches: list[Path] = []
+        for bin_dir in _candidate_toolchain_bins():
+            matches.extend(sorted(bin_dir.glob(pattern)))
+        if not matches:
+            report["missing_patterns"].append(pattern)
+            continue
+        for source in matches:
+            source_key = str(source).lower()
+            if source_key in copied_sources:
+                continue
+            copied_sources.add(source_key)
+            for dest_dir in destination_dirs:
+                dest = dest_dir / source.name
+                shutil.copy2(source, dest)
+                report["copied"].append({"source": str(source), "destination": str(dest)})
+    return report
+
+
 def attempt_build(build_python: Path, compiler: str | None = None):
     result = {
         "python": str(build_python),
@@ -151,6 +219,7 @@ def attempt_build(build_python: Path, compiler: str | None = None):
     result["stderr_tail"] = "\n".join(completed.stderr.splitlines()[-40:])
     built = list((VENDOR_ROOT / "pytmatrix" / "fortran_tm").glob("pytmatrix*.pyd")) + list((VENDOR_ROOT / "pytmatrix" / "fortran_tm").glob("pytmatrix*.so"))
     result["built_extensions"] = [str(path) for path in built]
+    result["runtime_dlls"] = copy_mingw_runtime_dlls(built)
     return result
 
 

@@ -88,6 +88,7 @@ function isExcluded(relativePath) {
     normalized.startsWith(".pytest_cache/") ||
     normalized.includes("/.pytest_cache/") ||
     normalized.startsWith("reports/_unit_test_tmp/") ||
+    normalized.startsWith("reports/actions_run_") ||
     /^reports\/[^/]*_unit_test_tmp[^/]*\//.test(normalized) ||
     normalized.endsWith(".pyc")
   );
@@ -123,7 +124,23 @@ async function githubRequest({ method, url, token, body, allowNotFound = false }
     headers["Content-Type"] = "application/json";
     init.body = JSON.stringify(body);
   }
-  const response = await fetch(url, init);
+  let response;
+  let lastNetworkError;
+  for (let attempt = 1; attempt <= 5; attempt += 1) {
+    try {
+      response = await fetch(url, init);
+      break;
+    } catch (error) {
+      lastNetworkError = error;
+      if (attempt === 5) {
+        throw error;
+      }
+      await new Promise((resolve) => setTimeout(resolve, 500 * attempt));
+    }
+  }
+  if (!response) {
+    throw lastNetworkError || new Error(`GitHub API request failed before response: ${method} ${url}`);
+  }
   const text = await response.text();
   if (allowNotFound && (response.status === 404 || response.status === 409)) {
     return null;

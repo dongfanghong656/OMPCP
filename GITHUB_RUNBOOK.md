@@ -42,4 +42,6 @@ python scripts/particle_size_sweep_runner.py `
 
 The workflow at `.github/workflows/build-pytmatrix-backend.yml` runs on `windows-2022`, installs CPython 3.10, builds the vendored PyTMatrix backend, validates it, rebuilds evidence with a required backend, and uploads `reports/**` plus the compiled backend artifact.
 
+The bootstrap step also copies the MinGW/Fortran runtime DLLs next to the generated `pytmatrix*.pyd`. Without those DLLs, the extension can compile successfully but still fail at import time with `DLL load failed`, which is exactly the failure mode this workflow is meant to catch.
+
 The workflow is intentionally strict: if the backend cannot be built or required evidence cannot be regenerated, CI should fail instead of producing a skipped report that looks complete.

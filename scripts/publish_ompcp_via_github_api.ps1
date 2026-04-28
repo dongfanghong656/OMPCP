@@ -79,6 +79,7 @@ function Test-ExcludedRelativePath {
     if ($normalized -like "__pycache__/*" -or $normalized -like "*/__pycache__/*") { return $true }
     if ($normalized -like ".pytest_cache/*" -or $normalized -like "*/.pytest_cache/*") { return $true }
     if ($normalized -like "reports/_unit_test_tmp/*") { return $true }
+    if ($normalized -like "reports/actions_run_*") { return $true }
     if ($normalized -match "(^|/)reports/[^/]*_unit_test_tmp[^/]*/") { return $true }
     if ($normalized -like "*.pyc") { return $true }
     return $false

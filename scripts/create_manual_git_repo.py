@@ -29,6 +29,8 @@ def is_excluded_relative_path(relative_path: Path) -> bool:
         return True
     if len(parts) >= 2 and parts[0] == "reports" and parts[1] == "_unit_test_tmp":
         return True
+    if len(parts) >= 2 and parts[0] == "reports" and parts[1].startswith("actions_run_"):
+        return True
     if any(part.endswith("_unit_test_tmp") for part in parts):
         return True
     return False
@@ -103,17 +105,23 @@ def build_tree(git_dir: Path, directory: Path) -> str:
     return write_object(git_dir, b"tree", bytes(payload))
 
 
-def build_commit(git_dir: Path, tree_id: str, message: str) -> str:
+def build_commit(git_dir: Path, tree_id: str, message: str, parent_id: str | None = None) -> str:
     now = int(time.time())
     timezone = time.strftime("%z") or "+0000"
     ident = f"Codex <codex@local> {now} {timezone}"
-    payload = (
-        f"tree {tree_id}\n"
-        f"author {ident}\n"
-        f"committer {ident}\n"
-        "\n"
-        f"{message}\n"
-    ).encode("utf-8")
+    lines = [f"tree {tree_id}"]
+    if parent_id:
+        lines.append(f"parent {parent_id}")
+    lines.extend(
+        [
+            f"author {ident}",
+            f"committer {ident}",
+            "",
+            message,
+            "",
+        ]
+    )
+    payload = "\n".join(lines).encode("utf-8")
     return write_object(git_dir, b"commit", payload)
 
 
@@ -155,6 +163,7 @@ def main() -> int:
     parser.add_argument("--output", required=True)
     parser.add_argument("--remote", default=DEFAULT_REMOTE)
     parser.add_argument("--message", default="Initialize OMPCP OCT Mie PSF diagnostic stack")
+    parser.add_argument("--parent", default=None, help="Optional parent commit SHA for fast-forward publishing.")
     args = parser.parse_args()
 
     source = Path(args.source).resolve()
@@ -166,7 +175,7 @@ def main() -> int:
     git_dir = output / ".git"
     git_dir.mkdir(parents=True, exist_ok=True)
     tree_id = build_tree(git_dir, output)
-    commit_id = build_commit(git_dir, tree_id, args.message)
+    commit_id = build_commit(git_dir, tree_id, args.message, parent_id=args.parent)
     write_git_metadata(output, args.remote, commit_id)
     print(f"created_repo={output}")
     print(f"commit={commit_id}")
