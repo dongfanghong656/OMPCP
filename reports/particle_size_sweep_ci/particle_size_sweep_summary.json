@@ -1,0 +1,144 @@
+{
+  "report_version_tag": "round6p1",
+  "report_kind": "particle_size_sweep",
+  "sweep_schema_version": "particle_size_sweep_v1",
+  "sweep_status": "complete",
+  "recommended_next_action": "compare_particle_size_sweep_against_bridge_or_measurement_protocol",
+  "particle_size_sweep_guidance_status": "explicit_report_used",
+  "mode_requested": "vector_pupil_overlap_bridge",
+  "diameter_nm_values": [
+    200.0,
+    300.0
+  ],
+  "diameter_range_nm": [
+    200.0,
+    300.0
+  ],
+  "sweep_case_count": 2,
+  "ok_count": 2,
+  "failed_count": 0,
+  "na": 0.05,
+  "eps": 0.0,
+  "beta_deg": 0.0,
+  "particle_material": "TiO2-anatase",
+  "medium_material": "PDMS",
+  "lambda0_nm": 855.0,
+  "fwhm_nm": 56.0,
+  "n_lambda": 201,
+  "n_z": 2001,
+  "n_x": 129,
+  "tmatrix_backend_requested_id": "vendored_pytmatrix",
+  "tmatrix_backend_available": true,
+  "tmatrix_backend_id": "python",
+  "tmatrix_backend_library_path": "python:pytmatrix.fortran_tm.pytmatrix",
+  "tmatrix_backend_reason": null,
+  "tmatrix_backend_provenance_path": "reports\\particle_size_sweep_ci_backend_provenance.json",
+  "tmatrix_backend_provenance": {
+    "report_kind": "tmatrix_backend_provenance",
+    "contract_version": "tmatrix_backend_contract_v1",
+    "selection_version": "tmatrix_backend_registry_v1",
+    "requested_backend_id": "vendored_pytmatrix",
+    "backend_available": true,
+    "backend_id": "python",
+    "library_path": "python:pytmatrix.fortran_tm.pytmatrix",
+    "reason": null,
+    "python_executable": "C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\python.exe",
+    "python_version": "3.10.11",
+    "python_implementation": "CPython",
+    "sys_platform": "win32",
+    "platform": "Windows-10-10.0.20348-SP0",
+    "machine": "AMD64",
+    "diagnostics": {
+      "selection_version": "tmatrix_backend_registry_v1",
+      "legacy_probe": {
+        "available": true,
+        "backend": "python",
+        "library_path": "python:pytmatrix.fortran_tm.pytmatrix",
+        "reason": null
+      }
+    }
+  },
+  "particle_lateral_scattering_scope_note": "The selected mode may include particle-aware lateral structure; interpret against the solver mode contract.",
+  "metric_ranges": {
+    "fwhm_opd_um": [
+      5.348535052131479,
+      5.706790982096512
+    ],
+    "peak_opd_um": [
+      -1.9600000000000009,
+      -0.1599999999999966
+    ],
+    "centroid_opd_um": [
+      -2.027314719617748,
+      -0.1498514644091719
+    ],
+    "main_to_sidelobe_rejection_db": [
+      25.110183518742662,
+      26.57346980040947
+    ],
+    "raw_peak_intensity": [
+      1.081569857995046e-06,
+      1.9841524059336374e-06
+    ],
+    "peakline_x_um": [
+      4.0,
+      4.0
+    ]
+  },
+  "rows": [
+    {
+      "diameter_nm": 200.0,
+      "status": "ok",
+      "mode_requested": "vector_pupil_overlap_bridge",
+      "mode_returned": "vector_pupil_overlap_bridge",
+      "tmatrix_used": true,
+      "paper_safe": false,
+      "fwhm_opd_um": 5.706790982096512,
+      "peak_opd_um": -0.1599999999999966,
+      "centroid_opd_um": -0.1498514644091719,
+      "psr_definition": "sidelobe_to_main_db",
+      "sidelobe_to_main_db": -26.57346980040947,
+      "main_to_sidelobe_rejection_db": 26.57346980040947,
+      "strongest_sidelobe_value": 0.0022011671355008956,
+      "sidelobe_energy_fraction": 0.0004922805709794399,
+      "raw_peak_intensity": 1.9841524059336374e-06,
+      "raw_peak_envelope": 0.0014085994483648066,
+      "peakline_x_um": 4.0,
+      "lateral_response_model": null,
+      "particle_lateral_scattering_enters_profile": null,
+      "na": 0.05,
+      "eps": 0.0,
+      "beta_deg": 0.0,
+      "particle_material": "TiO2-anatase",
+      "medium_material": "PDMS",
+      "notes": "vector Jones-projected scalar pupil-propagation bridge approximation"
+    },
+    {
+      "diameter_nm": 300.0,
+      "status": "ok",
+      "mode_requested": "vector_pupil_overlap_bridge",
+      "mode_returned": "vector_pupil_overlap_bridge",
+      "tmatrix_used": true,
+      "paper_safe": false,
+      "fwhm_opd_um": 5.348535052131479,
+      "peak_opd_um": -1.9600000000000009,
+      "centroid_opd_um": -2.027314719617748,
+      "psr_definition": "sidelobe_to_main_db",
+      "sidelobe_to_main_db": -25.110183518742662,
+      "main_to_sidelobe_rejection_db": 25.110183518742662,
+      "strongest_sidelobe_value": 0.003083057667493104,
+      "sidelobe_energy_fraction": 0.0007970535922443781,
+      "raw_peak_intensity": 1.081569857995046e-06,
+      "raw_peak_envelope": 0.0010399855085505018,
+      "peakline_x_um": 4.0,
+      "lateral_response_model": null,
+      "particle_lateral_scattering_enters_profile": null,
+      "na": 0.05,
+      "eps": 0.0,
+      "beta_deg": 0.0,
+      "particle_material": "TiO2-anatase",
+      "medium_material": "PDMS",
+      "notes": "vector Jones-projected scalar pupil-propagation bridge approximation"
+    }
+  ]
+}

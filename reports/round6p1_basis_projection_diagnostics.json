@@ -1,0 +1,198 @@
+{
+  "basis_projection_cases": [
+    {
+      "case_name": "sphere_low_na_low_contrast",
+      "bridge_peakline_x_um": 2.0,
+      "bridge_centroid_opd_um": -0.006971357165962617,
+      "lateral_slice_axis": "x",
+      "projection_fits": [
+        {
+          "family": "R0",
+          "basis_labels": [
+            "R0"
+          ],
+          "field_relative_l2": 0.0323615253502257,
+          "intensity_relative_l2": 0.12646589775306083,
+          "peakline_x_um": 0.0,
+          "peakline_x_delta_um_vs_bridge": 2.0,
+          "centroid_opd_um": -0.007044929602758036,
+          "centroid_opd_delta_um_vs_bridge": 7.357243679541933e-05,
+          "raw_peak_relative_delta": 0.09967670684802273,
+          "coefficient_energy_ratio": {
+            "abs_a1_over_abs_a0": 0.0,
+            "abs_a2_over_abs_a0": 0.0
+          }
+        },
+        {
+          "family": "R0_plus_R2",
+          "basis_labels": [
+            "R0",
+            "R2"
+          ],
+          "field_relative_l2": 0.0006020914538402162,
+          "intensity_relative_l2": 4.5537180880071014e-05,
+          "peakline_x_um": -2.0,
+          "peakline_x_delta_um_vs_bridge": 4.0,
+          "centroid_opd_um": -0.007046312310274544,
+          "centroid_opd_delta_um_vs_bridge": 7.49551443119268e-05,
+          "raw_peak_relative_delta": 3.958857284645957e-05,
+          "coefficient_energy_ratio": {
+            "abs_a1_over_abs_a0": 0.0,
+            "abs_a2_over_abs_a0": 55915.690073135454
+          }
+        },
+        {
+          "family": "R0_plus_R1_plus_R2",
+          "basis_labels": [
+            "R0",
+            "R1",
+            "R2"
+          ],
+          "field_relative_l2": 8.469911001191594e-06,
+          "intensity_relative_l2": 4.245327084313723e-05,
+          "peakline_x_um": 2.0,
+          "peakline_x_delta_um_vs_bridge": 0.0,
+          "centroid_opd_um": -0.00697106750753688,
+          "centroid_opd_delta_um_vs_bridge": 2.896584257372145e-07,
+          "raw_peak_relative_delta": 3.860583306152182e-05,
+          "coefficient_energy_ratio": {
+            "abs_a1_over_abs_a0": 0.2882314127948417,
+            "abs_a2_over_abs_a0": 55915.690073135615
+          }
+        }
+      ]
+    },
+    {
+      "case_name": "mild_shape_medium_tilt",
+      "bridge_peakline_x_um": 2.0,
+      "bridge_centroid_opd_um": -0.330733634790474,
+      "lateral_slice_axis": "x",
+      "projection_fits": [
+        {
+          "family": "R0",
+          "basis_labels": [
+            "R0"
+          ],
+          "field_relative_l2": 0.17228768841259048,
+          "intensity_relative_l2": 0.6033699838364164,
+          "peakline_x_um": 0.0,
+          "peakline_x_delta_um_vs_bridge": 2.0,
+          "centroid_opd_um": -0.29140332118567247,
+          "centroid_opd_delta_um_vs_bridge": 0.03933031360480155,
+          "raw_peak_relative_delta": 0.37265646868986085,
+          "coefficient_energy_ratio": {
+            "abs_a1_over_abs_a0": 0.0,
+            "abs_a2_over_abs_a0": 0.0
+          }
+        },
+        {
+          "family": "R0_plus_R2",
+          "basis_labels": [
+            "R0",
+            "R2"
+          ],
+          "field_relative_l2": 0.00146965900059651,
+          "intensity_relative_l2": 0.002488652723547669,
+          "peakline_x_um": -2.0,
+          "peakline_x_delta_um_vs_bridge": 4.0,
+          "centroid_opd_um": -0.3307054731360514,
+          "centroid_opd_delta_um_vs_bridge": 2.8161654422598215e-05,
+          "raw_peak_relative_delta": 0.002060815758913183,
+          "coefficient_energy_ratio": {
+            "abs_a1_over_abs_a0": 0.0,
+            "abs_a2_over_abs_a0": 14692.947033165661
+          }
+        },
+        {
+          "family": "R0_plus_R1_plus_R2",
+          "basis_labels": [
+            "R0",
+            "R1",
+            "R2"
+          ],
+          "field_relative_l2": 0.00023669132714849002,
+          "intensity_relative_l2": 0.0007272759639977916,
+          "peakline_x_um": 2.0,
+          "peakline_x_delta_um_vs_bridge": 0.0,
+          "centroid_opd_um": -0.33083158079352826,
+          "centroid_opd_delta_um_vs_bridge": 9.794600305423895e-05,
+          "raw_peak_relative_delta": 0.0006609377745665069,
+          "coefficient_energy_ratio": {
+            "abs_a1_over_abs_a0": 0.13611972559380642,
+            "abs_a2_over_abs_a0": 14692.947033176186
+          }
+        }
+      ]
+    },
+    {
+      "case_name": "failure_domain_high_tilt_high_contrast",
+      "bridge_peakline_x_um": -3.0,
+      "bridge_centroid_opd_um": -2.2024413711164295,
+      "lateral_slice_axis": "x",
+      "projection_fits": [
+        {
+          "family": "R0",
+          "basis_labels": [
+            "R0"
+          ],
+          "field_relative_l2": 0.42226515508230394,
+          "intensity_relative_l2": 1.1438029881173135,
+          "peakline_x_um": 0.0,
+          "peakline_x_delta_um_vs_bridge": 3.0,
+          "centroid_opd_um": -2.135231033879564,
+          "centroid_opd_delta_um_vs_bridge": 0.06721033723686531,
+          "raw_peak_relative_delta": 0.5519793878444248,
+          "coefficient_energy_ratio": {
+            "abs_a1_over_abs_a0": 0.0,
+            "abs_a2_over_abs_a0": 0.0
+          }
+        },
+        {
+          "family": "R0_plus_R2",
+          "basis_labels": [
+            "R0",
+            "R2"
+          ],
+          "field_relative_l2": 0.004209592705380106,
+          "intensity_relative_l2": 0.014994059950061266,
+          "peakline_x_um": 3.0,
+          "peakline_x_delta_um_vs_bridge": 6.0,
+          "centroid_opd_um": -2.202781424737054,
+          "centroid_opd_delta_um_vs_bridge": 0.00034005362062439204,
+          "raw_peak_relative_delta": 0.013845433963956712,
+          "coefficient_energy_ratio": {
+            "abs_a1_over_abs_a0": 0.0,
+            "abs_a2_over_abs_a0": 3372.0342126056084
+          }
+        },
+        {
+          "family": "R0_plus_R1_plus_R2",
+          "basis_labels": [
+            "R0",
+            "R1",
+            "R2"
+          ],
+          "field_relative_l2": 0.003984457316843013,
+          "intensity_relative_l2": 0.014909049536104326,
+          "peakline_x_um": -3.0,
+          "peakline_x_delta_um_vs_bridge": 0.0,
+          "centroid_opd_um": -2.202792746612487,
+          "centroid_opd_delta_um_vs_bridge": 0.000351375496057571,
+          "raw_peak_relative_delta": 0.013746412928506228,
+          "coefficient_energy_ratio": {
+            "abs_a1_over_abs_a0": 0.07834484059835783,
+            "abs_a2_over_abs_a0": 3372.0342126056075
+          }
+        }
+      ]
+    }
+  ],
+  "basis_projection_case_names": [
+    "sphere_low_na_low_contrast",
+    "mild_shape_medium_tilt",
+    "failure_domain_high_tilt_high_contrast"
+  ],
+  "basis_projection_recommended_next_action": "debug_coefficient_extraction_or_promote_directional_basis",
+  "recommended_next_action": "debug_coefficient_extraction_or_promote_directional_basis",
+  "report_version_tag": "round6p1"
+}

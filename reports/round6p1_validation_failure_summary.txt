@@ -1,43 +1,43 @@
 round6p1 validation failure summary
 Hard gate failures: none
-Model-limit failures: none
-Expected-fail checks: none
-Worst case: unavailable
-Worst metric: unavailable
-Dominant error bucket: unavailable
+Model-limit failures: low_na_asymptotic_absolute_alignment_gate
+Expected-fail checks: low_na_asymptotic_failure_domain_lateral_shift
+Worst case: failure_domain_high_tilt_high_contrast_tensor_closure_vs_bridge
+Worst metric: peakline_x_delta_um = 3
+Dominant error bucket: lateral_shift (peakline_x_delta_um = 3)
 Directional first-order is promising: False
-Most critical open model limit: none
-Recommended next action: inspect_open_model_limit_manually
-Recommended action source: open_model_limit
-Evidence dependency status: both_missing
-Guidance confidence: fallback_only
-Coefficient-map audit recommended next action: coefficient_map_audit_not_supplied
-Coefficient-map stability recommended next action: coefficient_map_stability_not_supplied
-Best generalizing coefficient-map model: None
-Promoted shared coefficient-map model: None
-Promoted shared coefficient-map runtime scope: unknown
-Promoted shared coefficient-map contract status: unknown
-Promoted shared coefficient-map supported lateral-shift models: none declared
-Promoted shared coefficient-map lateral-shift constraint: unknown
-Promoted shared coefficient-map shift target: none
-Coefficient-map ablation recommended next action: coefficient_map_ablation_not_supplied
-Best ablated coefficient-map model: None
-Fit sensitivity recommended next action: fit_sensitivity_not_supplied
-Fit-window sensitivity status: unknown
-Effective-channel fit strategy recommended next action: fit_strategy_ablation_not_supplied
-Effective-channel fit strategy status: unknown
-Slice-axis crosscheck recommended next action: slice_axis_crosscheck_not_supplied
-Slice-axis crosscheck status: unknown
-Measurement pipeline evidence status: not_supplied
-Measurement pipeline default mode: not_supplied
-Measurement pipeline modes: none declared
-FD-OCT measurement wrapper status: unknown
-Measurement reference-arm policy: not_supplied
-Measurement reference-arm policy status: unknown
-Measurement FD-OCT depth policy status: not_supplied
-Measurement FD-OCT k-axis kinds: none declared
-Measurement FD-OCT medium-index policies: none declared
-Measurement FD-OCT depth conventions: none declared
+Most critical open model limit: low_na_asymptotic_absolute_alignment_gate
+Recommended next action: require_train_eval_generalization_before_promoting_fitted_map
+Recommended action source: coefficient_map_ablation
+Evidence dependency status: complete
+Guidance confidence: full_evidence
+Coefficient-map audit recommended next action: audit_coefficient_map_stage_before_basis_expansion
+Coefficient-map stability recommended next action: audit_coefficient_map_generalization_before_production
+Best generalizing coefficient-map model: low_order_coupled_odd_even_map
+Promoted shared coefficient-map model: low_order_coupled_odd_even_map
+Promoted shared coefficient-map runtime scope: general_asymptotic_rendered_basis_override
+Promoted shared coefficient-map contract status: explicit_rendered_basis_override_contract
+Promoted shared coefficient-map supported lateral-shift models: none, first_order
+Promoted shared coefficient-map lateral-shift constraint: rendered_basis_override_supports_first_order_only_with_envelope_only_analytic_gaussian_or_rendered_interp
+Promoted shared coefficient-map shift target: baseline_envelope_ratio
+Coefficient-map ablation recommended next action: require_train_eval_generalization_before_promoting_fitted_map
+Best ablated coefficient-map model: fitted_linear_map_3x3
+Fit sensitivity recommended next action: fit_window_sensitivity_not_dominant
+Fit-window sensitivity status: not_dominant
+Effective-channel fit strategy recommended next action: joint_low_order_fit_not_yet_decisive
+Effective-channel fit strategy status: not_yet_decisive
+Slice-axis crosscheck recommended next action: coefficient_debug_generalizes_across_slice_axes
+Slice-axis crosscheck status: consistent
+Measurement pipeline evidence status: fd_oct_reconstruction_in_evidence_chain
+Measurement pipeline default mode: fd_oct_reconstruction
+Measurement pipeline modes: fd_oct_reconstruction, solver_output_peak_slice_adapter
+FD-OCT measurement wrapper status: integrated_in_measurement_evidence_chain
+Measurement reference-arm policy: flat_synthetic_reference_when_measurement_reference_arm_field_absent
+Measurement reference-arm policy status: scaffold_not_calibrated
+Measurement FD-OCT depth policy status: medium_effective_k_geometric_depth_axis_declared
+Measurement FD-OCT k-axis kinds: constant_medium_effective_wavenumber_rad_per_um
+Measurement FD-OCT medium-index policies: derived_geometry_series_n_medium
+Measurement FD-OCT depth conventions: geometric_roundtrip_conjugate_to_medium_effective_wavenumber
 Measurement artifact freshness status: not_supplied
 Measurement contract refreshed row count: 0
 CPython 3.10 evidence rebuild readiness status: not_supplied
@@ -45,12 +45,12 @@ CPython 3.10 evidence rebuild ready: False
 CPython 3.10 evidence rebuild selected Python version: None
 CPython 3.10 evidence rebuild status: not_supplied
 CPython 3.10 evidence rebuild recommended next action: cp310_readiness_not_supplied
-Particle-size sweep status: not_supplied
-Particle-size sweep mode: not_supplied
-Particle-size sweep diameter range nm: None
-Particle-size sweep cases: None ok / None failed (0 total)
-Particle-size sweep recommended next action: not_supplied
-Particle-size sweep scope note: not_supplied
-Basis conditioning status: unknown
-Coefficient interpretability status: unknown
-Shared-scale consistency status: unknown
+Particle-size sweep status: complete
+Particle-size sweep mode: low_na_separable_baseline
+Particle-size sweep diameter range nm: [200.0, 1000.0]
+Particle-size sweep cases: 9 ok / 0 failed (9 total)
+Particle-size sweep recommended next action: use_sweep_as_axial_spectral_smoke_not_lateral_truth
+Particle-size sweep scope note: For mode=low_na, this sweep is an axial spectral/Mie smoke harness: the lateral profile is still the Gaussian system surrogate, so it must not be used as evidence that particle scattering leaves lateral PSF shape unchanged.
+Basis conditioning status: poor
+Coefficient interpretability status: ill_conditioned
+Shared-scale consistency status: mixed_bc2_caution

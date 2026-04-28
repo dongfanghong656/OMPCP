@@ -136,16 +136,3 @@ Larger tilt and higher contrast. This should sit inside the asymptotic failure d
 | low_na_separable_baseline | 0 | 3.9547 | 5.24362 | -23.9531 | sidelobe_to_main_db | -23.9531 | 23.9531 | 5.12616e-06 | 3 | 3.02212 | -0.0386508 | 0.000486568 | -2.06667 |
 | low_na_asymptotic | 0 | 2.22996 | 5.24478 | -24.374 | sidelobe_to_main_db | -24.374 | 24.374 | 7.15513e-06 | 3 | 1.29738 | -0.0374906 | 0.000400839 | -2.06667 |
 
-## Measurement Contract Refresh Note
-
-- refreshed_fd_oct_depth_rows = 48
-- status = depth_contract_label_refreshed_from_existing_numerical_evidence
-- note = Numerical values were not recomputed in this runtime; this synchronizes the medium-effective k-space depth-axis contract with the current source.
-
-
-
-
-
-
-
-

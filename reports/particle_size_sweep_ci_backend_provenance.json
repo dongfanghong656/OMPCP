@@ -1,0 +1,25 @@
+{
+  "report_kind": "tmatrix_backend_provenance",
+  "contract_version": "tmatrix_backend_contract_v1",
+  "selection_version": "tmatrix_backend_registry_v1",
+  "requested_backend_id": "vendored_pytmatrix",
+  "backend_available": true,
+  "backend_id": "python",
+  "library_path": "python:pytmatrix.fortran_tm.pytmatrix",
+  "reason": null,
+  "python_executable": "C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\python.exe",
+  "python_version": "3.10.11",
+  "python_implementation": "CPython",
+  "sys_platform": "win32",
+  "platform": "Windows-10-10.0.20348-SP0",
+  "machine": "AMD64",
+  "diagnostics": {
+    "selection_version": "tmatrix_backend_registry_v1",
+    "legacy_probe": {
+      "available": true,
+      "backend": "python",
+      "library_path": "python:pytmatrix.fortran_tm.pytmatrix",
+      "reason": null
+    }
+  }
+}

@@ -103,6 +103,10 @@ CP310_EVIDENCE_REBUILD = load_module(
         "31_controlled_cp310_evidence_rebuild.py",
     ),
 )
+CI_EVIDENCE_IMPORT = load_module(
+    "round6_ci_evidence_import_test",
+    resolve_test_module_path("import_ci_evidence_artifacts.py"),
+)
 PARTICLE_SWEEP = load_module(
     "round6_particle_size_sweep_test",
     resolve_test_module_path("particle_size_sweep_runner.py", "06_particle_size_sweep_runner.py", "28_particle_size_sweep_runner.py"),
@@ -1089,6 +1093,113 @@ class LowNaAsymptoticHelperTests(unittest.TestCase):
             updated["cp310_evidence_rebuild_recommended_next_action"],
             "install_or_select_cp310_runtime_or_portable_tmatrix_backend",
         )
+
+    def test_ci_evidence_import_dry_run_plans_without_writing_canonical_reports(self):
+        tmp_dir = workspace_tempdir("ci-evidence-import-dry-run")
+        try:
+            artifact_dir = tmp_dir / "actions_run_123456_reports"
+            rebuild_dir = artifact_dir / "round6p1_cp310_ci_rebuild"
+            reports_dir = tmp_dir / "canonical_reports"
+            rebuild_dir.mkdir(parents=True)
+            (artifact_dir / "round6p1_cp310_evidence_rebuild_readiness.json").write_text(
+                json.dumps({"readiness_status": "ready_to_rebuild"}) + "\n",
+                encoding="utf-8",
+            )
+            (rebuild_dir / "round6p1_validation_summary.json").write_text(
+                json.dumps({"report_version_tag": "round6p1", "old": False}) + "\n",
+                encoding="utf-8",
+            )
+            manifest = CI_EVIDENCE_IMPORT.import_ci_evidence_artifacts(
+                artifact_dir,
+                reports_dir,
+                dry_run=True,
+                source_head_sha="abc123",
+            )
+            self.assertEqual(manifest["import_status"], "dry_run")
+            self.assertEqual(manifest["source_run_id"], "123456")
+            self.assertEqual(manifest["source_head_sha"], "abc123")
+            self.assertEqual(manifest["copied_file_count"], 2)
+            self.assertFalse((reports_dir / "round6p1_validation_summary.json").exists())
+            self.assertFalse((reports_dir / "round6p1_ci_evidence_import_manifest.json").exists())
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_ci_evidence_import_copies_reports_and_stamps_summary_provenance(self):
+        tmp_dir = workspace_tempdir("ci-evidence-import")
+        try:
+            artifact_dir = tmp_dir / "actions_run_789_reports"
+            rebuild_dir = artifact_dir / "round6p1_cp310_ci_rebuild"
+            sweep_dir = artifact_dir / "particle_size_sweep_ci"
+            reports_dir = tmp_dir / "canonical_reports"
+            rebuild_dir.mkdir(parents=True)
+            sweep_dir.mkdir(parents=True)
+            (artifact_dir / "round6p1_cp310_evidence_rebuild_readiness.json").write_text(
+                json.dumps(
+                    {
+                        "readiness_status": "ready_to_rebuild",
+                        "rebuild_status": "rebuild_completed",
+                    }
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            (artifact_dir / "pytmatrix-diagnose.json").write_text(
+                json.dumps({"verdict": "backend_available"}) + "\n",
+                encoding="utf-8",
+            )
+            (sweep_dir / "particle_size_sweep_summary.json").write_text(
+                json.dumps({"sweep_status": "complete"}) + "\n",
+                encoding="utf-8",
+            )
+            (rebuild_dir / "round6p1_validation_summary.json").write_text(
+                json.dumps(
+                    {
+                        "report_version_tag": "round6p1",
+                        "measurement_fd_oct_depth_policy_status": "medium_effective_k_geometric_depth_axis_declared",
+                    }
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            (rebuild_dir / "round6p1_measurement_protocol_bias.json").write_text(
+                json.dumps({"measurement_report_schema_version": "pipeline_and_comparison_modes"}) + "\n",
+                encoding="utf-8",
+            )
+            (rebuild_dir / "round6p1_validation_failure_summary.txt").write_text(
+                "failure summary\n",
+                encoding="utf-8",
+            )
+            manifest = CI_EVIDENCE_IMPORT.import_ci_evidence_artifacts(
+                artifact_dir,
+                reports_dir,
+                source_head_sha="deadbeef",
+            )
+            self.assertEqual(manifest["import_status"], "imported")
+            self.assertEqual(manifest["source_run_id"], "789")
+            self.assertTrue((reports_dir / "round6p1_ci_evidence_import_manifest.json").exists())
+            self.assertTrue((reports_dir / "round6p1_ci_evidence_import_manifest.md").exists())
+            self.assertTrue((reports_dir / "round6p1_measurement_protocol_bias.json").exists())
+            self.assertTrue((reports_dir / "particle_size_sweep_ci" / "particle_size_sweep_summary.json").exists())
+            summary = json.loads((reports_dir / "round6p1_validation_summary.json").read_text(encoding="utf-8"))
+            self.assertEqual(summary["ci_evidence_import_status"], "imported_from_github_actions_artifact")
+            self.assertEqual(summary["ci_evidence_source_run_id"], "789")
+            self.assertEqual(summary["ci_evidence_source_head_sha"], "deadbeef")
+            self.assertEqual(
+                summary["measurement_fd_oct_depth_policy_status"],
+                "medium_effective_k_geometric_depth_axis_declared",
+            )
+            written_manifest = json.loads(
+                (reports_dir / "round6p1_ci_evidence_import_manifest.json").read_text(encoding="utf-8")
+            )
+            destinations = {item["destination_relative_path"]: item for item in written_manifest["copied_files"]}
+            self.assertIn("round6p1_validation_summary.json", destinations)
+            self.assertIn("sha256", destinations["round6p1_validation_summary.json"])
+            self.assertEqual(
+                destinations["round6p1_validation_summary.json"]["sha256"],
+                CI_EVIDENCE_IMPORT.sha256_file(reports_dir / "round6p1_validation_summary.json"),
+            )
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
 
     def test_runtime_build_backend_skipped_report_is_structured(self):
         payload = DIAGNOSTIC_RUNTIME_CORE.build_backend_skipped_report(

@@ -45,3 +45,23 @@ The workflow at `.github/workflows/build-pytmatrix-backend.yml` runs on `windows
 The bootstrap step also copies the MinGW/Fortran runtime DLLs next to the generated `pytmatrix*.pyd`. Without those DLLs, the extension can compile successfully but still fail at import time with `DLL load failed`, which is exactly the failure mode this workflow is meant to catch.
 
 The workflow is intentionally strict: if the backend cannot be built or required evidence cannot be regenerated, CI should fail instead of producing a skipped report that looks complete.
+
+## Import CI Evidence Back Into Canonical Reports
+
+After downloading and extracting the `pytmatrix-reports` GitHub Actions artifact, import the CPython 3.10 evidence into the local canonical `reports/` directory:
+
+```powershell
+python scripts/import_ci_evidence_artifacts.py `
+  --artifact-dir reports/actions_run_<RUN_ID>_reports `
+  --reports-dir reports `
+  --source-run-id <RUN_ID> `
+  --source-head-sha <HEAD_SHA>
+```
+
+Use `--dry-run` first when checking a new artifact layout. The import writes:
+
+- `reports/round6p1_ci_evidence_import_manifest.json`
+- `reports/round6p1_ci_evidence_import_manifest.md`
+- CI provenance fields inside `reports/round6p1_validation_summary.json`
+
+This step is intentionally separate from the evidence rebuild. It prevents source/report drift by making it explicit when the canonical local reports came from a GitHub Actions CPython 3.10 + T-matrix run rather than the current local interpreter.

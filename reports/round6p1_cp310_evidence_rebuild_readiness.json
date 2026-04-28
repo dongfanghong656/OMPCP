@@ -1,0 +1,153 @@
+{
+  "report_kind": "round6p1_cp310_evidence_rebuild_readiness",
+  "timestamp_utc": "2026-04-28T02:50:07.682207+00:00",
+  "project_root": "D:\\a\\OMPCP\\OMPCP",
+  "candidate_python_commands": [
+    [
+      "py",
+      "-3.10"
+    ],
+    [
+      "python3.10"
+    ],
+    [
+      "python"
+    ]
+  ],
+  "selected_probe": {
+    "python_command": [
+      "py",
+      "-3.10"
+    ],
+    "return_code": 0,
+    "stdout": "{\"python_executable\": \"C:\\\\hostedtoolcache\\\\windows\\\\Python\\\\3.10.11\\\\x64\\\\python.exe\", \"python_version\": \"3.10.11\", \"python_version_info\": [3, 10, 11], \"sys_platform\": \"win32\", \"platform\": \"Windows-10-10.0.20348-SP0\", \"is_cp310\": true, \"is_windows\": true, \"tmatrix_backend_status\": {\"available\": true, \"backend\": \"python\", \"library_path\": \"python:pytmatrix.fortran_tm.pytmatrix\", \"reason\": null}, \"tmatrix_backend_provenance\": {\"report_kind\": \"tmatrix_backend_provenance\", \"contract_version\": \"tmatrix_backend_contract_v1\", \"selection_version\": \"tmatrix_backend_registry_v1\", \"requested_backend_id\": \"vendored_pytmatrix\", \"backend_available\": true, \"backend_id\": \"python\", \"library_path\": \"python:pytmatrix.fortran_tm.pytmatrix\", \"reason\": null, \"python_executable\": \"C:\\\\hostedtoolcache\\\\windows\\\\Python\\\\3.10.11\\\\x64\\\\python.exe\", \"python_version\": \"3.10.11\", \"python_implementation\": \"CPython\", \"sys_platform\": \"win32\", \"platform\": \"Windows-10-10.0.20348-SP0\", \"machine\": \"AMD64\", \"diagnostics\": {\"selection_version\": \"tmatrix_backend_registry_v1\", \"legacy_probe\": {\"available\": true, \"backend\": \"python\", \"library_path\": \"python:pytmatrix.fortran_tm.pytmatrix\", \"reason\": null}}}}\n",
+    "stderr": "",
+    "python_executable": "C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\python.exe",
+    "python_version": "3.10.11",
+    "python_version_info": [
+      3,
+      10,
+      11
+    ],
+    "sys_platform": "win32",
+    "platform": "Windows-10-10.0.20348-SP0",
+    "is_cp310": true,
+    "is_windows": true,
+    "tmatrix_backend_status": {
+      "available": true,
+      "backend": "python",
+      "library_path": "python:pytmatrix.fortran_tm.pytmatrix",
+      "reason": null
+    },
+    "tmatrix_backend_provenance": {
+      "report_kind": "tmatrix_backend_provenance",
+      "contract_version": "tmatrix_backend_contract_v1",
+      "selection_version": "tmatrix_backend_registry_v1",
+      "requested_backend_id": "vendored_pytmatrix",
+      "backend_available": true,
+      "backend_id": "python",
+      "library_path": "python:pytmatrix.fortran_tm.pytmatrix",
+      "reason": null,
+      "python_executable": "C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\python.exe",
+      "python_version": "3.10.11",
+      "python_implementation": "CPython",
+      "sys_platform": "win32",
+      "platform": "Windows-10-10.0.20348-SP0",
+      "machine": "AMD64",
+      "diagnostics": {
+        "selection_version": "tmatrix_backend_registry_v1",
+        "legacy_probe": {
+          "available": true,
+          "backend": "python",
+          "library_path": "python:pytmatrix.fortran_tm.pytmatrix",
+          "reason": null
+        }
+      }
+    },
+    "probe_status": "runtime_probe_ok",
+    "classification": {
+      "readiness_status": "ready_to_rebuild",
+      "ready_to_rebuild": true,
+      "reason": "CPython 3.10 runtime and T-matrix backend are available."
+    }
+  },
+  "all_probes": [
+    {
+      "python_command": [
+        "py",
+        "-3.10"
+      ],
+      "return_code": 0,
+      "stdout": "{\"python_executable\": \"C:\\\\hostedtoolcache\\\\windows\\\\Python\\\\3.10.11\\\\x64\\\\python.exe\", \"python_version\": \"3.10.11\", \"python_version_info\": [3, 10, 11], \"sys_platform\": \"win32\", \"platform\": \"Windows-10-10.0.20348-SP0\", \"is_cp310\": true, \"is_windows\": true, \"tmatrix_backend_status\": {\"available\": true, \"backend\": \"python\", \"library_path\": \"python:pytmatrix.fortran_tm.pytmatrix\", \"reason\": null}, \"tmatrix_backend_provenance\": {\"report_kind\": \"tmatrix_backend_provenance\", \"contract_version\": \"tmatrix_backend_contract_v1\", \"selection_version\": \"tmatrix_backend_registry_v1\", \"requested_backend_id\": \"vendored_pytmatrix\", \"backend_available\": true, \"backend_id\": \"python\", \"library_path\": \"python:pytmatrix.fortran_tm.pytmatrix\", \"reason\": null, \"python_executable\": \"C:\\\\hostedtoolcache\\\\windows\\\\Python\\\\3.10.11\\\\x64\\\\python.exe\", \"python_version\": \"3.10.11\", \"python_implementation\": \"CPython\", \"sys_platform\": \"win32\", \"platform\": \"Windows-10-10.0.20348-SP0\", \"machine\": \"AMD64\", \"diagnostics\": {\"selection_version\": \"tmatrix_backend_registry_v1\", \"legacy_probe\": {\"available\": true, \"backend\": \"python\", \"library_path\": \"python:pytmatrix.fortran_tm.pytmatrix\", \"reason\": null}}}}\n",
+      "stderr": "",
+      "python_executable": "C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\python.exe",
+      "python_version": "3.10.11",
+      "python_version_info": [
+        3,
+        10,
+        11
+      ],
+      "sys_platform": "win32",
+      "platform": "Windows-10-10.0.20348-SP0",
+      "is_cp310": true,
+      "is_windows": true,
+      "tmatrix_backend_status": {
+        "available": true,
+        "backend": "python",
+        "library_path": "python:pytmatrix.fortran_tm.pytmatrix",
+        "reason": null
+      },
+      "tmatrix_backend_provenance": {
+        "report_kind": "tmatrix_backend_provenance",
+        "contract_version": "tmatrix_backend_contract_v1",
+        "selection_version": "tmatrix_backend_registry_v1",
+        "requested_backend_id": "vendored_pytmatrix",
+        "backend_available": true,
+        "backend_id": "python",
+        "library_path": "python:pytmatrix.fortran_tm.pytmatrix",
+        "reason": null,
+        "python_executable": "C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\python.exe",
+        "python_version": "3.10.11",
+        "python_implementation": "CPython",
+        "sys_platform": "win32",
+        "platform": "Windows-10-10.0.20348-SP0",
+        "machine": "AMD64",
+        "diagnostics": {
+          "selection_version": "tmatrix_backend_registry_v1",
+          "legacy_probe": {
+            "available": true,
+            "backend": "python",
+            "library_path": "python:pytmatrix.fortran_tm.pytmatrix",
+            "reason": null
+          }
+        }
+      },
+      "probe_status": "runtime_probe_ok",
+      "classification": {
+        "readiness_status": "ready_to_rebuild",
+        "ready_to_rebuild": true,
+        "reason": "CPython 3.10 runtime and T-matrix backend are available."
+      }
+    }
+  ],
+  "readiness_status": "ready_to_rebuild",
+  "ready_to_rebuild": true,
+  "execute_requested": true,
+  "strict_requested": true,
+  "library_path": null,
+  "tmatrix_backend_requested_id": "vendored_pytmatrix",
+  "rebuild_result": {
+    "command": [
+      "py",
+      "-3.10",
+      "D:\\a\\OMPCP\\OMPCP\\scripts\\build_round6p1_evidence_package.py",
+      "--reports-dir",
+      "reports\\round6p1_cp310_ci_rebuild"
+    ],
+    "return_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "rebuild_reports_dir": "reports\\round6p1_cp310_ci_rebuild"
+  },
+  "rebuild_status": "rebuild_completed"
+}

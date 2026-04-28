@@ -1,0 +1,357 @@
+{
+  "fit_sensitivity_cases": [
+    {
+      "case_name": "sphere_low_na_low_contrast",
+      "variants": [
+        {
+          "variant": "default",
+          "fit_window": {
+            "theta_fit_max_rad": 0.005000170083647601,
+            "theta_max_rad": 0.014286200238993147,
+            "theta_fit_fraction": 0.35,
+            "theta_fit_cap_rad": 0.08,
+            "n_theta_fit": 9,
+            "n_azimuth_fit": 4,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 2.9386374594820277e-07,
+          "abs_C2_over_abs_B": 312881.5165039636,
+          "a1_vs_D1_slice_k_relative_residual": 0.16866528857112467,
+          "a2_vs_C2_slice_k_relative_residual": 0.14229037356619972
+        },
+        {
+          "variant": "wider_theta_window",
+          "fit_window": {
+            "theta_fit_max_rad": 0.0071431001194965735,
+            "theta_max_rad": 0.014286200238993147,
+            "theta_fit_fraction": 0.5,
+            "theta_fit_cap_rad": 0.12,
+            "n_theta_fit": 13,
+            "n_azimuth_fit": 6,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 5.123214069421872e-07,
+          "abs_C2_over_abs_B": 212741.79164561757,
+          "a1_vs_D1_slice_k_relative_residual": 0.11518234237458948,
+          "a2_vs_C2_slice_k_relative_residual": 0.14228992155540351
+        },
+        {
+          "variant": "denser_angular_sampling",
+          "fit_window": {
+            "theta_fit_max_rad": 0.005000170083647601,
+            "theta_max_rad": 0.014286200238993147,
+            "theta_fit_fraction": 0.35,
+            "theta_fit_cap_rad": 0.08,
+            "n_theta_fit": 15,
+            "n_azimuth_fit": 8,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 5.879033864189842e-07,
+          "abs_C2_over_abs_B": 494273.5752178575,
+          "a1_vs_D1_slice_k_relative_residual": 0.11517147190209244,
+          "a2_vs_C2_slice_k_relative_residual": 0.1422903606737377
+        }
+      ],
+      "sensitivity_summary": {
+        "max_abs_D1_over_abs_B_ratio_vs_default": 2.0005985580902848,
+        "max_abs_C2_over_abs_B_ratio_vs_default": 1.5797468023701424,
+        "max_a1_residual_delta_vs_default": 0.05349381666903223,
+        "max_a2_residual_delta_vs_default": 4.5201079620915685e-07
+      }
+    },
+    {
+      "case_name": "mild_shape_medium_tilt",
+      "variants": [
+        {
+          "variant": "default",
+          "fit_window": {
+            "theta_fit_max_rad": 0.01000136104425243,
+            "theta_max_rad": 0.028575317269292657,
+            "theta_fit_fraction": 0.35,
+            "theta_fit_cap_rad": 0.08,
+            "n_theta_fit": 9,
+            "n_azimuth_fit": 4,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 6.313724056955261e-07,
+          "abs_C2_over_abs_B": 87955.07917209528,
+          "a1_vs_D1_slice_k_relative_residual": 0.2516351147035725,
+          "a2_vs_C2_slice_k_relative_residual": 0.13320180004724802
+        },
+        {
+          "variant": "wider_theta_window",
+          "fit_window": {
+            "theta_fit_max_rad": 0.014287658634646329,
+            "theta_max_rad": 0.028575317269292657,
+            "theta_fit_fraction": 0.5,
+            "theta_fit_cap_rad": 0.12,
+            "n_theta_fit": 13,
+            "n_azimuth_fit": 6,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 1.0535174151883415e-06,
+          "abs_C2_over_abs_B": 62856.69888665132,
+          "a1_vs_D1_slice_k_relative_residual": 0.26192225274415587,
+          "a2_vs_C2_slice_k_relative_residual": 0.13320981495737452
+        },
+        {
+          "variant": "denser_angular_sampling",
+          "fit_window": {
+            "theta_fit_max_rad": 0.01000136104425243,
+            "theta_max_rad": 0.028575317269292657,
+            "theta_fit_fraction": 0.35,
+            "theta_fit_cap_rad": 0.08,
+            "n_theta_fit": 15,
+            "n_azimuth_fit": 8,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 1.2392169350338301e-06,
+          "abs_C2_over_abs_B": 149704.94802122022,
+          "a1_vs_D1_slice_k_relative_residual": 0.26191264867036956,
+          "a2_vs_C2_slice_k_relative_residual": 0.1332020171081254
+        }
+      ],
+      "sensitivity_summary": {
+        "max_abs_D1_over_abs_B_ratio_vs_default": 1.9627353426520064,
+        "max_abs_C2_over_abs_B_ratio_vs_default": 1.7020614321579255,
+        "max_a1_residual_delta_vs_default": 0.010287138040583343,
+        "max_a2_residual_delta_vs_default": 8.014910126502572e-06
+      }
+    },
+    {
+      "case_name": "failure_domain_high_tilt_high_contrast",
+      "variants": [
+        {
+          "variant": "default",
+          "fit_window": {
+            "theta_fit_max_rad": 0.020010900378232055,
+            "theta_max_rad": 0.05717400108066301,
+            "theta_fit_fraction": 0.35,
+            "theta_fit_cap_rad": 0.08,
+            "n_theta_fit": 9,
+            "n_azimuth_fit": 4,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 7.829120518936101e-07,
+          "abs_C2_over_abs_B": 17844.171510376986,
+          "a1_vs_D1_slice_k_relative_residual": 0.7410177539411872,
+          "a2_vs_C2_slice_k_relative_residual": 0.14446355809584563
+        },
+        {
+          "variant": "wider_theta_window",
+          "fit_window": {
+            "theta_fit_max_rad": 0.028587000540331507,
+            "theta_max_rad": 0.05717400108066301,
+            "theta_fit_fraction": 0.5,
+            "theta_fit_cap_rad": 0.12,
+            "n_theta_fit": 13,
+            "n_azimuth_fit": 6,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 1.0412217399736392e-06,
+          "abs_C2_over_abs_B": 11653.160656504024,
+          "a1_vs_D1_slice_k_relative_residual": 0.7804316277519453,
+          "a2_vs_C2_slice_k_relative_residual": 0.144298028507908
+        },
+        {
+          "variant": "denser_angular_sampling",
+          "fit_window": {
+            "theta_fit_max_rad": 0.020010900378232055,
+            "theta_max_rad": 0.05717400108066301,
+            "theta_fit_fraction": 0.35,
+            "theta_fit_cap_rad": 0.08,
+            "n_theta_fit": 15,
+            "n_azimuth_fit": 8,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 1.1707177403514298e-06,
+          "abs_C2_over_abs_B": 26530.693468891288,
+          "a1_vs_D1_slice_k_relative_residual": 0.7804002563336485,
+          "a2_vs_C2_slice_k_relative_residual": 0.1444596686401135
+        }
+      ],
+      "sensitivity_summary": {
+        "max_abs_D1_over_abs_B_ratio_vs_default": 1.495337487167101,
+        "max_abs_C2_over_abs_B_ratio_vs_default": 1.4867988381227337,
+        "max_a1_residual_delta_vs_default": 0.039413873810758115,
+        "max_a2_residual_delta_vs_default": 0.0001655295879376406
+      }
+    },
+    {
+      "case_name": "mild_shape_higher_na",
+      "variants": [
+        {
+          "variant": "default",
+          "fit_window": {
+            "theta_fit_max_rad": 0.015004595636182887,
+            "theta_max_rad": 0.04287027324623682,
+            "theta_fit_fraction": 0.35,
+            "theta_fit_cap_rad": 0.08,
+            "n_theta_fit": 9,
+            "n_azimuth_fit": 4,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 6.313783861679269e-07,
+          "abs_C2_over_abs_B": 39076.08162799216,
+          "a1_vs_D1_slice_k_relative_residual": 0.25305981614019474,
+          "a2_vs_C2_slice_k_relative_residual": 0.13051330174426554
+        },
+        {
+          "variant": "wider_theta_window",
+          "fit_window": {
+            "theta_fit_max_rad": 0.02143513662311841,
+            "theta_max_rad": 0.04287027324623682,
+            "theta_fit_fraction": 0.5,
+            "theta_fit_cap_rad": 0.12,
+            "n_theta_fit": 13,
+            "n_azimuth_fit": 6,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 1.0535451998038325e-06,
+          "abs_C2_over_abs_B": 27924.17867134322,
+          "a1_vs_D1_slice_k_relative_residual": 0.26304552107820234,
+          "a2_vs_C2_slice_k_relative_residual": 0.13053131069618298
+        },
+        {
+          "variant": "denser_angular_sampling",
+          "fit_window": {
+            "theta_fit_max_rad": 0.015004595636182887,
+            "theta_max_rad": 0.04287027324623682,
+            "theta_fit_fraction": 0.35,
+            "theta_fit_cap_rad": 0.08,
+            "n_theta_fit": 15,
+            "n_azimuth_fit": 8,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 1.2392102542775662e-06,
+          "abs_C2_over_abs_B": 66510.41052112367,
+          "a1_vs_D1_slice_k_relative_residual": 0.26303783627151217,
+          "a2_vs_C2_slice_k_relative_residual": 0.13051378949989972
+        }
+      ],
+      "sensitivity_summary": {
+        "max_abs_D1_over_abs_B_ratio_vs_default": 1.9627061702235322,
+        "max_abs_C2_over_abs_B_ratio_vs_default": 1.7020747155333746,
+        "max_a1_residual_delta_vs_default": 0.0099857049380076,
+        "max_a2_residual_delta_vs_default": 1.8008951917447558e-05
+      }
+    },
+    {
+      "case_name": "high_contrast_lower_tilt",
+      "variants": [
+        {
+          "variant": "default",
+          "fit_window": {
+            "theta_fit_max_rad": 0.020010900378232055,
+            "theta_max_rad": 0.05717400108066301,
+            "theta_fit_fraction": 0.35,
+            "theta_fit_cap_rad": 0.08,
+            "n_theta_fit": 9,
+            "n_azimuth_fit": 4,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 7.745053758614051e-07,
+          "abs_C2_over_abs_B": 17581.746635526528,
+          "a1_vs_D1_slice_k_relative_residual": 0.681025885877735,
+          "a2_vs_C2_slice_k_relative_residual": 0.13048176451304805
+        },
+        {
+          "variant": "wider_theta_window",
+          "fit_window": {
+            "theta_fit_max_rad": 0.028587000540331507,
+            "theta_max_rad": 0.05717400108066301,
+            "theta_fit_fraction": 0.5,
+            "theta_fit_cap_rad": 0.12,
+            "n_theta_fit": 13,
+            "n_azimuth_fit": 6,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 1.0060513739260259e-06,
+          "abs_C2_over_abs_B": 11336.13602890098,
+          "a1_vs_D1_slice_k_relative_residual": 0.7252247681029215,
+          "a2_vs_C2_slice_k_relative_residual": 0.1303363040575481
+        },
+        {
+          "variant": "denser_angular_sampling",
+          "fit_window": {
+            "theta_fit_max_rad": 0.020010900378232055,
+            "theta_max_rad": 0.05717400108066301,
+            "theta_fit_fraction": 0.35,
+            "theta_fit_cap_rad": 0.08,
+            "n_theta_fit": 15,
+            "n_azimuth_fit": 8,
+            "fit_window_kind": "heuristic_fraction_cap"
+          },
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none",
+          "abs_D1_over_abs_B": 1.1228640884091068e-06,
+          "abs_C2_over_abs_B": 25618.696644108975,
+          "a1_vs_D1_slice_k_relative_residual": 0.7251860947840133,
+          "a2_vs_C2_slice_k_relative_residual": 0.13047796805149747
+        }
+      ],
+      "sensitivity_summary": {
+        "max_abs_D1_over_abs_B_ratio_vs_default": 1.4497821750562507,
+        "max_abs_C2_over_abs_B_ratio_vs_default": 1.4571189754459661,
+        "max_a1_residual_delta_vs_default": 0.04419888222518642,
+        "max_a2_residual_delta_vs_default": 0.00014546045549995723
+      }
+    }
+  ],
+  "fit_sensitivity_case_names": [
+    "sphere_low_na_low_contrast",
+    "mild_shape_medium_tilt",
+    "failure_domain_high_tilt_high_contrast",
+    "mild_shape_higher_na",
+    "high_contrast_lower_tilt"
+  ],
+  "fit_sensitivity_recommended_next_action": "fit_window_sensitivity_not_dominant",
+  "recommended_next_action": "fit_window_sensitivity_not_dominant",
+  "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+  "reference_rendered_coefficients_source": "none",
+  "fit_window_sensitivity_status": "not_dominant",
+  "report_version_tag": "round6p1"
+}

@@ -1,0 +1,189 @@
+{
+  "effective_channel_fit_strategy_cases": [
+    {
+      "case_name": "sphere_low_na_low_contrast",
+      "description": "Sphere, low NA, low contrast. This should be the easiest alignment case.",
+      "strategies": [
+        {
+          "fit_strategy": "split_even_odd",
+          "effective_channel_fit_strategy": "split_even_odd",
+          "peakline_x_delta_um": 2.0,
+          "image_relative_l2": 0.12336331956178048,
+          "centroid_opd_delta_um": 7.273321117099753e-05,
+          "raw_peak_relative_delta": 492.16020400614514,
+          "effective_fit_residual_model": "even",
+          "effective_fit_residual_max": 0.6684034970686318,
+          "effective_fit_residual_even_max": 0.6684034970686318,
+          "effective_fit_residual_low_order_max": 0.6684034970686318,
+          "a1_vs_D1_slice_k_relative_residual": 0.16866528857112467,
+          "a2_vs_C2_slice_k_relative_residual": 0.14229037356619972,
+          "shared_scale_relative_residual": 0.14229037439321224,
+          "shared_scale_component_relative_residuals": {
+            "a0_vs_B_k": 0.8244721676179203,
+            "a1_vs_D1_slice_k": 0.9999998205338102,
+            "a2_vs_C2_slice_k": 0.14229037356619972
+          },
+          "effective_channel_theta_fit_max_rad": 0.005000170083647601,
+          "effective_channel_n_theta_fit": 9,
+          "effective_channel_n_azimuth_fit": 4,
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none"
+        },
+        {
+          "fit_strategy": "joint_low_order",
+          "effective_channel_fit_strategy": "joint_low_order",
+          "peakline_x_delta_um": 2.0,
+          "image_relative_l2": 0.12336331956178398,
+          "centroid_opd_delta_um": 7.273321117127422e-05,
+          "raw_peak_relative_delta": 492.1602040073796,
+          "effective_fit_residual_model": "low_order",
+          "effective_fit_residual_max": 0.6684034970686317,
+          "effective_fit_residual_even_max": 0.6684034970686318,
+          "effective_fit_residual_low_order_max": 0.6684034970686317,
+          "a1_vs_D1_slice_k_relative_residual": 0.16866528857112467,
+          "a2_vs_C2_slice_k_relative_residual": 0.14229037356619972,
+          "shared_scale_relative_residual": 0.14229037439321224,
+          "shared_scale_component_relative_residuals": {
+            "a0_vs_B_k": 0.8244721676211666,
+            "a1_vs_D1_slice_k": 0.9999998205338102,
+            "a2_vs_C2_slice_k": 0.14229037356619972
+          },
+          "effective_channel_theta_fit_max_rad": 0.005000170083647601,
+          "effective_channel_n_theta_fit": 9,
+          "effective_channel_n_azimuth_fit": 4,
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none"
+        }
+      ]
+    },
+    {
+      "case_name": "mild_shape_medium_tilt",
+      "description": "Small deformation with medium tilt. This is where bridge and asymptotic should start to separate.",
+      "strategies": [
+        {
+          "fit_strategy": "split_even_odd",
+          "effective_channel_fit_strategy": "split_even_odd",
+          "peakline_x_delta_um": 2.0,
+          "image_relative_l2": 0.5897479754375583,
+          "centroid_opd_delta_um": 0.09659912180865071,
+          "raw_peak_relative_delta": 698.0248088533815,
+          "effective_fit_residual_model": "even",
+          "effective_fit_residual_max": 0.6701270945111328,
+          "effective_fit_residual_even_max": 0.6701270945111328,
+          "effective_fit_residual_low_order_max": 0.6701270541815911,
+          "a1_vs_D1_slice_k_relative_residual": 0.2516351147035725,
+          "a2_vs_C2_slice_k_relative_residual": 0.13320180004724802,
+          "shared_scale_relative_residual": 0.13320181223567137,
+          "shared_scale_component_relative_residuals": {
+            "a0_vs_B_k": 0.8365738742214482,
+            "a1_vs_D1_slice_k": 0.9999992875212694,
+            "a2_vs_C2_slice_k": 0.13320180004724802
+          },
+          "effective_channel_theta_fit_max_rad": 0.01000136104425243,
+          "effective_channel_n_theta_fit": 9,
+          "effective_channel_n_azimuth_fit": 4,
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none"
+        },
+        {
+          "fit_strategy": "joint_low_order",
+          "effective_channel_fit_strategy": "joint_low_order",
+          "peakline_x_delta_um": 2.0,
+          "image_relative_l2": 0.5897479754375596,
+          "centroid_opd_delta_um": 0.09659912180865082,
+          "raw_peak_relative_delta": 698.024808853385,
+          "effective_fit_residual_model": "low_order",
+          "effective_fit_residual_max": 0.6701270541815911,
+          "effective_fit_residual_even_max": 0.6701270945111328,
+          "effective_fit_residual_low_order_max": 0.6701270541815911,
+          "a1_vs_D1_slice_k_relative_residual": 0.2516351147035725,
+          "a2_vs_C2_slice_k_relative_residual": 0.13320180004724802,
+          "shared_scale_relative_residual": 0.13320181223567137,
+          "shared_scale_component_relative_residuals": {
+            "a0_vs_B_k": 0.8365738742214488,
+            "a1_vs_D1_slice_k": 0.9999992875212694,
+            "a2_vs_C2_slice_k": 0.13320180004724802
+          },
+          "effective_channel_theta_fit_max_rad": 0.01000136104425243,
+          "effective_channel_n_theta_fit": 9,
+          "effective_channel_n_azimuth_fit": 4,
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none"
+        }
+      ]
+    },
+    {
+      "case_name": "failure_domain_high_tilt_high_contrast",
+      "description": "Larger tilt and higher contrast. This should sit inside the asymptotic failure domain.",
+      "strategies": [
+        {
+          "fit_strategy": "split_even_odd",
+          "effective_channel_fit_strategy": "split_even_odd",
+          "peakline_x_delta_um": 3.0,
+          "image_relative_l2": 1.1672801741602539,
+          "centroid_opd_delta_um": 0.07613849060643219,
+          "raw_peak_relative_delta": 31.586100329665037,
+          "effective_fit_residual_model": "even",
+          "effective_fit_residual_max": 0.6695256641336818,
+          "effective_fit_residual_even_max": 0.6695256641336818,
+          "effective_fit_residual_low_order_max": 0.6695206824596371,
+          "a1_vs_D1_slice_k_relative_residual": 0.7410177539411872,
+          "a2_vs_C2_slice_k_relative_residual": 0.14446355809584563,
+          "shared_scale_relative_residual": 0.14446375710360562,
+          "shared_scale_component_relative_residuals": {
+            "a0_vs_B_k": 0.8132489707113904,
+            "a1_vs_D1_slice_k": 0.9999996067065435,
+            "a2_vs_C2_slice_k": 0.14446355809584627
+          },
+          "effective_channel_theta_fit_max_rad": 0.020010900378232055,
+          "effective_channel_n_theta_fit": 9,
+          "effective_channel_n_azimuth_fit": 4,
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none"
+        },
+        {
+          "fit_strategy": "joint_low_order",
+          "effective_channel_fit_strategy": "joint_low_order",
+          "peakline_x_delta_um": 3.0,
+          "image_relative_l2": 1.1672801741602543,
+          "centroid_opd_delta_um": 0.07613849060643263,
+          "raw_peak_relative_delta": 31.58610032966483,
+          "effective_fit_residual_model": "low_order",
+          "effective_fit_residual_max": 0.6695206824596373,
+          "effective_fit_residual_even_max": 0.6695256641336818,
+          "effective_fit_residual_low_order_max": 0.6695206824596373,
+          "a1_vs_D1_slice_k_relative_residual": 0.7410177539411872,
+          "a2_vs_C2_slice_k_relative_residual": 0.14446355809584563,
+          "shared_scale_relative_residual": 0.14446375710360565,
+          "shared_scale_component_relative_residuals": {
+            "a0_vs_B_k": 0.8132489707113898,
+            "a1_vs_D1_slice_k": 0.9999996067065435,
+            "a2_vs_C2_slice_k": 0.14446355809584627
+          },
+          "effective_channel_theta_fit_max_rad": 0.020010900378232055,
+          "effective_channel_n_theta_fit": 9,
+          "effective_channel_n_azimuth_fit": 4,
+          "field_assembly_model_id": "directional_field_expansion_first_order",
+          "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+          "reference_rendered_coefficients_source": "none"
+        }
+      ]
+    }
+  ],
+  "effective_channel_fit_strategy_case_names": [
+    "sphere_low_na_low_contrast",
+    "mild_shape_medium_tilt",
+    "failure_domain_high_tilt_high_contrast"
+  ],
+  "effective_channel_fit_strategy_recommended_next_action": "joint_low_order_fit_not_yet_decisive",
+  "recommended_next_action": "joint_low_order_fit_not_yet_decisive",
+  "coefficient_map_model_id": "identity_slice_projected_rendered_basis",
+  "reference_rendered_coefficients_source": "none",
+  "effective_channel_fit_strategy_status": "not_yet_decisive",
+  "report_version_tag": "round6p1"
+}

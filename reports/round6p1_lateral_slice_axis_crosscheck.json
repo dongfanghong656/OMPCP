@@ -1,0 +1,418 @@
+{
+  "slice_axis_crosscheck_cases": [
+    {
+      "case_name": "mild_shape_medium_tilt",
+      "description": "Small deformation with medium tilt. This is where bridge and asymptotic should start to separate.",
+      "axis_reports": [
+        {
+          "axis": "x",
+          "projection_fits": [
+            {
+              "family": "R0",
+              "basis_labels": [
+                "R0"
+              ],
+              "field_relative_l2": 0.17228768841259048,
+              "intensity_relative_l2": 0.6033699838364164,
+              "peakline_x_um": 0.0,
+              "peakline_x_delta_um_vs_bridge": 2.0,
+              "centroid_opd_um": -0.29140332118567247,
+              "centroid_opd_delta_um_vs_bridge": 0.03933031360480155,
+              "raw_peak_relative_delta": 0.37265646868986085,
+              "coefficient_energy_ratio": {
+                "abs_a1_over_abs_a0": 0.0,
+                "abs_a2_over_abs_a0": 0.0
+              }
+            },
+            {
+              "family": "R0_plus_R2",
+              "basis_labels": [
+                "R0",
+                "R2"
+              ],
+              "field_relative_l2": 0.00146965900059651,
+              "intensity_relative_l2": 0.002488652723547669,
+              "peakline_x_um": -2.0,
+              "peakline_x_delta_um_vs_bridge": 4.0,
+              "centroid_opd_um": -0.3307054731360514,
+              "centroid_opd_delta_um_vs_bridge": 2.8161654422598215e-05,
+              "raw_peak_relative_delta": 0.002060815758913183,
+              "coefficient_energy_ratio": {
+                "abs_a1_over_abs_a0": 0.0,
+                "abs_a2_over_abs_a0": 14692.947033165661
+              }
+            },
+            {
+              "family": "R0_plus_R1_plus_R2",
+              "basis_labels": [
+                "R0",
+                "R1",
+                "R2"
+              ],
+              "field_relative_l2": 0.00023669132714849002,
+              "intensity_relative_l2": 0.0007272759639977916,
+              "peakline_x_um": 2.0,
+              "peakline_x_delta_um_vs_bridge": 0.0,
+              "centroid_opd_um": -0.33083158079352826,
+              "centroid_opd_delta_um_vs_bridge": 9.794600305423895e-05,
+              "raw_peak_relative_delta": 0.0006609377745665069,
+              "coefficient_energy_ratio": {
+                "abs_a1_over_abs_a0": 0.13611972559380642,
+                "abs_a2_over_abs_a0": 14692.947033176186
+              }
+            }
+          ],
+          "axis_requires_odd_basis": true,
+          "odd_basis_resolves_axis": true,
+          "full_family_beats_even_family": true,
+          "coefficient_recovery_recommended_focus": "D1_dominant",
+          "coefficient_summary": {
+            "case_name": "mild_shape_medium_tilt_x",
+            "vector_alignment": {
+              "scale_abs": 0.35437208104603096,
+              "scale_phase_rad": -0.002789467866130937,
+              "relative_residual": 0.13320181223567137
+            },
+            "shared_scale_consistency": {
+              "scale_abs": 0.35437208104603096,
+              "scale_phase_rad": -0.002789467866130937,
+              "relative_residual": 0.13320181223567137,
+              "component_relative_residuals": {
+                "a0_vs_B_k": 0.8365738742214482,
+                "a1_vs_D1_slice_k": 0.9999992875212694,
+                "a2_vs_C2_slice_k": 0.13320180004724802
+              },
+              "component_mean_abs_ratio_under_shared_scale": {
+                "a0_vs_B_k": 6.163278963091569,
+                "a1_vs_D1_slice_k": 1328762.2861659843,
+                "a2_vs_C2_slice_k": 1.0295793285366477
+              }
+            },
+            "component_summaries": [
+              {
+                "name": "a0_vs_B_k",
+                "relative_residual": 0.12600650570647545,
+                "scale_abs": 2.1265965779889373,
+                "scale_phase_rad": 0.05315344087624574,
+                "mean_abs_ratio_recovered_over_asymptotic": 2.184093992217983
+              },
+              {
+                "name": "a1_vs_D1_slice_k",
+                "relative_residual": 0.2516351147035725,
+                "scale_abs": 462562.9361006371,
+                "scale_phase_rad": -0.12228114388158787,
+                "mean_abs_ratio_recovered_over_asymptotic": 470876.2565641215
+              },
+              {
+                "name": "a2_vs_C2_slice_k",
+                "relative_residual": 0.13320180004724802,
+                "scale_abs": 0.35437208081792937,
+                "scale_phase_rad": -0.0027894679093989987,
+                "mean_abs_ratio_recovered_over_asymptotic": 0.36485416925550695
+              }
+            ],
+            "basis_gram_diagnostics": {
+              "gram_matrix_real": [
+                [
+                  384.7165982917712,
+                  -1.4339943315812972e-16,
+                  0.024629008281210545
+                ],
+                [
+                  -1.4339943315812972e-16,
+                  0.00023918964191116157,
+                  -9.67798720365423e-21
+                ],
+                [
+                  0.024629008281210545,
+                  -9.67798720365423e-21,
+                  1.5770074753685866e-06
+                ]
+              ],
+              "gram_matrix_imag": [
+                [
+                  0.0,
+                  1.8725093232591297e-17,
+                  1.2253291712814418e-20
+                ],
+                [
+                  -1.8725093232591297e-17,
+                  0.0,
+                  3.351350997334885e-22
+                ],
+                [
+                  -1.2253291712814418e-20,
+                  -3.351350997334885e-22,
+                  0.0
+                ]
+              ],
+              "gram_condition_number": 1310926482695.1228
+            },
+            "recovered_coefficient_energy_ratio": {
+              "abs_a1_over_abs_a0": 0.1361197255938065,
+              "abs_a2_over_abs_a0": 14692.947033176195
+            },
+            "orthonormalized_recovered_coefficient_energy_ratio": {
+              "abs_q1_over_abs_q0": 0.0014659604363381914,
+              "abs_q2_over_abs_q0": 0.17527509399870023
+            },
+            "orthonormalized_basis_diagnostics": {
+              "r_condition_number": 1144956.9785340584,
+              "r_matrix_real": [
+                [
+                  -19.614193796630314,
+                  7.311003176830319e-18,
+                  -0.0012556727305020191
+                ],
+                [
+                  0.0,
+                  -0.015465757075266687,
+                  3.3034284942917713e-20
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.7130943995930443e-05
+                ]
+              ],
+              "r_matrix_imag": [
+                [
+                  0.0,
+                  -1.734723475976807e-18,
+                  -6.24715542217155e-22
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -1.6807957248537883e-19
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ]
+            },
+            "rendered_coefficient_labels": [
+              "a0",
+              "a1",
+              "a2"
+            ],
+            "asymptotic_coefficient_energy_ratio": {
+              "abs_D1_over_abs_B": 6.313724056955261e-07,
+              "abs_C2_over_abs_B": 87955.07917209528
+            }
+          }
+        },
+        {
+          "axis": "y",
+          "projection_fits": [
+            {
+              "family": "R0",
+              "basis_labels": [
+                "R0"
+              ],
+              "field_relative_l2": 0.20085146084903815,
+              "intensity_relative_l2": 0.30261706792924237,
+              "peakline_x_um": 0.0,
+              "peakline_x_delta_um_vs_bridge": 0.0,
+              "centroid_opd_um": -0.24408521033770886,
+              "centroid_opd_delta_um_vs_bridge": 0.022068242362419166,
+              "raw_peak_relative_delta": 0.23102667084633075,
+              "coefficient_energy_ratio": {
+                "abs_a1_over_abs_a0": 0.0,
+                "abs_a2_over_abs_a0": 0.0
+              }
+            },
+            {
+              "family": "R0_plus_R2",
+              "basis_labels": [
+                "R0",
+                "R2"
+              ],
+              "field_relative_l2": 0.00367492807730916,
+              "intensity_relative_l2": 0.0031240400669770934,
+              "peakline_x_um": 0.0,
+              "peakline_x_delta_um_vs_bridge": 0.0,
+              "centroid_opd_um": -0.2660313783125552,
+              "centroid_opd_delta_um_vs_bridge": 0.00012207438757283473,
+              "raw_peak_relative_delta": 0.00022640387387453306,
+              "coefficient_energy_ratio": {
+                "abs_a1_over_abs_a0": 0.0,
+                "abs_a2_over_abs_a0": 15123.740817517793
+              }
+            },
+            {
+              "family": "R0_plus_R1_plus_R2",
+              "basis_labels": [
+                "R0",
+                "R1",
+                "R2"
+              ],
+              "field_relative_l2": 0.0036749280773091604,
+              "intensity_relative_l2": 0.003124040066977116,
+              "peakline_x_um": 0.0,
+              "peakline_x_delta_um_vs_bridge": 0.0,
+              "centroid_opd_um": -0.26603137831255136,
+              "centroid_opd_delta_um_vs_bridge": 0.000122074387576665,
+              "raw_peak_relative_delta": 0.00022640387387604387,
+              "coefficient_energy_ratio": {
+                "abs_a1_over_abs_a0": 7.451862492088461e-09,
+                "abs_a2_over_abs_a0": 15123.740817517793
+              }
+            }
+          ],
+          "axis_requires_odd_basis": false,
+          "odd_basis_resolves_axis": false,
+          "full_family_beats_even_family": false,
+          "coefficient_recovery_recommended_focus": "D1_dominant",
+          "coefficient_summary": {
+            "case_name": "mild_shape_medium_tilt_y",
+            "vector_alignment": {
+              "scale_abs": 1.5131438009363267,
+              "scale_phase_rad": -3.138389821252875,
+              "relative_residual": 0.1476436431554497
+            },
+            "shared_scale_consistency": {
+              "scale_abs": 1.5131438009363267,
+              "scale_phase_rad": -3.138389821252875,
+              "relative_residual": 0.1476436431554497,
+              "component_relative_residuals": {
+                "a0_vs_B_k": 1.2712724379144318,
+                "a1_vs_D1_slice_k": 15491375.197549509,
+                "a2_vs_C2_slice_k": 0.14764361934820538
+              },
+              "component_mean_abs_ratio_under_shared_scale": {
+                "a0_vs_B_k": 3.7212145518137105,
+                "a1_vs_D1_slice_k": 6.46438950887104e-08,
+                "a2_vs_C2_slice_k": 1.032926566372792
+              }
+            },
+            "component_summaries": [
+              {
+                "name": "a0_vs_B_k",
+                "relative_residual": 0.14200300199940935,
+                "scale_abs": 5.462907101861357,
+                "scale_phase_rad": 0.08555393512105641,
+                "mean_abs_ratio_recovered_over_asymptotic": 5.630732731030967
+              },
+              {
+                "name": "a1_vs_D1_slice_k",
+                "relative_residual": 0.39888280667515,
+                "scale_abs": 8.956957128889047e-08,
+                "scale_phase_rad": 0.3727602181304313,
+                "mean_abs_ratio_recovered_over_asymptotic": 9.781550912186039e-08
+              },
+              {
+                "name": "a2_vs_C2_slice_k",
+                "relative_residual": 0.14764361934820538,
+                "scale_abs": 1.5131438033644973,
+                "scale_phase_rad": -3.1383898211530776,
+                "mean_abs_ratio_recovered_over_asymptotic": 1.5629664307294355
+              }
+            ],
+            "basis_gram_diagnostics": {
+              "gram_matrix_real": [
+                [
+                  384.7165982917712,
+                  -7.324737457337538e-17,
+                  0.025118464946614162
+                ],
+                [
+                  -7.324737457337538e-17,
+                  1.0609736669516852e-33,
+                  -4.766670376567979e-21
+                ],
+                [
+                  0.025118464946614162,
+                  -4.766670376567979e-21,
+                  1.6400372397426927e-06
+                ]
+              ],
+              "gram_matrix_imag": [
+                [
+                  0.0,
+                  -7.198951381138664e-20,
+                  -3.846384188078876e-21
+                ],
+                [
+                  7.198951381138664e-20,
+                  0.0,
+                  4.6330082275730915e-24
+                ],
+                [
+                  3.846384188078876e-21,
+                  -4.6330082275730915e-24,
+                  0.0
+                ]
+              ],
+              "gram_condition_number": 3.701736322491967e+35
+            },
+            "recovered_coefficient_energy_ratio": {
+              "abs_a1_over_abs_a0": 7.451862492088456e-09,
+              "abs_a2_over_abs_a0": 15123.740817517788
+            },
+            "orthonormalized_recovered_coefficient_energy_ratio": {
+              "abs_q1_over_abs_q0": 0.017686692331431254,
+              "abs_q2_over_abs_q0": 0.20468828772282768
+            },
+            "orthonormalized_basis_diagnostics": {
+              "r_condition_number": 6.084192101833697e+17,
+              "r_matrix_real": [
+                [
+                  -19.614193796630314,
+                  3.734406590086776e-18,
+                  -0.0012806269381782835
+                ],
+                [
+                  0.0,
+                  3.235780989035989e-17,
+                  4.855489559054356e-07
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -5.6257615218076045e-06
+                ]
+              ],
+              "r_matrix_imag": [
+                [
+                  0.0,
+                  3.670276461923927e-21,
+                  1.9610207933907935e-22
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -2.078221003097434e-09
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ]
+            },
+            "rendered_coefficient_labels": [
+              "a0",
+              "a1",
+              "a2"
+            ],
+            "asymptotic_coefficient_energy_ratio": {
+              "abs_D1_over_abs_B": 0.42896516532026235,
+              "abs_C2_over_abs_B": 54484.69062581426
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "slice_axis_crosscheck_case_names": [
+    "mild_shape_medium_tilt"
+  ],
+  "slice_axis_crosscheck_status": "consistent",
+  "slice_axis_crosscheck_recommended_next_action": "coefficient_debug_generalizes_across_slice_axes",
+  "recommended_next_action": "coefficient_debug_generalizes_across_slice_axes",
+  "slice_axis_crosscheck_note": "Cross-check one representative tilted non-spherical case on x and y lateral slices to confirm whether the current coefficient-debug recommendation is slice-direction robust.",
+  "report_version_tag": "round6p1"
+}
